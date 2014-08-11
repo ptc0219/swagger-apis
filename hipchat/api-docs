@@ -13,7 +13,7 @@
     ],
     "info": {
         "title": "Hipchat API Docs",
-        "description": "",
+        "description": "Create an API token <a href=\"https://www.hipchat.com/admin/api\">here</a> (group admins only).",
         "termsOfServiceUrl": "https://www.hipchat.com/terms"
     }
 }

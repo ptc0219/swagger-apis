@@ -1,26 +1,410 @@
 {
-  "swaggerVersion": "1.2",
-  "basePath": "https://api.hipchat.com/v1/rooms",
-  "apis": [
-    {
-      "path": "/list?auth_token={token}",
-      "operations": [
+    "swaggerVersion": "1.2",
+    "basePath": "https://api.hipchat.com/v1/rooms",
+    "apis": [
         {
-          "method": "GET",
-          "summary": "Greet our subject with hello!",
-          "type": "string",
-          "nickname": "helloSubject",
-          "parameters": [
-            {
-              "name": "token",
-              "description": "The token .",
-              "required": true,
-              "type": "string",
-              "paramType": "path"
-            }
-          ]
+            "path": "/list",
+            "operations": [
+                {
+                "method": "GET",
+                "summary": "List rooms for this group.",
+                "nickname": "listRooms",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/create",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Creates a new room.",
+                    "nickname": "createRoom",
+                    "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "owner_user_id",
+                            "description": "User ID of the room's owner.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "privacy",
+                            "description": "Privacy (default: public)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form",
+                            "enum": ["public","private"],
+                            "defaultValue": "public"
+                        },
+                        {
+                            "name": "topic",
+                            "description": "Initial room topic.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "guest_access",
+                            "description": "Whether or not to enable guest access for this room.<br>0 = false, 1 = true. (default: 0)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form",
+                            "enum": ["0","1"],
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Response format.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/delete",
+            "operations": [
+                {
+                "method": "POST",
+                "summary": "Deletes a room and kicks the current participants.",
+                "nickname": "deleteRoom",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "room_id",
+                            "description": "ID of the room.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/show",
+            "operations": [
+                {
+                "method": "GET",
+                "summary": "Get room details.",
+                "nickname": "showRoom",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "room_id",
+                            "description": "ID of the room.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/history",
+            "operations": [
+                {
+                "method": "GET",
+                "summary": "Fetch chat history for this room.",
+                "nickname": "historyRoom",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "room_id",
+                            "description": "ID of the room.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "date",
+                            "description": "Either the date to fetch history for in YYYY-MM-DD format, or \"recent\" to fetch the latest 75 messages.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "timezone",
+                            "description": "Your timezone. Must be a <a href=\"https://www.hipchat.com/docs/api/timezones\">supported timezone</a>. (default: UTC)",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/message",
+            "operations": [
+                {
+                "method": "POST",
+                "summary": "Send a message to a room.",
+                "nickname": "messageRoomP",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "room_id",
+                            "description": "ID or name of the room.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "from",
+                            "description": "Name the message will appear be sent from. Must be less than 15 characters long. May contain letters, numbers, -, _, and spaces.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "message",
+                            "description": "The message body. 10,000 characters max.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "message_format",
+                            "description": "Determines how the message is treated by our server and rendered inside HipChat applications.(default: html)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form",
+                            "enum": ["text","html"],
+                            "defaultValue": "html"
+                        },
+                        {
+                            "name": "notify",
+                            "description": "Whether or not this message should trigger a notification for people in the room (change the tab color, play a sound, etc). Each recipient's notification preferences are taken into account.<br>0 = false, 1 = true. (default: 0)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form",
+                            "enum": ["0","1"],
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "color",
+                            "description": "Background color for message. One of \"yellow\", \"red\", \"green\", \"purple\", \"gray\", or \"random\".<br>(default: yellow)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form",
+                            "enum": ["yellow","red","green","purple","gray","random"],
+                            "defaultValue": "yellow"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                },
+                {
+                "method": "GET",
+                "summary": "Send a message to a room.",
+                "nickname": "messageRoomG",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "room_id",
+                            "description": "ID or name of the room.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from",
+                            "description": "Name the message will appear be sent from. Must be less than 15 characters long. May contain letters, numbers, -, _, and spaces.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "message",
+                            "description": "The message body. 10,000 characters max.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "message_format",
+                            "description": "Determines how the message is treated by our server and rendered inside HipChat applications.(default: html)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["text","html"],
+                            "defaultValue": "html"
+                        },
+                        {
+                            "name": "notify",
+                            "description": "Whether or not this message should trigger a notification for people in the room (change the tab color, play a sound, etc). Each recipient's notification preferences are taken into account.<br>0 = false, 1 = true. (default: 0)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["0","1"],
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "color",
+                            "description": "Background color for message. One of \"yellow\", \"red\", \"green\", \"purple\", \"gray\", or \"random\".<br>(default: yellow)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["yellow","red","green","purple","gray","random"],
+                            "defaultValue": "yellow"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/topic",
+            "operations": [
+                {
+                "method": "POST",
+                "summary": "Set a room's topic. Useful for displaying statistics, important links, server status, you name it!",
+                "nickname": "topicRoom",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "room_id",
+                            "description": "ID or name of the room.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "topic",
+                            "description": "The topic body. 250 characters max.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "from",
+                            "description": "Name of the service changing the topic. (default: API)",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form",
+                            "defaultValue": "API"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
