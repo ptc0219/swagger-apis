@@ -46,6 +46,13 @@
                             "paramType": "query"
                         },
                         {
+                            "name": "name",
+                            "description": "Create a new room.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
                             "name": "owner_user_id",
                             "description": "User ID of the room's owner.",
                             "required": true,
@@ -180,21 +187,21 @@
                             "description": "ID of the room.",
                             "required": true,
                             "type": "string",
-                            "paramType": "form"
+                            "paramType": "query"
                         },
                         {
                             "name": "date",
                             "description": "Either the date to fetch history for in YYYY-MM-DD format, or \"recent\" to fetch the latest 75 messages.",
                             "required": true,
                             "type": "string",
-                            "paramType": "form"
+                            "paramType": "query"
                         },
                         {
                             "name": "timezone",
                             "description": "Your timezone. Must be a <a href=\"https://www.hipchat.com/docs/api/timezones\">supported timezone</a>. (default: UTC)",
-                            "required": true,
+                            "required": false,
                             "type": "string",
-                            "paramType": "form"
+                            "paramType": "query"
                         },
                         {
                             "name": "format",

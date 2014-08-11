@@ -63,7 +63,7 @@
                         },
                         {
                             "name": "name",
-                            "description": "User's full name.",
+                            "description": "User's full name.(Separated first name and last name with a blank)",
                             "required": true,
                             "type": "string",
                             "paramType": "form"
@@ -254,7 +254,7 @@
                         },
                         {
                             "name": "name",
-                            "description": "User's full name.",
+                            "description": "User's full name.(Separated first name and last name with a blank)",
                             "required": false,
                             "type": "string",
                             "paramType": "form"
