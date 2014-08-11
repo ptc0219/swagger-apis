@@ -1,0 +1,312 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://api.hipchat.com/v1/users",
+    "apis": [
+        {
+            "path": "/list",
+            "operations": [
+                {
+                "method": "GET",
+                "summary": "List all users in the group.",
+                "nickname": "listUsers",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "include_deleted",
+                            "description": "Include deleted users in response.<br>0 = false, 1 = true. (default: 0)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["0","1"],
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/create",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Create a new user in your group.",
+                    "nickname": "createUser",
+                    "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token .",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "email",
+                            "description": "User's email.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "name",
+                            "description": "User's full name.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "mention_name",
+                            "description": "User's @mention name.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "title",
+                            "description": "User's title.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "is_group_admin",
+                            "description": "Whether or not this user is an admin.<br>0 = false, 1 = true. (default: 0) ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form",
+                            "enum": ["0","1"],
+                            "defaultValue": "0"
+                        },
+                        {
+                            "name": "password",
+                            "description": "User's password.<br>If not provided, a randomly generated password will be returned.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "timezone",
+                            "description": "User's timezone.<br>Must be a <a href=\"https://www.hipchat.com/docs/api/timezones\">supported timezone</a>. (default: UTC) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Response format.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/delete",
+            "operations": [
+                {
+                "method": "POST",
+                "summary": "Delete a user.",
+                "nickname": "deleteUser",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "ID or email address of the user.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/show",
+            "operations": [
+                {
+                "method": "GET",
+                "summary": "Get a user's details.",
+                "nickname": "showUser",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "ID or email address of the user.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/undelete",
+            "operations": [
+                {
+                "method": "POST",
+                "summary": "Undelete a user. They will be sent an email requiring them to click a link to reactivate the account.",
+                "nickname": "undeleteUser",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "ID or email address of the user.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/update",
+            "operations": [
+                {
+                "method": "POST",
+                "summary": "Update a user.",
+                "nickname": "updateUser",
+                "parameters": [
+                        {
+                            "name": "auth_token",
+                            "description": "Admin token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "ID or email address of the user.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "email",
+                            "description": "User's email.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "name",
+                            "description": "User's full name.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "mention_name",
+                            "description": "User's @mention name.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "title",
+                            "description": "User's title.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "is_group_admin",
+                            "description": "Whether or not this user is an admin.<br>0 = false, 1 = true. (default: 0) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form",
+                            "enum": ["0","1"]
+                        },
+                        {
+                            "name": "password",
+                            "description": "User's password.<br>If not provided, a randomly generated password will be returned.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "timezone",
+                            "description": "User's timezone.<br>Must be a <a href=\"https://www.hipchat.com/docs/api/timezones\">supported timezone</a>. (default: UTC) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Desired response format: json or xml. (default: json)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json","xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

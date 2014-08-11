@@ -1,0 +1,26 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "https://api.hipchat.com/v1/rooms",
+  "apis": [
+    {
+      "path": "/list?auth_token={token}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Greet our subject with hello!",
+          "type": "string",
+          "nickname": "helloSubject",
+          "parameters": [
+            {
+              "name": "token",
+              "description": "The token .",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
