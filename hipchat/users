@@ -318,23 +318,14 @@
     ],
     "models": {
         "listUsersResp": {
-<<<<<<< Updated upstream
             "id": "",
-=======
-            "id": "listUsersResp",
->>>>>>> Stashed changes
             "required": [
                 "users"
             ],
             "properties": {
-<<<<<<< Updated upstream
                 "users": {
                     "type": "array",
                     "description": "",
-=======
-                "users":{
-                    "type": "array",
->>>>>>> Stashed changes
                     "items": {
                         "$ref": "user"
                     }
