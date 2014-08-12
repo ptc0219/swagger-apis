@@ -1,15 +1,17 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "https://api.hipchat.com/v1/rooms",
+    "basePath": "https://api.hipchat.com/v1",
+    "resourcePath": "/rooms",
     "apis": [
         {
-            "path": "/list",
+            "path": "/rooms/list",
             "operations": [
                 {
-                "method": "GET",
-                "summary": "List rooms for this group.",
-                "nickname": "listRooms",
-                "parameters": [
+                    "method": "GET",
+                    "summary": "List rooms for this group.",
+                    "nickname": "listRooms",
+                    "type": "listRoomsResp",
+                    "parameters": [
                         {
                             "name": "auth_token",
                             "description": "Admin token.",
@@ -31,12 +33,13 @@
             ]
         },
         {
-            "path": "/create",
+            "path": "/rooms/create",
             "operations": [
                 {
                     "method": "POST",
                     "summary": "Creates a new room.",
                     "nickname": "createRoom",
+                    "type": "createRoomResp",
                     "parameters": [
                         {
                             "name": "auth_token",
@@ -98,12 +101,13 @@
             ]
         },
         {
-            "path": "/delete",
+            "path": "/rooms/delete",
             "operations": [
                 {
                 "method": "POST",
                 "summary": "Deletes a room and kicks the current participants.",
                 "nickname": "deleteRoom",
+                "type": "deleteRoomResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -133,12 +137,13 @@
             ]
         },
         {
-            "path": "/show",
+            "path": "/rooms/show",
             "operations": [
                 {
                 "method": "GET",
                 "summary": "Get room details.",
                 "nickname": "showRoom",
+                "type": "showRoomResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -168,12 +173,13 @@
             ]
         },
         {
-            "path": "/history",
+            "path": "/rooms/history",
             "operations": [
                 {
                 "method": "GET",
                 "summary": "Fetch chat history for this room.",
                 "nickname": "historyRoom",
+                "type": "historyRoomResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -217,12 +223,13 @@
             ]
         },
         {
-            "path": "/message",
+            "path": "/rooms/message",
             "operations": [
                 {
                 "method": "POST",
                 "summary": "Send a message to a room.",
                 "nickname": "messageRoomP",
+                "type": "messageRoomPResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -294,6 +301,7 @@
                 "method": "GET",
                 "summary": "Send a message to a room.",
                 "nickname": "messageRoomG",
+                "type": "messageRoomGResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -364,12 +372,13 @@
             ]
         },
         {
-            "path": "/topic",
+            "path": "/rooms/topic",
             "operations": [
                 {
                 "method": "POST",
                 "summary": "Set a room's topic. Useful for displaying statistics, important links, server status, you name it!",
                 "nickname": "topicRoom",
+                "type": "topicRoomResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -413,5 +422,287 @@
                 }
             ]
         }
-    ]
+    ],
+    "models": {
+        "listRoomsResp": {
+            "id": "rooms",
+            "required": [
+                "room_id",
+                "name",
+                "topic",
+                "last_active",
+                "created",
+                "owner_user_id",
+                "is_archived",
+                "is_private",
+                "guest_access_url",
+                "xmpp_jid"
+            ],
+            "properties": {
+                "room_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "topic": {
+                    "type": "string",
+                    "description": ""
+                },
+                "last_active": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "created": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "owner_user_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "is_archived": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "is_private": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "guest_access_url": {
+                    "type": "string",
+                    "description": ""
+                },
+                "xmpp_jid": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "createRoomResp": {
+            "id": "room",
+            "required": [
+                "room_id",
+                "name",
+                "topic",
+                "last_active",
+                "created",
+                "owner_user_id",
+                "is_archived",
+                "is_private",
+                "guest_access_url",
+                "xmpp_jid"
+            ],
+            "properties": {
+                "room_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "topic": {
+                    "type": "string",
+                    "description": ""
+                },
+                "last_active": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "created": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "owner_user_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "is_archived": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "is_private": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "guest_access_url": {
+                    "type": "string",
+                    "description": ""
+                },
+                "xmpp_jid": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "deleteRoomResp": {
+            "id": "",
+            "required": [
+                "deleted"
+            ],
+            "properties": { 
+                "deleted": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }   
+        },
+        "showRoomResp": {
+            "id": "rooms",
+            "required": [
+                "room_id",
+                "name",
+                "topic",
+                "last_active",
+                "created",
+                "owner_user_id",
+                "is_archived",
+                "is_private",
+                "guest_access_url",
+                "xmpp_jid",
+                "privacy",
+                "member_user_ids",
+                "participants"
+            ],
+            "properties": {
+                "room_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "topic": {
+                    "type": "string",
+                    "description": ""
+                },
+                "last_active": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "created": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "owner_user_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "is_archived": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "is_private": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "guest_access_url": {
+                    "type": "string",
+                    "description": ""
+                },
+                "xmpp_jid": {
+                    "type": "string",
+                    "description": ""
+                },
+                "privacy": {
+                    "type": "string",
+                    "description": ""
+                },
+                "member_user_ids": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "participants": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            }
+        },
+        "historyRoomResp": {
+            "id": "messages",
+            "required": [
+                "date",
+                "from",
+                "message"
+            ],
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "from": {
+                    "type": "object",
+                    "description": "",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "message": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "messageRoomPResp": {
+            "id": "",
+            "required": [
+                "status"
+            ],
+            "properties": { 
+                "status": {
+                    "type": "string",
+                    "description": ""
+                }
+            }   
+        },
+        "messageRoomGResp": {
+            "id": "",
+            "required": [
+                "status"
+            ],
+            "properties": { 
+                "status": {
+                    "type": "string",
+                    "description": ""
+                }
+            }   
+        },
+        "topicRoomResp": {
+            "id": "",
+            "required": [
+                "status"
+            ],
+            "properties": { 
+                "status": {
+                    "type": "string",
+                    "description": ""
+                }
+            }   
+        }
+    }
 }

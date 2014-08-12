@@ -1,6 +1,11 @@
 {
     "apiVersion": "1.0.0",
     "swaggerVersion": "1.2",
+    "info": {
+        "title": "HipChat API Docs",
+        "description": "HipChat launched in 2010 to give companies and teams a chat service that was built just for them.<br>We wanted to combine the power of group chat and the simplicity of consumer IM services with the administrative controls that companies need.<br>Read more on <a href=\"https://www.hipchat.com\">HipChat</a>.<hr>Create an API token <a href=\"https://www.hipchat.com/admin/api\">here</a> (group admins only).<br>Read more on <a href=\"https://www.hipchat.com/docs/api\">official API document</a>.",
+        "termsOfServiceUrl": "https://www.hipchat.com/terms"
+    },
     "apis": [
         {
             "path" : "/../users",
@@ -8,12 +13,7 @@
         },
         {
             "path" : "/../rooms",
-            "description" : "Operations about rooms"
+            "description" : "Operations about chat rooms"
         }
-    ],
-    "info": {
-        "title": "Hipchat API Docs",
-        "description": "Create an API token <a href=\"https://www.hipchat.com/admin/api\">here</a> (group admins only).",
-        "termsOfServiceUrl": "https://www.hipchat.com/terms"
-    }
+    ]
 }

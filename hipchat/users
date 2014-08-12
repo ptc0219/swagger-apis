@@ -1,14 +1,16 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "https://api.hipchat.com/v1/users",
+    "basePath": "https://api.hipchat.com/v1",
+    "resourcePath": "/users",
     "apis": [
         {
-            "path": "/list",
+            "path": "/users/list",
             "operations": [
                 {
                 "method": "GET",
                 "summary": "List all users in the group.",
                 "nickname": "listUsers",
+                "type": "listUsersResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -40,12 +42,13 @@
             ]
         },
         {
-            "path": "/create",
+            "path": "/users/create",
             "operations": [
                 {
                     "method": "POST",
                     "summary": "Create a new user in your group.",
                     "nickname": "createUser",
+                    "type": "createUserResp",
                     "parameters": [
                         {
                             "name": "auth_token",
@@ -119,12 +122,13 @@
             ]
         },
         {
-            "path": "/delete",
+            "path": "/users/delete",
             "operations": [
                 {
                 "method": "POST",
                 "summary": "Delete a user.",
                 "nickname": "deleteUser",
+                "type": "deleteUserResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -154,12 +158,13 @@
             ]
         },
         {
-            "path": "/show",
+            "path": "/users/show",
             "operations": [
                 {
                 "method": "GET",
                 "summary": "Get a user's details.",
                 "nickname": "showUser",
+                "type": "showUserResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -189,12 +194,13 @@
             ]
         },
         {
-            "path": "/undelete",
+            "path": "/users/undelete",
             "operations": [
                 {
                 "method": "POST",
                 "summary": "Undelete a user. They will be sent an email requiring them to click a link to reactivate the account.",
                 "nickname": "undeleteUser",
+                "type": "undeleteUserResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -224,12 +230,13 @@
             ]
         },
         {
-            "path": "/update",
+            "path": "/users/update",
             "operations": [
                 {
                 "method": "POST",
                 "summary": "Update a user.",
                 "nickname": "updateUser",
+                "type": "updateUserResp",
                 "parameters": [
                         {
                             "name": "auth_token",
@@ -308,5 +315,343 @@
                 }
             ]
         }
-    ]
+    ],
+    "models": {
+        "listUsersResp": {
+            "id": "users",
+            "required": [
+                "user_id",
+                "email",
+                "is_deleted",
+                "is_group_admin",
+                "name",
+                "mention_name",
+                "photo_url",
+                "last_active",
+                "created",
+                "status",
+                "status_message",
+                "timezone",
+                "title"
+            ],
+            "properties": {
+                "user_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "email": {
+                    "type": "string",
+                    "description": ""
+                },
+                "is_deleted": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "is_group_admin": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "mention_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "photo_url": {
+                    "type": "string",
+                    "description": ""
+                },
+                "last_active": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "created": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "status": {
+                    "type": "string",
+                    "description": ""
+                },
+                "status_message": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "title": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "createUserResp": {
+            "id": "user",
+            "required": [
+                "user_id",
+                "email",
+                "is_deleted",
+                "is_group_admin",
+                "name",
+                "mention_name",
+                "photo_url",
+                "last_active",
+                "created",
+                "status",
+                "status_message",
+                "timezone",
+                "title",
+                "password"
+            ],
+            "properties": {
+                "user_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "email": {
+                    "type": "string",
+                    "description": ""
+                },
+                "is_deleted": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "is_group_admin": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "mention_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "photo_url": {
+                    "type": "string",
+                    "description": ""
+                },
+                "last_active": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "created": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "status": {
+                    "type": "string",
+                    "description": ""
+                },
+                "status_message": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "title": {
+                    "type": "string",
+                    "description": ""
+                },
+                "password": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "deleteUserResp": {
+            "id": "",
+            "required": [
+                "deleted"
+            ],
+            "properties": { 
+                "deleted": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }   
+        },
+        "showUserResp": {
+            "id": "user",
+            "required": [
+                "user_id",
+                "email",
+                "is_deleted",
+                "is_group_admin",
+                "name",
+                "mention_name",
+                "photo_url",
+                "last_active",
+                "created",
+                "status",
+                "status_message",
+                "timezone",
+                "title"
+            ],
+            "properties": {
+                "user_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "email": {
+                    "type": "string",
+                    "description": ""
+                },
+                "is_deleted": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "is_group_admin": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "mention_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "photo_url": {
+                    "type": "string",
+                    "description": ""
+                },
+                "last_active": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "created": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "status": {
+                    "type": "string",
+                    "description": ""
+                },
+                "status_message": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "title": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "undeleteUserResp": {
+            "id": "",
+            "required": [
+                "undeleted"
+            ],
+            "properties": {
+                "undeleted": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "updateUserResp": {
+            "id": "user",
+            "required": [
+                "user_id",
+                "email",
+                "is_deleted",
+                "is_group_admin",
+                "name",
+                "mention_name",
+                "photo_url",
+                "last_active",
+                "created",
+                "status",
+                "status_message",
+                "timezone",
+                "title"
+            ],
+            "properties": {
+                "user_id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "email": {
+                    "type": "string",
+                    "description": ""
+                },
+                "is_deleted": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "is_group_admin": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": ""
+                },
+                "name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "mention_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "photo_url": {
+                    "type": "string",
+                    "description": ""
+                },
+                "last_active": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "created": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "status": {
+                    "type": "string",
+                    "description": ""
+                },
+                "status_message": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "title": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        }
+    }
 }
