@@ -655,8 +655,41 @@
                 }
             }
         },
+        "showRoomMembers": {
+            "id": "showRoomMembers",
+            "required": [
+            ],
+            "properties": {
+                "userid": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                }
+            }
+        },
+        "showRoomParts": {
+            "id": "showRoomParts",
+            "required": [
+            ],
+            "properties": {
+                "userid": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                }
+            }
+        },
+        "userid": {
+            "id": "userid",
+            "properties": {
+                "userid": {
+                    "type": "array",
+                    "description": ""
+                }
+            }
+        },
         "historyRoomResp": {
-            "id": "messages",
+            "id": "",
             "required": [
                 "date",
                 "from",
