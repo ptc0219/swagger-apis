@@ -425,7 +425,22 @@
     ],
     "models": {
         "listRoomsResp": {
-            "id": "rooms",
+            "id": "",
+            "required": [
+                "rooms"
+            ],
+            "properties": {
+                "rooms": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "room"
+                    }
+                }
+            }
+        },
+        "room": {
+            "id": "room",
             "required": [
                 "room_id",
                 "name",
@@ -559,7 +574,7 @@
             }   
         },
         "showRoomResp": {
-            "id": "rooms",
+            "id": "room",
             "required": [
                 "room_id",
                 "name",
@@ -628,17 +643,41 @@
                     "type": "array",
                     "description": "",
                     "items": {
-                        "type": "integer",
-                        "format": "int64"
+                        "$ref": "showRoomMembers"
                     }
                 },
                 "participants": {
                     "type": "array",
                     "description": "",
                     "items": {
-                        "type": "integer",
-                        "format": "int64"
+                        "$ref": "showRoomParts"
                     }
+                }
+            }
+        },
+        "showRoomMembers": {
+            "id": "showRoomMembers",
+            "required": [
+                "userid"
+            ],
+            "properties": {
+                "userid": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                }
+            }
+        },
+        "showRoomParts": {
+            "id": "showRoomParts",
+            "required": [
+                "userid"
+            ],
+            "properties": {
+                "userid": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
                 }
             }
         },
@@ -656,14 +695,33 @@
                     "description": ""
                 },
                 "from": {
-                    "type": "object",
+                    "type": "array",
                     "description": "",
                     "items": {
-                        "type": "string"
+                        "$ref": "messageFrom"
                     }
                 },
                 "message": {
                     "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "messageFrom": {
+            "id": "messageFrom",
+            "required": [
+                "name",
+                "user_id"
+            ],
+            "properties": {
+                "name": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "format": "int64",
                     "description": ""
                 }
             }

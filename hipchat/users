@@ -318,7 +318,22 @@
     ],
     "models": {
         "listUsersResp": {
-            "id": "users",
+            "id": "",
+            "required": [
+                "users"
+            ],
+            "properties": {
+                "users": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "user"
+                    }
+                }
+            }
+        },
+        "user": {
+            "id": "user",
             "required": [
                 "user_id",
                 "email",
