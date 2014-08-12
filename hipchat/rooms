@@ -643,41 +643,15 @@
                     "type": "array",
                     "description": "",
                     "items": {
-                        "$ref": "showRoomMembers"
+                        "$ref": "integer"
                     }
                 },
                 "participants": {
                     "type": "array",
                     "description": "",
                     "items": {
-                        "$ref": "showRoomParts"
+                        "$ref": "integer"
                     }
-                }
-            }
-        },
-        "showRoomMembers": {
-            "id": "showRoomMembers",
-            "required": [
-                "userid"
-            ],
-            "properties": {
-                "userid": {
-                    "type": "integer",
-                    "format": "int64",
-                    "description": ""
-                }
-            }
-        },
-        "showRoomParts": {
-            "id": "showRoomParts",
-            "required": [
-                "userid"
-            ],
-            "properties": {
-                "userid": {
-                    "type": "integer",
-                    "format": "int64",
-                    "description": ""
                 }
             }
         },
@@ -715,13 +689,11 @@
             ],
             "properties": {
                 "name": {
-                    "type": "integer",
-                    "format": "int64",
+                    "type": "string",
                     "description": ""
                 },
                 "user_id": {
-                    "type": "integer",
-                    "format": "int64",
+                    "type": "string",
                     "description": ""
                 }
             }
