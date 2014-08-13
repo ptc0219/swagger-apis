@@ -1,20 +1,71 @@
-
 {
-    "apiVersion": "1.0.0",
-    "swaggerVersion": "1.2",
-    "info": {
-        "title": "Plurk API Docs",
-        "description": "Plurk（噗浪）是創立於2008年，初期為限制 140 個字的微網誌服務，後來漸漸發展為網友日常對話、交流的社群網站。2012年，噗浪將字數限制放寬為 210 個字，正式轉型為對話型的社交網站。噗浪特殊的時間軸設計，使得其與相關的微網誌服務快速區隔，並在北美、台灣、東南亞、香港等地快速受到許多亞洲使用者的喜愛。同時，藉由其強調促成對話的特性，以及快速訊息傳遞的力量，在2009年於台灣發生的八八風災發揮了極大的資訊工具及社交感染力。<hr>Read more on <a href=\"http://www.plurk.com/API\">official API document</a>.",
-        "termsOfServiceUrl": "http://www.plurk.com/terms"
+  "apiVersion": "2.0",
+  "swaggerVersion": "1.2",
+  "info": {
+    "title": "Plurk API Docs",
+    "description": "<a href=\"https://www.plurk.com\">Plurk（噗浪）</a>是創立於2008年，初期為限制 140 個字的微網誌服務，後來漸漸發展為網友日常對話、交流的社群網站。2012年，噗浪將字數限制放寬為 210 個字，正式轉型為對話型的社交網站。噗浪特殊的時間軸設計，使得其與相關的微網誌服務快速區隔，並在北美、台灣、東南亞、香港等地快速受到許多亞洲使用者的喜愛。同時，藉由其強調促成對話的特性，以及快速訊息傳遞的力量，在2009年於台灣發生的八八風災發揮了極大的資訊工具及社交感染力。<hr>Read more on <a href=\"http://www.plurk.com/API\">official API document</a>.",
+    "termsOfServiceUrl": "http://www.plurk.com/terms"
+  },
+  "apis": [
+    {
+      "path": "/../users",
+      "description": "Operations about users"
     },
-    "apis": [
-        {
-            "path" : "/../users",
-            "description" : "Operations about users"
-        },
-        {
-            "path" : "/../rooms",
-            "description" : "Operations about chat rooms"
-        }
-    ]
+    {
+      "path": "/../profile",
+      "description": "Operations about profile"
+    },
+    {
+      "path": "/../realtime",
+      "description": "Operations about Real time notifications"
+    },
+    {
+      "path": "/../polling",
+      "description": "Operations about Polling"
+    },
+    {
+      "path": "/../timeline",
+      "description": "Operations about timeline"
+    },
+    {
+      "path": "/../responses",
+      "description": "Operations about responses"
+    },
+    {
+      "path": "/../friendfans",
+      "description": "Operations about friends and fans"
+    },
+    {
+      "path": "/../alert",
+      "description": "Operations about alert"
+    },
+    {
+      "path": "/../plurksearch",
+      "description": "Operations about plurk search"
+    },
+    {
+      "path": "/../usersearch ",
+      "description": "Operations about user search"
+    },
+    {
+      "path": "/../emoticons",
+      "description": "Operations about emoticons"
+    },
+    {
+      "path": "/../blocks",
+      "description": "Operations about block"
+    },
+    {
+      "path": "/../cliques",
+      "description": "Operations about cliques"
+    },
+    {
+      "path": "/../plurktop",
+      "description": "Operations about plurktop"
+    },
+    {
+      "path": "/../oauthtools",
+      "description": "Operations about oauth tools"
+    }
+  ]
 }
