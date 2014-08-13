@@ -124,8 +124,7 @@
                     "description": ""
                 },
                 "plurks_users": {
-                    "type": "object",
-                    "description": ""
+                    "$ref": "plurkuser"
                 },
                 "friends_count": {
                     "type": "integer",
@@ -140,8 +139,7 @@
                     "description": ""
                 },
                 "user_info": {
-                    "type": "object",
-                    "description": ""
+                    "$ref": "userinfo"
                 },
                 "plurks": {
                     "type": "array",
@@ -157,7 +155,7 @@
             }
         },
         "Ownplurk": {
-            "id": "plurk",
+            "id": "Ownplurk",
             "required": [
                 "replurkers_count",
                 "replurkable",
@@ -313,8 +311,7 @@
                     "description": ""
                 },
                 "user_info": {
-                    "type": "object",
-                    "description": ""
+                    "$ref": "userinfo"
                 },
                 "plurks": {
                     "type": "array",
@@ -326,7 +323,7 @@
             }
         },
         "Publicplurk": {
-            "id": "plurk",
+            "id": "Publicplurk",
             "required": [
                 "replurkers_count",
                 "replurkable",
@@ -441,6 +438,279 @@
                     "items": {
                         "$ref": "integer"
                     }
+                }
+            }
+        },
+        "userinfo": {
+            "id": "userinfo",
+            "required": [
+                "verified_account",
+                "fans_count",
+                "default_lang",
+                "setup_facebook_sync",
+                "page_title",
+                "uid",
+                "avatar_big",
+                "dateformat",
+                "has_profile_image",
+                "response_count",
+                "avatar_small",
+                "full_name",
+                "name_color",
+                "timezone",
+                "id",
+                "setup_weibo_sync",
+                "profile_views",
+                "about",
+                "display_name",
+                "relationship",
+                "privacy",
+                "nick_name",
+                "gender",
+                "plurks_count",
+                "friends_count",
+                "post_anonymous_plurk",
+                "avatar",
+                "setup_twitter_sync",
+                "date_of_birth",
+                "location",
+                "avatar_medium",
+                "accept_private_plurk_from",
+                "recruited",
+                "bday_privacy",
+                "karma"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "fans_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "setup_facebook_sync": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "page_title": {
+                    "type": "string",
+                    "description": ""
+                },
+                "uid": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar_big": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "response_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar_small": {
+                    "type": "string",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "setup_weibo_sync": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "profile_views": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "about": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "relationship": {
+                    "type": "string",
+                    "description": ""
+                },
+                "privacy": {
+                    "type": "string",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "plurks_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "friends_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "post_anonymous_plurk": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "setup_twitter_sync": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "avatar_medium": {
+                    "type": "string",
+                    "description": ""
+                },
+                "accept_private_plurk_from": {
+                    "type": "string",
+                    "description": ""
+                },
+                "recruited": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                }
+            }
+        },
+        "plurkuser": {
+            "id": "plurkuser",
+            "required": [
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "location",
+                "bday_privacy",
+                "date_of_birth",
+                "karma",
+                "full_name",
+                "gender",
+                "name_color",
+                "timezone",
+                "id",
+                "avatar"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
                 }
             }
         }
