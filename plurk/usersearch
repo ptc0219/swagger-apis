@@ -1,6 +1,6 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "http://www.plurk.com/APP/",
+    "basePath": "http://www.plurk.com/APP",
     "resourcePath": "/users",
     "apis": [
         {

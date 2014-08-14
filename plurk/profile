@@ -1,10 +1,10 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "http://www.plurk.com/APP/",
-    "resourcePath": "/profile",
+    "basePath": "https://www.plurk.com/APP",
+    "resourcePath": "/Profile",
     "apis": [
         {
-            "path": "/profile/getOwnProfile",
+            "path": "/Profile/getOwnProfile",
             "operations": [
                 {
                     "method": "GET",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "path": "/profile/getPublicProfile",
+            "path": "/Profile/getPublicProfile",
             "operations": [
                 {
                     "method": "GET",
