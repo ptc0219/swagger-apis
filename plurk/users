@@ -1,10 +1,10 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "http://www.plurk.com/APP/",
-    "resourcePath": "/users",
+    "basePath": "https://www.plurk.com/APP",
+    "resourcePath": "/Users",
     "apis": [
         {
-            "path": "/users/me",
+            "path": "/Users/me",
             "operations": [
                 {
                     "method": "GET",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "path": "/users/update",
+            "path": "/Users/update",
             "operations": [
                 {
                     "method": "GET",
@@ -164,11 +164,12 @@
             ]
         },
         {
-            "path": "/users/updatePicture",
+            "path": "/Users/updatePicture",
             "operations": [
                 {
                     "method": "POST",
                     "summary": "Update a user's profile picture.",
+                    "notes": "Please check the <a href=\"https://www.plurk.com/API\">official API documentation</a> for more detail",
                     "nickname": "UsersUpdatePicture",
                     "type": "UsersUpdatePictureResp",
                     "parameters": [
@@ -201,7 +202,7 @@
             ]
         },
         {
-            "path": "/users/getKarmaStats",
+            "path": "/Users/getKarmaStats",
             "operations": [
                 {
                     "method": "GET",
