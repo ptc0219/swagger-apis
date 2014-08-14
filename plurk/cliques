@@ -1,23 +1,23 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "http://www.plurk.com/APP",
-    "resourcePath": "/users",
+    "basePath": "https://www.plurk.com/APP",
+    "resourcePath": "/Timeline",
     "apis": [
         {
-            "path": "/users/me",
+            "path": "/Timeline/",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "List rooms for this group.",
-                    "nickname": "listRooms",
-                    "type": "listRoomsResp",
+                    "summary": "",
+                    "nickname": "1",
+                    "type": "",
                     "parameters": [
                         {
-                            "name": "auth_token",
-                            "description": "Admin token.",
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
                             "required": true,
                             "type": "string",
-                            "paramType": "query"
+                            "paramType": "header"
                         }
                     ]
                 }
@@ -25,18 +25,15 @@
         }
     ],
     "models": {
-        "listRoomsResp": {
+        "": {
             "id": "",
             "required": [
-                "rooms"
+                ""
             ],
             "properties": {
-                "rooms": {
-                    "type": "array",
-                    "description": "",
-                    "items": {
-                        "$ref": "room"
-                    }
+                "": {
+                    "type": "",
+                    "description": ""
                 }
             }
         }

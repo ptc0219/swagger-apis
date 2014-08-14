@@ -184,7 +184,7 @@
                             "name": "profile_image",
                             "description": "The new profile image.",
                             "required": true,
-                            "type": "string",
+                            "type": "file",
                             "paramType": "form"
                         }
                     ],
