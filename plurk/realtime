@@ -1,23 +1,38 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "http://www.plurk.com/APP/",
-    "resourcePath": "/users",
+    "basePath": "https://www.plurk.com/APP",
+    "resourcePath": "/Realtime",
     "apis": [
         {
-            "path": "/users/me",
+            "path": "/Realtime/getUserChannel",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "List rooms for this group.",
-                    "nickname": "listRooms",
-                    "type": "listRoomsResp",
+                    "summary": "Get instant notifications when there are new plurks and responses on a user's timeline. This is much more efficient and faster than polling so please use it!",
+                    "nickname": "RealimegetUserChannel",
+                    "type": "RealimegetUserChannelResp",
                     "parameters": [
                         {
-                            "name": "auth_token",
-                            "description": "Admin token.",
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
                             "required": true,
                             "type": "string",
-                            "paramType": "query"
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Get instant notifications when there are new plurks and responses on a user's timeline. This is much more efficient and faster than polling so please use it!",
+                    "nickname": "RealimegetUserChannel",
+                    "type": "RealimegetUserChannelResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
                         }
                     ]
                 }
@@ -25,18 +40,20 @@
         }
     ],
     "models": {
-        "listRoomsResp": {
+        "RealimegetUserChannelResp": {
             "id": "",
             "required": [
-                "rooms"
+                "channel_name",
+                "comet_server"
             ],
             "properties": {
-                "rooms": {
-                    "type": "array",
-                    "description": "",
-                    "items": {
-                        "$ref": "room"
-                    }
+                "channel_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "comet_server": {
+                    "type": "string",
+                    "description": ""
                 }
             }
         }
