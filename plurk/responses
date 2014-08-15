@@ -1,16 +1,16 @@
 {
     "swaggerVersion": "1.2",
     "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "resourcePath": "/Responses",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/Responses/get",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Fetches responses for plurk with plurk_id and some basic info about the users.",
+                    "nickname": "responseGet",
+                    "type": "responseGetResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -18,6 +18,108 @@
                             "required": true,
                             "type": "string",
                             "paramType": "header"
+                        },
+                        {
+                            "name": "plurk_id",
+                            "description": "The plurk that the responses belong to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from_response",
+                            "description": "Only fetch responses from an offset - could be 5, 10 or 15 (default: 0) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["0","5","10","15"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Responses/responseAdd",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Adds a responses to plurk_id. Language is inherited from the plurk.",
+                    "nickname": "responseresponseAdd",
+                    "type": "responseresponseAddResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "plurk_id",
+                            "description": "The plurk that the responses belong to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "content",
+                            "description": "The response's text.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "qualifier",
+                            "description": "qualifier: The Plurk's qualifier, must be in English.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Responses/responseDelete",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Deletes a response. A user can delete own responses or responses that are posted to own plurks.",
+                    "nickname": "responseresponseDelete",
+                    "type": "responseresponseDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "response_id",
+                            "description": "The id of the response to delete. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "plurk_id",
+                            "description": "The plurk that the responses belong to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
                         }
                     ]
                 }
@@ -25,14 +127,229 @@
         }
     ],
     "models": {
-        "": {
+        "responseGetResp": {
             "id": "",
             "required": [
-                ""
+                "friends",
+                "response_count",
+                "responses_seen",
+                "responses"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "friends": {
+                    "$ref": "userid"
+                },
+                "response_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "responses_seen": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "responses": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "response"
+                    }    
+                }
+            }
+        },
+        "userid": {
+            "id": "userid",
+            "required": [
+                "userid"
+            ],
+            "properties": {
+                "userid": {
+                    "$ref": "userinfo"
+                }
+            }
+        },
+        "userinfo": {
+            "id": "userinfo",
+            "required": [
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "uid",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "date_of_birth",
+                "karma",
+                "gender",
+                "name_color",
+                "recruited",
+                "id",
+                "avatar"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "uid": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "recruited": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "response": {
+            "id": "response",
+            "required": [
+                "lang",
+                "content_raw",
+                "user_id",
+                "qualifier",
+                "plurk_id",
+                "content",
+                "id",
+                "posted"
+            ],
+            "properties": {
+                "lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "content_raw": {
+                    "type": "string",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier": {
+                    "type": "string",
+                    "description": ""
+                },
+                "plurk_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "content": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                }
+            }
+        },
+        "responseresponseAddResp": {
+            "id": "",
+            "required": [
+                "lang",
+                "content_raw",
+                "user_id",
+                "qualifier",
+                "plurk_id",
+                "content",
+                "id",
+                "posted"
+            ],
+            "properties": {
+                "lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "content_raw": {
+                    "type": "string",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier": {
+                    "type": "string",
+                    "description": ""
+                },
+                "plurk_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "content": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                }
+            }
+        },
+        "responseresponseDeleteResp": {
+            "id": "",
+            "required": [
+                "success_text"
+            ],
+            "properties": {
+                "success_text": {
+                    "type": "string",
                     "description": ""
                 }
             }
