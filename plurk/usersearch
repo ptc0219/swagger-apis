@@ -1,16 +1,16 @@
 {
     "swaggerVersion": "1.2",
     "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "resourcePath": "/UserSearch",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/UserSearch/search",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Returns 10 users that match query, users are sorted by karma.",
+                    "nickname": "usersearch",
+                    "type": "usersearchResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -18,6 +18,49 @@
                             "required": true,
                             "type": "string",
                             "paramType": "header"
+                        },
+                        {
+                            "name": "query",
+                            "description": "The query after users. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "Page offset, like 10, 20, 30 etc.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Returns 10 users that match query, users are sorted by karma.",
+                    "nickname": "usersearch",
+                    "type": "usersearchResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "query",
+                            "description": "The query after users. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "Page offset, like 10, 20, 30 etc.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
                         }
                     ]
                 }
@@ -25,14 +68,236 @@
         }
     ],
     "models": {
-        "": {
+        "usersearchResp": {
             "id": "",
             "required": [
-                ""
+                "counts",
+                "users",
+                "exact_matches"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "counts": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "users": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "user"
+                    }
+                },
+                "exact_matches": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "exact_match"
+                    }
+                }
+            }
+        },
+        "user": {
+            "id": "user",
+            "required": [
+                "verified_account",
+                "last_active",
+                "full_name",
+                "name_color",
+                "timezone",
+                "num_of_followers",
+                "id",
+                "profile_views",
+                "date_of_birth",
+                "location",
+                "bday_privacy",
+                "avatar",
+                "default_lang",
+                "dateformat",
+                "has_profile_image",
+                "nick_name",
+                "gender",
+                "karma"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "last_active": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "num_of_followers": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "profile_views": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                }
+            }
+        },
+        "exact_match": {
+            "id": "exact_match",
+            "required": [
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "uid",
+                "relationship",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "location",
+                "bday_privacy",
+                "date_of_birth",
+                "karma",
+                "full_name",
+                "gender",
+                "timezone",
+                "recruited",
+                "id",
+                "email_confirmed",
+                "avatar"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "uid": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "relationship": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "recruited": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "email_confirmed": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
                     "description": ""
                 }
             }
