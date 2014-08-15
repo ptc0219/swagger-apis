@@ -1,16 +1,16 @@
 {
     "swaggerVersion": "1.2",
     "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "resourcePath": "/PlurkSearch",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/PlurkSearch/search",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Returns the latest 20 plurks on a search term.",
+                    "nickname": "plurksearch",
+                    "type": "plurksearchResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -18,6 +18,49 @@
                             "required": true,
                             "type": "string",
                             "paramType": "header"
+                        },
+                        {
+                            "name": "query",
+                            "description": "The query after Plurks. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": " A plurk_id of the oldest Plurk in the last search result. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Returns the latest 20 plurks on a search term.",
+                    "nickname": "plurksearch",
+                    "type": "plurksearchResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "query",
+                            "description": "The query after Plurks. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": " A plurk_id of the oldest Plurk in the last search result. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
                         }
                     ]
                 }
@@ -25,14 +68,233 @@
         }
     ],
     "models": {
-        "": {
+        "plurksearchResp": {
             "id": "",
             "required": [
-                ""
+                "has_more",
+                "error",
+                "last_offset",
+                "users",
+                "plurks"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "has_more": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "error": {
+                    "type": "string",
+                    "description": ""
+                },
+                "last_offset": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "users": {
+                    "$ref": "user"
+                },
+                "plurks": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "plurk"
+                    }
+                }
+            }
+        },
+        "user": {
+            "id": "user",
+            "required": [
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "date_of_birth",
+                "karma",
+                "gender",
+                "name_color",
+                "id",
+                "avatar"
+            ],
+            "properties":{
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "plurk": {
+            "id": "Ownplurk",
+            "required": [
+                "replurkers_count",
+                "replurkable",
+                "favorite_count",
+                "is_unread",
+                "favorers",
+                "user_id",
+                "plurk_type",
+                "replurked",
+                "content",
+                "plurk_id",
+                "owner_id",
+                "responses_seen",
+                "qualifier",
+                "replurker_id",
+                "response_count",
+                "limited_to",
+                "no_comments",
+                "posted",
+                "lang",
+                "content_raw",
+                "replurkers",
+                "favorite"
+            ],
+            "properties": {
+                "replurkers_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "replurkable": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorite_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "is_unread": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "favorers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "plurk_type": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier_translated": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurked": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "content": {
+                    "type": "string",
+                    "description": ""
+                },
+                "plurk_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "owner_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "responses_seen": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurker_id": {
+                    "type": "string",
+                    "description": ""
+                },
+                "response_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "limited_to": {
+                    "type": "string",
+                    "description": ""
+                },
+                "no_comments": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "integer",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "content_raw": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurkers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "favorite": {
+                    "type": "boolean",
                     "description": ""
                 }
             }
