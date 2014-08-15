@@ -1180,6 +1180,7 @@
                             "paramType": "form"
                         }
                     ],
+                    "comsumes": "multipart/form-data",
                     "responseMessages": [
                         {
                             "code": 400,
