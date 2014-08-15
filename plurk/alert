@@ -1,16 +1,37 @@
 {
     "swaggerVersion": "1.2",
     "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "resourcePath": "/Alerts",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/Alerts/getActive",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Return a JSON list of current active alerts.",
+                    "nickname": "getActive",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getActiveResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Return a JSON list of current active alerts.",
+                    "nickname": "getActive",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getActiveResp"
+                    },
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -22,17 +43,544 @@
                     ]
                 }
             ]
+        },
+        {
+            "path": "/Alerts/getHistory",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a JSON list of past 30 alerts.",
+                    "nickname": "getHistory",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getHistoryResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Return a JSON list of past 30 alerts.",
+                    "nickname": "getHistory",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getHistoryResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Alerts/addAsFan",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Accept user_id as fan. ",
+                    "nickname": "addAsFan",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Accept user_id as fan. ",
+                    "nickname": "addAsFan",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Alerts/addAllAsFan",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Accept all friendship requests as fans.",
+                    "nickname": "addAllAsFan",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Accept all friendship requests as fans.",
+                    "nickname": "addAllAsFan",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Alerts/addAllAsFriends",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Accept all friendship requests as friends.",
+                    "nickname": "addAllAsFriends",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Accept all friendship requests as friends.",
+                    "nickname": "addAllAsFriends",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Alerts/addAsFriend",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Accept user_id as friend. ",
+                    "nickname": "addAsFriend",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Accept user_id as friend. ",
+                    "nickname": "addAsFriend",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Alerts/denyFriendship",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Deny friendship to user_id. ",
+                    "nickname": "denyFriendship",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Deny friendship to user_id. ",
+                    "nickname": "denyFriendship",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Alerts/removeNotification",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Remove notification to user with id user_id. ",
+                    "nickname": "removeNotification",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Remove notification to user with id user_id. ",
+                    "nickname": "removeNotification",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "models": {
-        "": {
+        "getActiveResp": {
             "id": "",
             "required": [
-                ""
+                "to_user",
+                "type",
+                "posted"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "to_user": {
+                    "$ref": "to_user"
+                },
+                "type": {
+                    "type": "string",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "to_user": {
+            "id": "to_user",
+            "required": [
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "location",
+                "bday_privacy",
+                "date_of_birth",
+                "karma",
+                "full_name",
+                "gender",
+                "name_color",
+                "timezone",
+                "id",
+                "avatar"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "getHistoryResp": {
+            "id": "",
+            "required": [
+                "to_user",
+                "type",
+                "posted"
+            ],
+            "properties": {
+                "new_friend": {
+                    "$ref": "new_friend"
+                },
+                "type": {
+                    "type": "string",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "new_friend": {
+            "id": "new_friend",
+            "required": [
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "location",
+                "bday_privacy",
+                "date_of_birth",
+                "karma",
+                "full_name",
+                "gender",
+                "name_color",
+                "timezone",
+                "id",
+                "avatar"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "successResp": {
+            "id": "",
+            "required": [
+                "success_text"
+            ],
+            "properties": {
+                "success_text": {
+                    "type": "string",
                     "description": ""
                 }
             }
