@@ -1,16 +1,500 @@
 {
     "swaggerVersion": "1.2",
     "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "resourcePath": "/FriendsFans",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/FriendsFans/getFriendsByOffset",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Returns user_id's friend list in chucks of 10 friends at a time.",
+                    "nickname": "getFriendsByOffset",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getFriendsByOffsetResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "The User's id",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "The offset, can be 10, 20, 30 etc. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "The max number of friends to be returned (default 10).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Returns user_id's friend list in chucks of 10 friends at a time.",
+                    "nickname": "getFriendsByOffset",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getFriendsByOffsetResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "The User's id",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "The offset, can be 10, 20, 30 etc. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "The max number of friends to be returned (default 10).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/FriendsFans/getFansByOffset",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns user_id's fans list in chucks of 10 fans at a time.",
+                    "nickname": "getFansByOffset",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getFansByOffsetResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "The User's id",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "The offset, can be 10, 20, 30 etc. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "The max number of friends to be returned (default 10).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Returns user_id's fans list in chucks of 10 fans at a time.",
+                    "nickname": "getFansByOffset",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getFansByOffsetResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "The User's id",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "The offset, can be 10, 20, 30 etc. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "The max number of friends to be returned (default 10).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/FriendsFans/getFollowingByOffset",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns users that the current logged in user follows as fan - in chucks of 10 fans at a time.",
+                    "nickname": "getFollowingByOffset",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getFollowingByOffsetResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "The offset, can be 10, 20, 30 etc. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "The max number of friends to be returned (default 10).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Returns users that the current logged in user follows as fan - in chucks of 10 fans at a time.",
+                    "nickname": "getFollowingByOffset",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getFollowingByOffsetResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "The offset, can be 10, 20, 30 etc. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "The max number of friends to be returned (default 10).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/FriendsFans/becomeFriend",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Create a friend request to friend_id. User with friend_id has to accept a friendship.",
+                    "nickname": "becomeFriend",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "friend_id",
+                            "description": "The ID of the user you want to befriend. ",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Create a friend request to friend_id. User with friend_id has to accept a friendship.",
+                    "nickname": "becomeFriend",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "friend_id",
+                            "description": "The ID of the user you want to befriend. ",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/FriendsFans/removeAsFriend",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Remove friend with ID friend_id. friend_id won't be notified.",
+                    "nickname": "removeAsFriend",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "friend_id",
+                            "description": "The ID of the user you want to befriend. ",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Remove friend with ID friend_id. friend_id won't be notified.",
+                    "nickname": "removeAsFriend",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "friend_id",
+                            "description": "The ID of the user you want to befriend. ",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/FriendsFans/becomeFan",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Become fan of fan_id. To stop being a fan of someone, user /APP/FriendsFans/setFollowing?fan_id=FAN_ID&follow=false.",
+                    "nickname": "becomeFan",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "fan_id",
+                            "description": "The ID of the user you want to become fan of",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Become fan of fan_id. To stop being a fan of someone, user /APP/FriendsFans/setFollowing?fan_id=FAN_ID&follow=false.",
+                    "nickname": "becomeFan",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "fan_id",
+                            "description": "The ID of the user you want to become fan of",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/FriendsFans/setFollowing",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Update following of user_id. A user can befriend someone, but can unfollow them. This request is also used to stop following someone as a fan. ",
+                    "nickname": "setFollowing",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "The ID of the user you want to follow/unfollow ",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "follow",
+                            "description": "true if the user should be followed, and false if the user should be unfollowed. ",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Update following of user_id. A user can befriend someone, but can unfollow them. This request is also used to stop following someone as a fan. ",
+                    "nickname": "setFollowing",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "The ID of the user you want to follow/unfollow ",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "follow",
+                            "description": "true if the user should be followed, and false if the user should be unfollowed. ",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/FriendsFans/getCompletion",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns a JSON object of the logged in users friends (nick name and full name). This information can be used to construct auto-completion for private plurking. Notice that a friend list can be big, depending on how many friends a user has, so this list should be lazy-loaded in your application.",
+                    "nickname": "getCompletion",
+                    "type": "getCompletionResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Returns a JSON object of the logged in users friends (nick name and full name). This information can be used to construct auto-completion for private plurking. Notice that a friend list can be big, depending on how many friends a user has, so this list should be lazy-loaded in your application.",
+                    "nickname": "getCompletion",
+                    "type": "getCompletionResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -25,14 +509,422 @@
         }
     ],
     "models": {
-        "": {
+        "getFriendsByOffsetResp": {
             "id": "",
             "required": [
-                ""
+                "verified_account",
+                "uid",
+                "following_im",
+                "full_name",
+                "name_color",
+                "timezone",
+                "id",
+                "display_name",
+                "date_of_birth",
+                "location",
+                "recruited",
+                "bday_privacy",
+                "avatar",
+                "default_lang",
+                "relationship",
+                "dateformat",
+                "has_profile_image",
+                "following_tl",
+                "email_confirmed",
+                "settings",
+                "nick_name",
+                "gender",
+                "karma",
+                "following"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "uid": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "following_im": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "recruited": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "relationship": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "following_tl": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "email_confirmed": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "settings": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "following": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "getFansByOffsetResp": {
+            "id": "",
+            "required": [
+                "verified_account",
+                "uid",
+                "following_im",
+                "full_name",
+                "name_color",
+                "timezone",
+                "id",
+                "display_name",
+                "date_of_birth",
+                "location",
+                "recruited",
+                "bday_privacy",
+                "avatar",
+                "default_lang",
+                "relationship",
+                "dateformat",
+                "has_profile_image",
+                "following_tl",
+                "email_confirmed",
+                "settings",
+                "nick_name",
+                "gender",
+                "karma",
+                "following"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "uid": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "following_im": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "recruited": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "relationship": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "following_tl": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "email_confirmed": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "settings": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "following": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "getFollowingByOffsetResp": {
+            "id": "",
+            "required": [
+                "verified_account",
+                "uid",
+                "full_name",
+                "name_color",
+                "timezone",
+                "id",
+                "display_name",
+                "date_of_birth",
+                "location",
+                "recruited",
+                "bday_privacy",
+                "avatar",
+                "default_lang",
+                "relationship",
+                "dateformat",
+                "has_profile_image",
+                "email_confirmed",
+                "settings",
+                "nick_name",
+                "gender",
+                "karma",
+                "following"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "uid": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "recruited": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "relationship": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "email_confirmed": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "settings": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "following": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "getCompletionResp": {
+            "id": "",
+            "required": [
+                "userid"
+            ],
+            "properties": {
+                "userid": {
+                    "$ref": "userid"
+                }
+            }
+        },
+        "userid": {
+            "id": "userid",
+            "required": [
+                "nick_name",
+                "display_name",
+                "full_name"
+
+            ],
+            "properties": {
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "successResp": {
+            "id": "",
+            "required": [
+                "success_text"
+            ],
+            "properties": {
+                "success_text": {
+                    "type": "string",
                     "description": ""
                 }
             }
