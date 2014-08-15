@@ -35,6 +35,36 @@
                             "enum": ["0","5","10","15"]
                         }
                     ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Fetches responses for plurk with plurk_id and some basic info about the users.",
+                    "nickname": "responseGet",
+                    "type": "responseGetResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "plurk_id",
+                            "description": "The plurk that the responses belong to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from_response",
+                            "description": "Only fetch responses from an offset - could be 5, 10 or 15 (default: 0) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["0","5","10","15"]
+                        }
+                    ]
                 }
             ]
         },
@@ -82,6 +112,48 @@
                             "message": "BAD REQUEST"
                         }
                     ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Adds a responses to plurk_id. Language is inherited from the plurk.",
+                    "nickname": "responseresponseAdd",
+                    "type": "responseresponseAddResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "plurk_id",
+                            "description": "The plurk that the responses belong to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "content",
+                            "description": "The response's text.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "qualifier",
+                            "description": "qualifier: The Plurk's qualifier, must be in English.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
                 }
             ]
         },
@@ -90,6 +162,41 @@
             "operations": [
                 {
                     "method": "GET",
+                    "summary": "Deletes a response. A user can delete own responses or responses that are posted to own plurks.",
+                    "nickname": "responseresponseDelete",
+                    "type": "responseresponseDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "response_id",
+                            "description": "The id of the response to delete. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "plurk_id",
+                            "description": "The plurk that the responses belong to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
                     "summary": "Deletes a response. A user can delete own responses or responses that are posted to own plurks.",
                     "nickname": "responseresponseDelete",
                     "type": "responseresponseDeleteResp",
