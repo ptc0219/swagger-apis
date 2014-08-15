@@ -44,7 +44,7 @@
       "description": "Operations about plurk search"
     },
     {
-      "path": "/../usersearch ",
+      "path": "/../usersearch",
       "description": "Operations about user search"
     },
     {
