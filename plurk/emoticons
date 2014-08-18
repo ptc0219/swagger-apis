@@ -1,16 +1,36 @@
 {
     "swaggerVersion": "1.2",
     "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "resourcePath": "/Emoticons",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/Emoticons/get",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Emoticons are a big part of Plurk since they make it easy to express feelings.",
+                    "nickname": "emoticonsGet",
+                    "notes": "Get complete data model on <a href=\"http://www.plurk.com/API#/APP/Emoticons/get\">official document</a>",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Emoticons/get",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Emoticons are a big part of Plurk since they make it easy to express feelings.",
+                    "nickname": "emoticonsGet",
+                    "notes": "Get complete data model on <a href=\"http://www.plurk.com/API#/APP/Emoticons/get\">official document</a>",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -23,19 +43,5 @@
                 }
             ]
         }
-    ],
-    "models": {
-        "": {
-            "id": "",
-            "required": [
-                ""
-            ],
-            "properties": {
-                "": {
-                    "type": "",
-                    "description": ""
-                }
-            }
-        }
-    }
+    ]      
 }
