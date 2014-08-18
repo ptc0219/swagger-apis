@@ -27,6 +27,28 @@
                             "paramType": "query"
                         }
                     ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Get blocked users",
+                    "nickname": "blockGet",
+                    "type": "blockGetResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "What page should be shown, e.g. 0, 10, 20.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
                 }
             ]
         },
@@ -54,6 +76,28 @@
                             "paramType": "query"
                         }
                     ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Block user",
+                    "nickname": "block",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "The id of the user that should be blocked.",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
                 }
             ]
         },
@@ -62,6 +106,28 @@
             "operations": [
                 {
                     "method": "GET",
+                    "summary": "Unblock user",
+                    "nickname": "unblock",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "The id of the user that should be blocked.",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
                     "summary": "Unblock user",
                     "nickname": "unblock",
                     "type": "successResp",
