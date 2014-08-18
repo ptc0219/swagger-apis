@@ -1,16 +1,37 @@
 {
     "swaggerVersion": "1.2",
     "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "resourcePath": "/Cliques",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/Cliques/getCliques",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Get cliques name",
+                    "nickname": "getCliques",
+                    "type": "array",
+                    "items": {
+                        "$ref": "string"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Get cliques name",
+                    "nickname": "getCliques",
+                    "type": "array",
+                    "items": {
+                        "$ref": "string"
+                    },
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -22,17 +43,423 @@
                     ]
                 }
             ]
+        },
+        {
+            "path": "/Cliques/getClique",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get clique info",
+                    "nickname": "getClique",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getCliqueResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Get clique info",
+                    "nickname": "getClique",
+                    "type": "array",
+                    "items": {
+                        "$ref": "getCliqueResp"
+                    },
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Cliques/createClique",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Create a clique",
+                    "nickname": "createClique",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Create a clique",
+                    "nickname": "createClique",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Cliques/renameClique",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Rename a clique",
+                    "nickname": "removeClique",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "new_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Rename a clique",
+                    "nickname": "removeClique",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "new_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Cliques/add",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Add a user to clique",
+                    "nickname": "addClique",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages":[
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Add a user to clique",
+                    "nickname": "addClique",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages":[
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/Cliques/remove",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Remove a clique",
+                    "nickname": "removeClique",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages":[
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Remove a clique",
+                    "nickname": "removeClique",
+                    "type": "successResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "clique_name",
+                            "description": "",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_id",
+                            "description": "",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages":[
+                        {
+                            "code": 400,
+                            "message": "BAD REQUEST"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "models": {
-        "": {
+        "getCliqueResp": {
             "id": "",
             "required": [
-                ""
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "location",
+                "bday_privacy",
+                "date_of_birth",
+                "karma",
+                "full_name",
+                "gender",
+                "name_color",
+                "timezone",
+                "id",
+                "avatar"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "successResp": {
+            "id": "",
+            "required": [
+                "success_text"
+            ],
+            "properties": {
+                "success_text": {
+                    "type": "string",
                     "description": ""
                 }
             }
