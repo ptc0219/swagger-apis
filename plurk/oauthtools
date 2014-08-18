@@ -1,16 +1,31 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "basePath": "https://www.plurk.com",
+    "resourcePath": "/APP",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/APP/checkToken",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Check if current access token is valid and return information for this token",
+                    "nickname": "checkToken",
+                    "type": "tokenResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Check if current access token is valid and return information for this token",
+                    "nickname": "checkToken",
+                    "type": "tokenResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -22,17 +37,196 @@
                     ]
                 }
             ]
+        },
+        {
+            "path": "/APP/expireToken",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Expire current access token ",
+                    "nickname": "expireToken",
+                    "type": "tokenResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Expire current access token ",
+                    "nickname": "expireToken",
+                    "type": "tokenResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/APP/checkTime",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Check current time of plurk servers",
+                    "nickname": "checkTime",
+                    "type": "checkTimeResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Check current time of plurk servers",
+                    "nickname": "checkTime",
+                    "type": "checkTimeResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/APP/echo",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Test for argument passing. ",
+                    "nickname": "echo",
+                    "type": "echoResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "data",
+                            "description": "Data",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Test for argument passing. ",
+                    "nickname": "echo",
+                    "type": "echoResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "data",
+                            "description": "Data",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "models": {
-        "": {
+        "tokenResp": {
             "id": "",
             "required": [
-                ""
+                "app_id",
+                "user_id",
+                "issued",
+                "deviceid"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "app_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "issued": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "deviceid": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "checkTimeResp": {
+            "id": "",
+            "required": [
+                "now",
+                "timestamp",
+                "app_id",
+                "user_id"
+            ],
+            "properties": {
+                "now": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "app_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "echoResp": {
+            "id": "",
+            "required": [
+                "length",
+                "data"
+            ],
+            "properties": {
+                "length": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "data": {
+                    "type": "string",
                     "description": ""
                 }
             }
