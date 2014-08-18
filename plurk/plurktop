@@ -1,16 +1,31 @@
 {
     "swaggerVersion": "1.2",
     "basePath": "https://www.plurk.com/APP",
-    "resourcePath": "/Timeline",
+    "resourcePath": "/PlurkTop",
     "apis": [
         {
-            "path": "/Timeline/",
+            "path": "/PlurkTop/getCollections",
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
-                    "nickname": "1",
-                    "type": "",
+                    "summary": "Get PlurkTop Collenctions",
+                    "nickname": "getCollections",
+                    "notes": "Get complete data model on <a href=\"http://www.plurk.com/API#/APP/Emoticons/get\">official document</a>",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Get PlurkTop Collenctions",
+                    "nickname": "getCollections",
+                    "notes": "Get complete data model on <a href=\"http://www.plurk.com/API#/APP/Emoticons/get\">official document</a>",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -22,17 +37,450 @@
                     ]
                 }
             ]
+        },
+        {
+            "path": "/PlurkTop/getTopics",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get PlurkTop Topics",
+                    "nickname": "getTopics",
+                    "notes": "Get complete data model on <a href=\"http://www.plurk.com/API#/APP/Emoticons/get\">official document</a>",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "lang",
+                            "description": "get topics for specified lang (default: en) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Get PlurkTop Topics",
+                    "nickname": "getTopics",
+                    "notes": "Get complete data model on <a href=\"http://www.plurk.com/API#/APP/Emoticons/get\">official document</a>",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "lang",
+                            "description": "get topics for specified lang (default: en) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/PlurkTop/getPlurks",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get PlurkTop Plurks",
+                    "nickname": "getPlurks",
+                    "type": "getPlurksResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "collection_name",
+                            "description": "only get plurks in specified collection ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "offset of Plurks in PlurkTop, should be an float, e.g. 0.99. ",
+                            "required": false,
+                            "type": "number",
+                            "format": "float",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "number of plurks returned (default: 30) ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sorting",
+                            "description": "the way to sort plurks in PlurkTop, can be \"hot\" for sorting by popularity or \"new\" for posted time. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "topic_fliter",
+                            "description": "only show topic with this id (default: null) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Get PlurkTop Plurks",
+                    "nickname": "getPlurks",
+                    "type": "getPlurksResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth Authorization.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header"
+                        },
+                        {
+                            "name": "collection_name",
+                            "description": "only get plurks in specified collection ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset",
+                            "description": "offset of Plurks in PlurkTop, should be an float, e.g. 0.99. ",
+                            "required": false,
+                            "type": "number",
+                            "format": "float",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "number of plurks returned (default: 30) ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sorting",
+                            "description": "the way to sort plurks in PlurkTop, can be \"hot\" for sorting by popularity or \"new\" for posted time. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "topic_fliter",
+                            "description": "only show topic with this id (default: null) ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "models": {
-        "": {
+        "getPlurksResp": {
             "id": "",
             "required": [
-                ""
+                "plurk_users",
+                "plurks",
+                "offset"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "plurk_users": {
+                   "type": "userid"
+                },
+                "plurks": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "plurk"
+                    }
+                },
+                "offset": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                }
+            }
+        },
+        "userid": {
+            "id": "userid",
+            "required": [
+                "userid"
+            ],
+            "properties": {
+                "userid": {
+                    "type": "user",
+                    "description": ""
+                }
+            }
+        },
+        "user": {
+            "id": "user",
+            "required": [
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "location",
+                "bday_privacy",
+                "date_of_birth",
+                "karma",
+                "full_name",
+                "gender",
+                "name_color",
+                "timezone",
+                "id",
+                "avatar"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "plurk": {
+            "id": "plurk",
+            "required": [
+                "replurkable",
+                "favorite_count",
+                "is_unread",
+                "favorers",
+                "vote_user",
+                "user_id",
+                "plurk_type",
+                "replurked",
+                "poster_uid",
+                "content",
+                "plurk_id",
+                "score",
+                "topic_id",
+                "owner_id",
+                "vote_up",
+                "responses_seen",
+                "qualifier",
+                "replurker_id",
+                "response_count",
+                "replurkers_count",
+                "limited_to",
+                "no_comments",
+                "posted",
+                "lang",
+                "vote_down",
+                "content_raw",
+                "replurkers",
+                "entry_posted"
+            ],
+            "properties": {
+               "porn": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "replurkable": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorite_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "is_unread": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "favorers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "vote_user": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "plurk_type": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier_translated": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurked": {
+                    "type": "string",
+                    "description": ""
+                },
+                "poster_uid": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "content": {
+                    "type": "string",
+                    "description": ""
+                },
+                "plurk_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "score": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "topic_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "owner_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "vote_up": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "responses_seen": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurker_id": {
+                    "type": "string",
+                    "description": ""
+                },
+                "response_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "replurkers_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "limited_to": {
+                    "type": "string",
+                    "description": ""
+                },
+                "no_comments": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "vote_down": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "content_raw": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurkers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "entry_posted": {
+                    "type": "integer",
                     "description": ""
                 }
             }
