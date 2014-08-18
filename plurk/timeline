@@ -593,7 +593,7 @@
                     "method": "GET",
                     "summary": "Delete plurk",
                     "nickname": "timelineplurkDelete",
-                    "type": "timelineplurkDeleteResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -621,7 +621,7 @@
                     "method": "POST",
                     "summary": "Delete plurk",
                     "nickname": "timelineplurkDelete",
-                    "type": "timelineplurkDeleteResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -806,7 +806,7 @@
                     "method": "GET",
                     "summary": "Mute plurks",
                     "nickname": "timelinemutePlurks",
-                    "type": "timelinemutePlurksResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -828,7 +828,7 @@
                     "method": "POST",
                     "summary": "Mute plurks",
                     "nickname": "timelinemutePlurks",
-                    "type": "timelinemutePlurksResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -855,7 +855,7 @@
                     "method": "GET",
                     "summary": "Unmute plurks",
                     "nickname": "timelineunmutePlurks",
-                    "type": "timelineunmutePlurksResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -877,7 +877,7 @@
                     "method": "POST",
                     "summary": "Unmute plurks",
                     "nickname": "timelineunmutePlurks",
-                    "type": "timelineunmutePlurksResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -904,7 +904,7 @@
                     "method": "GET",
                     "summary": "Favorite plurks",
                     "nickname": "timelinefavoritePlurks",
-                    "type": "timelinefavoritePlurksResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -926,7 +926,7 @@
                     "method": "POST",
                     "summary": "Favorite plurks",
                     "nickname": "timelinefavoritePlurks",
-                    "type": "timelinefavoritePlurksResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -953,7 +953,7 @@
                     "method": "GET",
                     "summary": "Unfavorite plurks",
                     "nickname": "timelineunfavoritePlurks",
-                    "type": "timelineunfavoritePlurksResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -975,7 +975,7 @@
                     "method": "POST",
                     "summary": "Unfavorite plurks",
                     "nickname": "timelineunfavoritePlurks",
-                    "type": "timelineunfavoritePlurksResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -1100,7 +1100,7 @@
                     "method": "GET",
                     "summary": "Mark plurk as read",
                     "nickname": "timelinemarkAsRead",
-                    "type": "timelinemarkAsReadResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -1129,7 +1129,7 @@
                     "method": "POST",
                     "summary": "Mark plurk as read",
                     "nickname": "timelinemarkAsRead",
-                    "type": "timelinemarkAsReadResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -1163,7 +1163,7 @@
                     "method": "POST",
                     "summary": "To upload a picture to Plurk, you should do a multipart/form-data POST request to /APP/Timeline/uploadPicture. This will add the picture to Plurk's CDN network and return a image link that you can add to /APP/Timeline/plurkAdd<br><br>Plurk will automatically scale down the image and create a thumbnail. ",
                     "nickname": "timelineuploadPicture",
-                    "type": "timelineuploadPictureResp",
+                    "notes": "Get complete data model on <a href=\"http://www.plurk.com/API#/APP/Timeline/uploadPicture\">official document</a>",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -1197,7 +1197,7 @@
                     "method": "GET",
                     "summary": "Report abuse",
                     "nickname": "timelinereportAbuse",
-                    "type": "timelinereportAbuseResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -1227,7 +1227,7 @@
                     "method": "POST",
                     "summary": "Report abuse",
                     "nickname": "timelinereportAbuse",
-                    "type": "timelinereportAbuseResp",
+                    "type": "successResp",
                     "parameters": [
                         {
                             "name": "Authorization",
@@ -1257,14 +1257,790 @@
         }
     ],
     "models": {
-        "": {
+        "timelinegetPlurkResp": {
             "id": "",
             "required": [
-                ""
+                "plurk_users",
+                "user",
+                "plurks"
             ],
             "properties": {
-                "": {
-                    "type": "",
+                "plurk_users": {
+                    "type": "userid",
+                    "description": ""
+                },
+                "user": {
+                    "type": "user",
+                    "description": ""
+                },
+                "plurks": {
+                    "type": "plurks",
+                    "description": ""
+                }
+            }
+        },
+        "timelinegetPlurksResp": {
+            "id": "",
+            "required": [
+                "plurk_users",
+                "plurks"
+            ],
+            "properties": {
+                "plurk_users": {
+                    "type": "userid",
+                    "description": ""
+                },
+                "plurks": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "plurk"
+                    }
+                }
+            }
+        },
+        "timelinegetUnreadPlurksResp": {
+            "id": "",
+            "required": [
+                "plurk_users",
+                "plurks"
+            ],
+            "properties": {
+                "plurk_users": {
+                    "type": "userid",
+                    "description": ""
+                },
+                "plurks": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "plurk"
+                    }
+                }
+            }
+        },
+        "timelinegetPublicPlurksResp": {
+            "id": "",
+            "required": [
+                "plurk_users",
+                "plurks"
+            ],
+            "properties": {
+                "plurk_users": {
+                    "type": "userid",
+                    "description": ""
+                },
+                "plurks": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "plurk"
+                    }
+                }
+            }
+        },
+        "timelineplurkAddResp": {
+            "id": "",
+            "required": [
+                "replurkers_count",
+                "replurkable",
+                "favorite_count",
+                "is_unread",
+                "content",
+                "user_id",
+                "plurk_type",
+                "replurked",
+                "favorers",
+                "replurker_id",
+                "owner_id",
+                "responses_seen",
+                "qualifier",
+                "plurk_id",
+                "response_count",
+                "limited_to",
+                "no_comments",
+                "posted",
+                "lang",
+                "content_raw",
+                "replurkers",
+                "favorite",
+                "anonymous"
+            ],
+            "properties": {
+                "replurkers_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "replurkable": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorite_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "is_unread": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "content": {
+                    "type": "string",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "plurk_type": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier_translated": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurked": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "replurker_id": {
+                    "type": "string",
+                    "description": ""
+                },
+                "owner_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "responses_seen": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier": {
+                    "type": "string",
+                    "description": ""
+                },
+                "plurk_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "response_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "limited_to": {
+                    "type": "string",
+                    "description": ""
+                },
+                "no_comments": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "integer",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "content_raw": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurkers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "favorite": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "anonymous": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "timelineplurkEditResp": {
+            "id": "",
+            "required": [
+                "replurkers_count",
+                "replurkable",
+                "favorite_count",
+                "is_unread",
+                "content",
+                "user_id",
+                "plurk_type",
+                "replurked",
+                "favorers",
+                "replurker_id",
+                "owner_id",
+                "responses_seen",
+                "qualifier",
+                "plurk_id",
+                "response_count",
+                "limited_to",
+                "no_comments",
+                "posted",
+                "lang",
+                "content_raw",
+                "replurkers"
+            ],
+            "properties": {
+                "replurkers_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "replurkable": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorite_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "is_unread": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "content": {
+                    "type": "string",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "plurk_type": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier_translated": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurked": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "replurker_id": {
+                    "type": "string",
+                    "description": ""
+                },
+                "owner_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "responses_seen": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier": {
+                    "type": "string",
+                    "description": ""
+                },
+                "plurk_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "response_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "limited_to": {
+                    "type": "string",
+                    "description": ""
+                },
+                "no_comments": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "integer",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "content_raw": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurkers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                }
+            }
+        },
+        "timelinetoggleCommentsResp": {
+            "id": "",
+            "required": [
+                "no_comments"
+            ],
+            "properties": {
+                "no_comments": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "timelinereplurkResp": {
+            "id": "",
+            "required": [
+                "results",
+                "success"
+            ],
+            "properties": {
+                "results": {
+                    "$ref": "plurkid"
+                },
+                "success": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "timelineunreplurkResp": {
+            "id": "",
+            "required": [
+                "results",
+                "success"
+            ],
+            "properties": {
+                "results": {
+                    "$ref": "plurkid"
+                },
+                "success": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "plurkid": {
+            "id": "plurkid",
+            "required": [
+                "plurk",
+                "success",
+                "error"
+            ],
+            "properties": {
+                "plurkid": {
+                    "type": "rplurk",
+                    "description": ""
+                },
+                "success": {
+                    "type": "string",
+                    "description": ""
+                },
+                "error": {
+                    "type": "string",
+                    "description": ""
+                }
+            }
+        },
+        "userid": {
+            "id": "userid",
+            "required": [
+                "userid"
+            ],
+            "properties": {
+                "userid": {
+                    "type": "user",
+                    "description": ""
+                }
+            }
+        },
+        "user": {
+            "id": "user",
+            "required": [
+                "verified_account",
+                "default_lang",
+                "display_name",
+                "dateformat",
+                "nick_name",
+                "has_profile_image",
+                "location",
+                "bday_privacy",
+                "date_of_birth",
+                "karma",
+                "full_name",
+                "gender",
+                "name_color",
+                "timezone",
+                "id",
+                "avatar"
+            ],
+            "properties": {
+                "verified_account": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "default_lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "display_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "dateformat": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "nick_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "has_profile_image": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "location": {
+                    "type": "string",
+                    "description": ""
+                },
+                "bday_privacy": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "karma": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "full_name": {
+                    "type": "string",
+                    "description": ""
+                },
+                "gender": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "name_color": {
+                    "type": "string",
+                    "description": ""
+                },
+                "timezone": {
+                    "type": "string",
+                    "description": ""
+                },
+                "id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "avatar": {
+                    "type": "integer",
+                    "description": ""
+                }
+            }
+        },
+        "rplurk": {
+            "id": "rplutk",
+            "required": [
+                "replurk"
+            ],
+            "properties": {
+                "replurk": {
+                    "$ref": "replurk"
+                }
+            }
+        },
+        "replurk": {
+            "id": "replurk",
+            "required": [
+                "replurkers_count",
+                "replurkable",
+                "favorite_count",
+                "is_unread",
+                "content",
+                "user_id",
+                "plurk_type",
+                "replurked",
+                "favorers",
+                "replurker_id",
+                "owner_id",
+                "responses_seen",
+                "qualifier",
+                "plurk_id",
+                "response_count",
+                "limited_to",
+                "no_comments",
+                "posted",
+                "lang",
+                "content_raw",
+                "replurkers"
+            ],
+            "properties": {
+                "replurkers_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "replurkable": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorite_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "is_unread": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "content": {
+                    "type": "string",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "plurk_type": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier_translated": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurked": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "replurker_id": {
+                    "type": "string",
+                    "description": ""
+                },
+                "owner_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "responses_seen": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier": {
+                    "type": "string",
+                    "description": ""
+                },
+                "plurk_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "response_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "limited_to": {
+                    "type": "string",
+                    "description": ""
+                },
+                "no_comments": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "integer",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "content_raw": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurkers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "longitude": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                },
+                "latitude": {
+                    "type": "number",
+                    "format": "float",
+                    "description": ""
+                }
+            }
+        },
+        "plurk": {
+            "id": "plurk",
+            "required": [
+                "replurkers_count",
+                "replurkable",
+                "favorite_count",
+                "is_unread",
+                "content",
+                "user_id",
+                "plurk_type",
+                "replurked",
+                "favorers",
+                "replurker_id",
+                "owner_id",
+                "responses_seen",
+                "qualifier",
+                "plurk_id",
+                "response_count",
+                "limited_to",
+                "no_comments",
+                "posted",
+                "lang",
+                "content_raw",
+                "replurkers"
+            ],
+            "properties": {
+                "replurkers_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "replurkable": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorite_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "is_unread": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "content": {
+                    "type": "string",
+                    "description": ""
+                },
+                "user_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "plurk_type": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier_translated": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurked": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "favorers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "replurker_id": {
+                    "type": "string",
+                    "description": ""
+                },
+                "owner_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "responses_seen": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "qualifier": {
+                    "type": "string",
+                    "description": ""
+                },
+                "plurk_id": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "response_count": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "limited_to": {
+                    "type": "string",
+                    "description": ""
+                },
+                "no_comments": {
+                    "type": "integer",
+                    "description": ""
+                },
+                "posted": {
+                    "type": "integer",
+                    "format": "date-time",
+                    "description": ""
+                },
+                "lang": {
+                    "type": "string",
+                    "description": ""
+                },
+                "content_raw": {
+                    "type": "string",
+                    "description": ""
+                },
+                "replurkers": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                        "$ref": "integer"
+                    }
+                },
+                "favorite": {
+                    "type": "boolean",
+                    "description": ""
+                }
+            }
+        },
+        "successResp": {
+            "id": "",
+            "required": [
+                "success_text"
+            ],
+            "properties": {
+                "success_text": {
+                    "type": "string",
                     "description": ""
                 }
             }
