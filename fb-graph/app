@@ -1,0 +1,1247 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://graph.facebook.com/v2.1",
+    "resourcePath": "/",
+    "apis": [
+        {
+            "path": "/{app-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "A Facebook app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can publish to this node to update most of the app's settings.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "app_domains",
+                            "description": "Domains and subdomains this app can use.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "auth_dialog_data_help_url",
+                            "description": "The URL of a special landing page that helps people who are using an app begin publishing Open Graph activity",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "auth_dialog_headline",
+                            "description": "One line description of an app that appears in the Login Dialog",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "auth_dialog_perms_explanation",
+                            "description": "The text to explain why an app needs additional permissions that appears in the Login Dialog",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "auth_referral_default_activity_privacy",
+                            "description": "The default privacy setting selected for Open Graph activities in the Login Dialog",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["SELF", "EVERYONE", "ALL_FRIENDS", "NONE"]
+                        },
+                        {
+                            "name": "auth_referral_enabled",
+                            "description": "Indicates whether Authenticated Referrals are enabled.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "auth_referral_extended_perms",
+                            "description": "Extended permissions that a person can choose to grant when Authenticated Referrals are enabled.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "auth_referral_friend_perms",
+                            "description": "Basic friends permissions that a person must grant when Authenticated Referrals are enabled.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "auth_referral_user_perms",
+                            "description": "Basic user permissions that a person must grant when Authenticated Referrals are enabled",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "auth_referral_response_type",
+                            "description": "The format that an app receives the authentication token from the Login Dialog in",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["code", "token"]
+                        },
+                        {
+                            "name": "canvas_fluid_height",
+                            "description": "Indicates whether app uses fluid or settable height values for Canvas",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "canvas_fluid_width",
+                            "description": "Indicates whether app uses fluid or fixed width values for Canvas",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "canvas_url",
+                            "description": "The non-secure URL from which Canvas app content is loaded.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "contact_email",
+                            "description": "Email address listed for people to contact developers.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "deauth_callback_url",
+                            "description": "URL that is pinged whenever a person removes the app",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "migrations",
+                            "description": "Migrations settings for this app.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "mobile_web_url",
+                            "description": "URL to which people will be directed when using the app from a mobile device.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "namespace",
+                            "description": "The namespace for the app.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page_tab_default_name",
+                            "description": "The title of the app when used in a Page Tab",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page_tab_url",
+                            "description": "The non-secure URL from which Page Tab app content is loaded.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "privacy_policy_url",
+                            "description": "The URL that links to a Privacy Policy for the app.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "restrictions",
+                            "description": "Demographic restrictions set for this app.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "secure_canvas_url",
+                            "description": "The secure URL from which Canvas app content is loaded.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "secure_page_tab_url",
+                            "description": "The secure URL from which Page Tab app content is loaded.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "server_ip_whitelist",
+                            "description": "App requests must originate from this comma-separated list of IP addresses",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "social_discovery",
+                            "description": "Indicates whether app usage stories show up in the Ticker or News Feed.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "terms_of_service_url",
+                            "description": "URL to Terms of Service which is linked to in Login Dialog.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_support_email",
+                            "description": "Main contact email for this app.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user_support_url",
+                            "description": "URL of support for people using an app shown in Canvas footer.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "website_url",
+                            "description": "URL of a website that integrates with this app.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/app_link_hosts",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The app link objects created by this app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/app_link_hosts\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Facebook apps can create app links using this edgeㄡ",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/app_link_hosts\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "name",
+                            "description": "A custom name for this app link host. This field is required.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "ios",
+                            "description": "An array of app links to define for the iOS platform.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "iphone",
+                            "description": "An array of app links to define for iPhones.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "ipad",
+                            "description": "An array of app links to define for iPads.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "android",
+                            "description": "An array of app links to define for the Android platform.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "windows_phone",
+                            "description": "An array of app links to define for the Windows Phone platform.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "web",
+                            "description": "The web redirect to use when the app link URL is loaded in a browser.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/app_insights/{metric-name}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Usage metrics for this app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/app_insights\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "metric-name",
+                            "description": "Metric name",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "aggregateBy",
+                            "description": "How to aggregate the data.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["count", "uu", "topk", "sum", "usd_sum", "uuu"]
+                        },
+                        {
+                            "name": "breakdowns[0]",
+                            "description": "Breaks down this metric by different values.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["client", "auth_state"]
+                        },
+                        {
+                            "name": "event_name",
+                            "description": "Specific to app events: the name of the app event to query.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "period",
+                            "description": "Change the period (from now) over which the metric has been collected. Valid values for each metric are listed below. range is a sum over a date range specified by since and until.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["daily", "days_28", "hourly", "monthly", "weekly", "lifetime", "range"]
+                        },
+                        {
+                            "name": "since",
+                            "description": "A start point for a specified date range.",
+                            "required": false,
+                            "type": "string",
+                            "format": "date-time",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "until",
+                            "description": "An end point for a specified date range.",
+                            "required": false,
+                            "type": "string",
+                            "format": "date-time",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "intervals_to_aggregate",
+                            "description": "The number of time intervals aggregated per data point returned.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query",
+                            "enum": [1, 7, 28]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/accounts/test-users",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The test users associated with this app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/accounts/test-users\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "By publishing using this edge, you can create new test users and you can assosciate existing test users with new apps.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/accounts/test-users\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "installed",
+                            "description": "Automatically installs the app for the test user once it is created or associated.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "permissions",
+                            "description": "List of permissions that are automatically granted for the app when it is created or associated.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "name",
+                            "description": "The name for the test user. When left blank, a random name will be automatically generated.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "owner_access_token",
+                            "description": "When associating existing test users with other apps, this is the app access token of any app that is already associated with the test user.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "uid",
+                            "description": "ID of an existing test user to associate with another app. Required when associating test users, but should not be used when creating new test users.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/achievements",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The list of Games achievement types that have been registered by this app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/achievements\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can publish to this edge to create an achievement type for this app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/achievements\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "achievement",
+                            "description": "The URL of an Open Graph Achievement object. This URL should contain the tags necessary to describe an Achievement object. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "display_order",
+                            "description": "Order of the achievement when shown in any achievement stories UI. A display order of 100 is displayed in the UI before 200. Values should be unique and incremented in the correct order for your achievements.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can delete using edge to remove an achievement type from this app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/achievements\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "achievement",
+                            "description": "The URL of an Open Graph Achievement object. This URL should contain the tags necessary to describe an Achievement object. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/banned",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The people banned from using this app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/banned\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "By publishing using this edge, you ban people from using an app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/banned\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "uid",
+                            "description": "List of user IDs of people to be banned.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can un-ban someone from an app using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/banned\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "uid",
+                            "description": "The ID of the test user to be un-banned from the app.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/groups",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Groups that belong to this app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/groups\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Facebook apps can create app and game groups by publishing using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/groups\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "name",
+                            "description": "A name for the group.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "description",
+                            "description": "A description for the group.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "privacy",
+                            "description": "The privacy setting for the group.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["closed", "open"]
+                        },
+                        {
+                            "name": "admin",
+                            "description": "The user ID of an admin for the group.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }       
+            ]
+        },
+        {
+            "path": "/{app-id}/groups/{group-id}",
+            "operations": [
+                {
+                    "method": "DELETE",
+                    "summary": "You can delete a group from an app using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/groups\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "group-id",
+                            "description": "The ID of the group to delete.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/picture",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "An app's profile picture.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/picture\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "redirect",
+                            "description": "The picture edge is a special case, as when requested, it will by default return the picture itself and not a JSON response. To return a JSON response, you need to set redirect=false as a request attribute.",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "type",
+                            "description": "You can use this to get a pre-specified size of picture.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["small", "large"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/roles",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The developer roles defined for a Facebook app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/roles\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can publish to add a user to a role.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/roles\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "user",
+                            "description": "The ID of the user to give a role in the app.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "role",
+                            "description": "The name of the role that this person will have.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["administrators", "developers", "testers", "insights users"]
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can remove a user from a role using this edge",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/roles\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "user",
+                            "description": "The ID of the user to remove from a role in the app.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/scores",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Scores from this Facebook game for a user and their friends.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/scores\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/staticresources",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Usage statistics for any static resources used by a Facebook Canvas app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/staticresources\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/subscriptions",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The real-time update objects and fields that this app has subscribed to.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/subscriptions\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can create new real-time update subscriptions using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/subscriptions\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "object",
+                            "description": "Indicates the object type that this subscription applies to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["user", "page", "permissions", "payments"]
+                        },
+                        {
+                            "name": "callback_url",
+                            "description": "The URL that will receive the POST request when an update is triggered, and a GET request when attempting this publish operation.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "fields",
+                            "description": "One or more of the set of valid fields in this object to subscribe to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "verify_token",
+                            "description": "An arbitrary string that can be used to confirm to your server that the request is valid.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can delete all or per-object subscriptions using this operation.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/subscriptions\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "object",
+                            "description": "A specific object type to remove subscriptions for. If this optional field is not included, all subscriptions for this app will be removed.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["user", "page", "permissions", "payments"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{app-id}/translations",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The strings from this app that were translated using our translations tools.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/translations\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "locale",
+                            "description": "Specifies which locale of language to request. This is a required parameter when reading this edge.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can specify new strings to be translated for your app using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/translations\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "native_strings",
+                            "description": "The list of strings to add for translation, in an array of objects with the following structure. At least one object must be provided.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can delete translation strings using this operation",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app/translations\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "The app ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "native_hashes",
+                            "description": "An array of hashes for each translation string. The hash is a unique identifier for each string, and can be retrieved using the translation FQL table.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
