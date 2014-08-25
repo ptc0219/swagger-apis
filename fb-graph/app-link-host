@@ -1,0 +1,132 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://graph.facebook.com/v2.1",
+    "resourcePath": "/",
+    "apis": [
+        {
+            "path": "/{app-link-host-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "An individual app link host object created by an app. An app link host is basically a wrapper for a group of different app links.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app-link-host\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-link-host-id",
+                            "description": "The app link host ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "Facebook apps can delete app links using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app-link-host\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-link-host-id",
+                            "description": "The app link host ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Facebook apps can update app links using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/app-link-host\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "app-link-host-id",
+                            "description": "The app link host ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "name",
+                            "description": "A custom name for this app link host.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "ios",
+                            "description": "An array of app links to define for the iOS platform. Any value supplied will overwrite the old list. Removed by passing an empty array.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "iphone",
+                            "description": "An array of app links to define for iPhones. Any values supplied will overwrite the old values. Removed by passing an empty array.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "ipad",
+                            "description": "An array of app links to define for iPads. Any value supplied will overwrite the old list. Removed by passing an empty array.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "android",
+                            "description": "An array of app links to define for the Android platform. Any value supplied will overwrite the old list. Removed by passing an empty array.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "windows_phone",
+                            "description": "An array of app links to define for the Windows Phone platform. Any value supplied will overwrite the old list. Removed by passing an empty array.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "web",
+                            "description": "The web redirect to use when the app link URL is loaded in a browser.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
