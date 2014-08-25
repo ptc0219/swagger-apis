@@ -1,0 +1,38 @@
+{
+    "apiVersion": "2.1",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "Facebook Graph API Docs",
+        "description": "The primary way for apps to read and write to the Facebook social graph."
+    },
+    "apis": [
+        {
+            "path" : "/../achievement",
+            "description" : "Operations about Achievement"
+        },
+        {
+            "path" : "/../achievement-type",
+            "description" : "Operations about Achievement type"
+        },
+        {
+            "path" : "/../album",
+            "description" : "Operations about Album"
+        },
+        {
+            "path" : "/../app",
+            "description" : "Operations about App"
+        },
+        {
+            "path" : "/../app-link-host",
+            "description" : "Operations about App host link"
+        },
+        {
+            "path" : "/../comment",
+            "description" : "Operations about Comment"
+        },
+        {
+            "path" : "/../domain",
+            "description" : "Operations about Domain"
+        }
+    ]
+}
