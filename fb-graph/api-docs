@@ -37,6 +37,10 @@
         {
             "path" : "/../event",
             "description" : "Operations about Event"
+        },
+        {
+            "path" : "/../friendlist",
+            "description" : "Operations about Friend list"
         }
     ]
 }
