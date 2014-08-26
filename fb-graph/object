@@ -1,0 +1,256 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://graph.facebook.com/v2.1",
+    "resourcePath": "/",
+    "apis": [
+        {
+            "path": "/{object-id}/comments",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "This reference describes the /comments edge that is common to multiple Graph API nodes. The structure and operations are the same for each node.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/object/comments\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "object-id",
+                            "description": "ID of object.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "summary",
+                            "description": "Shows a summary of metadata about the comments on the object. Importantly this metadata includes order which indicates how the comments are being sorted.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "filter",
+                            "description": "This determines which comments are returned when comment replies are available.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["toplevel", "stream"]
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can publish new comments to any object as below",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/object/comments\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "object-id",
+                            "description": "ID of object.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "message",
+                            "description": "The comment text. One of attachment_url, attachment_id, message or source must be provided when publishing.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "attachment_id",
+                            "description": "An optional ID of a unpublished photo (see no_story field in /{user-id}/photos) uploaded to Facebook to include as a photo comment. One of attachment_url, attachment_id, message or source must be provided when publishing.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "attachment_url",
+                            "description": "The URL of an image to include as a photo comment. One of attachment_url, attachment_id, message or source must be provided when publishing.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "source",
+                            "description": "",
+                            "required": false,
+                            "type": "File",
+                            "paramType": "form"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{object-id}/likes",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "This reference describes the /likes edge that is common to multiple Graph API nodes. The structure and operations are the same for each node.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/object/likes\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "object-id",
+                            "description": "ID of object.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can add new likes to any object as below",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/object/likes\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "object-id",
+                            "description": "ID of object.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can delete likes using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/object/likes\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "object-id",
+                            "description": "ID of object.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{object-id}/sharedposts",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "This edge represents any posts where the original object was shared on Facebook.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/object/sharedposts\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "object-id",
+                            "description": "ID of object.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{object-id}/insights/{metric-name}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Facebook Insights is a product available to all Pages and Apps on Facebook, and any domains claimed by a site developer using the Insights dashboard.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/insights\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "object-id",
+                            "description": "ID of object.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "metric-name",
+                            "description": "Metric name",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "period",
+                            "description": "Change the period (from now) over which the metric has been collected.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["day", "week", "month", "lifetime"]
+                        },
+                        {
+                            "name": "breakdown",
+                            "description": "Usuable only with the application_mobile_app_installs metric to show a breakdown of installs by a specific grouping.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["gender_age", "country", "locale"]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
