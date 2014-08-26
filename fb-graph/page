@@ -1,0 +1,1676 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://graph.facebook.com/v2.1",
+    "resourcePath": "/",
+    "apis": [
+        {
+            "path": "/{page-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "This represents a Facebook Page. The /{page-id} node returns a single 'page'.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can publish to this node to update any of the Page fields marked above with ¹ or to change a Page's cover photo.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "cover",
+                            "description": "The ID of a photo already on Facebook to use as a new cover photo.",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "offset_y",
+                            "description": "The percentage offset from top (ie. a number between 0-100). The default value is 50. This field can only be used when cover is supplied.",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "no_feed_story",
+                            "description": "Suppress the creation of a feed story for a cover photo update. The default value is false. This field can only be used when cover is supplied.",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "no_notification",
+                            "description": "Suppress notifications for a cover photo update. The default value is false. This field can only be used when cover is supplied.",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/admins/{user-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "A list of this Page's admins.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/admins\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "user-id",
+                            "description": "The user id or username.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/albums",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The photo albums this Page has created.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/albums\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Publish album.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/albums\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "name",
+                            "description": "The name given to the album.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "message",
+                            "description": "The description of the album, which will show up in news feed stories as the status message",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/blocked/{user-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "A list of people blocked from viewing this Page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/blocked\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "user-id",
+                            "description": "The user id or username.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can publish to this edge to block people from a Page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/blocked\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "user",
+                            "description": "The user ID of the person to be blocked.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can delete on this edge to remove someone from the blocked list for that Page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/blocked\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "user",
+                            "description": "The user ID of the person to be unblocked.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/conversations",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The Facebook Messages conversations that this Page is involved in.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/conversations\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/events",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The events this Page has created.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/events\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/feed",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The feed of posts (including status updates) and links published by this page, or by others on this page. There are other edges which provide filtered versions of this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/feed\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "include_hidden",
+                            "description": "Whether or not to include any posts that were hidden by the Page. Defaults to false",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "filter",
+                            "description": "Used with the promotable_posts edge only to differentiate between app ad, and other types of posts",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["OTHER", "APP"]
+                        },
+                        {
+                            "name": "is_published",
+                            "description": "Used with the promotable_posts edge only to filter by published or unpublished page posts.",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can create links, status messages, or posts by using this edge:",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/feed\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "message",
+                            "description": "The main body of the post, otherwise called the status message.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "link",
+                            "description": "The URL of a link to attach to the post. Either link or message must be supplied.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "actions",
+                            "description": "The action links attached to the post.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "place",
+                            "description": "Page ID of a location associated with this post.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "tags",
+                            "description": "Comma-separated list of user IDs of people tagged in this post. You cannot specify this field without also specifying a place.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "object_attachment",
+                            "description": "Facebook ID for an existing picture in the person's photo albums to use as the thumbnail image. They must be the owner of the photo, and the photo cannot be part of a message attachment.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "targeting",
+                            "description": "Object that limits the audience for this content. Anyone not in these demographics will not be able to view this content. This will not override any Page-level demographic restrictions that may be in place.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "feed_targeting",
+                            "description": "Object that controls news feed targeting for this content. Anyone in these groups will be more likely to see this content, those not will be less likely, but may still see it anyway. Any of the targeting fields shown here can be used, none are required.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "published",
+                            "description": "Whether a story is shown about this newly published object. Default is true which means the story is shown. This field is not supported when actions parameter is specified. Unpublished posts can be used in Sponsored Stories.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "scheduled_publish_time",
+                            "description": "Time when this post should go live, this can be any date between ten minutes and six months from the time of the API call.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "backdated_time",
+                            "description": "Specifies a time in the past to back-date this post to.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "backdated_time_granularity",
+                            "description": "Controls the display of how a backdated post appears. For example, if you pick month posts will be displayed as 2 months ago. instead of an exact date.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["year", "month", "day", "hour", "minute"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/global_brand_children",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "All the child brands of the brand represented by this Page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/global_brand_children\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/insights",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The Facebook Insights for this Page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/insights\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/insights/{metric-name}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Facebook Insights is a product available to all Pages and Apps on Facebook, and any domains claimed by a site developer using the Insights dashboard.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/insights\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "metric-name",
+                            "description": "Metric name",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "period",
+                            "description": "Change the period (from now) over which the metric has been collected.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["day", "week", "month", "lifetime"]
+                        },
+                        {
+                            "name": "breakdown",
+                            "description": "Usuable only with the application_mobile_app_installs metric to show a breakdown of installs by a specific grouping.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["gender_age", "country", "locale"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/links",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The feed of links published by this page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/links\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/locations",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The list of Pages that represent different real-world locations of a parent business Page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/locations\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can add an existing location-based Page to this list by publishing on this edge",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/locations\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "main_page_id",
+                            "description": "The ID for the Facebook Page that is the parent of all the locations.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "store_number",
+                            "description": "An arbitrary, developer-defined ID for this location, usually used to link back to an internal database of locations. ",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location_page_id",
+                            "description": "The ID of the Facebook Page you would like to add as a location. If this field is not included, you must instead specify location, place_topics, and phone fields to create a new location Page.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location",
+                            "description": "This defines the location for this page.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "place_topics",
+                            "description": "Place topics for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "phone",
+                            "description": "Phone number for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "hours",
+                            "description": "Defines the opening hours for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page_username",
+                            "description": "Vanity URL for this location",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "permanently_closed",
+                            "description": "Is this location permanently closed?",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "is_franchise",
+                            "description": "Is this a franchise location?",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "ignore_warnings",
+                            "description": "Whether to disable any warnings (not errors) that result from this API call, such as latitude and longitude not matching street address.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can remove a location page from a parent's list of locations by deleting on this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/locations\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "main_page_id",
+                            "description": "ID of the main Facebook Page for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "store_number",
+                            "description": "Developer-defined ID for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location_page_id",
+                            "description": "Facebook-defined ID for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can update an existing location-based Page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/locations\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "main_page_id",
+                            "description": "The ID for the Facebook Page that is the parent of all the locations.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "store_number",
+                            "description": "An arbitrary, developer-defined ID for this location, usually used to link back to an internal database of locations. ",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location_page_id",
+                            "description": "The ID of the Facebook Page you would like to add as a location. If this field is not included, you must instead specify location, place_topics, and phone fields to create a new location Page.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location",
+                            "description": "This defines the location for this page.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "place_topics",
+                            "description": "Place topics for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "phone",
+                            "description": "Phone number for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "hours",
+                            "description": "Defines the opening hours for this location.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page_username",
+                            "description": "Vanity URL for this location",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "permanently_closed",
+                            "description": "Is this location permanently closed?",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "is_franchise",
+                            "description": "Is this a franchise location?",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "ignore_warnings",
+                            "description": "Whether to disable any warnings (not errors) that result from this API call, such as latitude and longitude not matching street address.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/milestones",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The milestones posted by a Facebook Page.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/milestones\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can create Page milestones by using this edge:",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/milestones\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "title",
+                            "description": "The title of the milestone.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "description",
+                            "description": "The description of the milestone.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "start_time",
+                            "description": "The start time of the milestone. This will also be used for the end_time value (these two fields are always the same).",
+                            "required": true,
+                            "type": "string",
+                            "format": "date-time",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/offers",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The offers a Page has created.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/offers\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can create offers by using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/offers\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "title",
+                            "description": "The title of the offer. 25 character maximum.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "message",
+                            "description": "The body text of the offer.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "expiration_time",
+                            "description": "The expiration time of the offer.",
+                            "required": true,
+                            "type": "string",
+                            "format": "date-time",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "terms",
+                            "description": "Terms and conditions of the offer.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "image_url",
+                            "description": "The URL for the offer's image. Either image_url or image parameter should be specified, but not both.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "image",
+                            "description": "The image for the offer. Either image_url or image parameter should be specified, but not both.",
+                            "required": false,
+                            "type": "File",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "claim_limit",
+                            "description": "The maximum number of times the offer can be claimed",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "coupon_type",
+                            "description": "The type of offer: in_store_only, in_store_and_online or online_only",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "qrcode",
+                            "description": "QR code - alphanumeric with limited punctuation: $ % * + - . / :",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "barcode",
+                            "description": "12-character UPC-A or 13-character EAN-13 barcode (alphanumeric)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "redemption_link",
+                            "description": "The URL where the offer may be redeemed",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "redemption_code",
+                            "description": "A code to enter on your website to receive the discount or promotion (50 characters max)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "published",
+                            "description": "Whether a post is published. Default is published",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "scheduled_publish_time",
+                            "description": "Time when the page post should go live, this should be between 10 mins and 6 months from the time of publishing the post.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "reminder_time",
+                            "description": "Time before the expiration_time of the offer when the user receives a notification that the offer is about to expire",
+                            "required": false,
+                            "type": "string",
+                            "format": "date-time",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/picture",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "This Page's profile picture.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/picture\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "redirect",
+                            "description": "The picture edge is a special case, as when requested, it will by default return the picture itself and not a JSON response. To return a JSON response, you need to set redirect=false as a request attribute. This is how to return the fields below.",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "type",
+                            "description": "You use this to get a pre-specified size of picture.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["square", "small", "normal", "large"]
+                        },
+                        {
+                            "name": "height",
+                            "description": "Restrict the picture height to this size in pixels.",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "width",
+                            "description": "Restrict the picture width to this size in pixels. When height and width are both used, the image will be scaled as close to the dimensions as possible and then cropped down.",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "There are two separate ways of publishing a Page profile photo to Facebook",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/picture\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "source",
+                            "description": "The photo, encoded as form data. Either this or picture field is required, but both should not be used together.",
+                            "required": false,
+                            "type": "File",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "picture",
+                            "description": "The URL of a photo that is already uploaded to the internet. Either this or source is required, but both should not be used together.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/photos",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Both of these edges share the exact same API structure, permissions and fields, but we will only describe /photos below.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/photos\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "There are two ways to publish photos to Facebook:",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/photos\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "source",
+                            "description": "The photo, encoded as form data. Either this or url field is required, but both should not be used together.",
+                            "required": false,
+                            "type": "File",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "url",
+                            "description": "The URL of a photo that is already uploaded to the internet. Either this or source is required, but both should not be used together.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "message",
+                            "description": "he description of the photo, used as the accompanying status message in any feed story.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "place",
+                            "description": "Page ID of a place associated with the Photo",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "no_story",
+                            "description": "If set to true, this will suppress the feed story that is automatically generated on a Page's profile when it uploads a photo using your app.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "targeting",
+                            "description": "Object that limits the audience for this content. Anyone not in these demographics will not be able to view this content. This will not override any Page-level demographic restrictions that may be in place.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "feed_targeting",
+                            "description": "Object that controls news feed targeting for this content. Anyone in these groups will be more likely to see this content, those not will be less likely, but may still see it anyway. Any of the targeting fields shown here can be used, none are required.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "published",
+                            "description": "Whether a story is shown about this newly published object. Default is true which means the story is shown. This field is not supported when actions parameter is specified. Unpublished posts can be used in Sponsored Stories.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "scheduled_publish_time",
+                            "description": "Time when this post should go live, this can be any date between ten minutes and six months from the time of the API call.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/settings",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Various Page settings controlling who can post content to that Page, or send messages, etc.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/settings\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can adjust Page settings by using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/settings\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "setting",
+                            "description": "The name of the setting.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["PLATFORM_OPTOUTS_CAN_POST", "SHOW_RECENT_POSTS_BY_OTHERS", "USERS_CAN_MESSAGE", "USERS_CAN_POST", "USERS_CAN_POST_PHOTOS", "USERS_CAN_TAG_PHOTOS"]
+                        },
+                        {
+                            "name": "value",
+                            "description": "Whether the setting is enabled or not.",
+                            "required": true,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/statuses",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/statuses\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/tabs",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The apps that this Page has added as tabs.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/tabs\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can add apps as a tab, or install them for a Page using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/tabs\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "app_id",
+                            "description": "ID of the app that you want to add as a tab.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can remove tabs using this edge:",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/tabs\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "app-id",
+                            "description": "ID of the tab app that you want to remove. The app ID is prefixed with app_.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can update tabs by using this edge ({app-id} is the ID of the app in the tab that you want to update).",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/tabs\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "position",
+                            "description": "Order in which the tab will appear on the profile. Must be after permanent tabs and less than the number of installed tabs. Index starts at 0",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "custom_name",
+                            "description": "Name to be used for the tab. If this is set to an empty string, the tab will use the application’s default tab name.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "is_non_connection_landing_tab",
+                            "description": "Set this tab as the default landing tab for users who have not liked and are not admins of the Page. If provided, value must be true.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "custom_image_url",
+                            "description": "URL for an image to be used as a custom icon for this Page app. Note that either custom_image_url or custom_image can be set, but not both.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "custom_image",
+                            "description": "The name of an image file to be used as a custom icon for this Page app. Note that either custom_image_url or custom_image can be set, but not both.",
+                            "required": false,
+                            "type": "File",
+                            "paramType": "form"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{page-id}/videos",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Both of these edges share the exact same API structure, permissions and fields, but we will only describe /videos below",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/videos\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Videos must be encoded as multipart/form-data and published to graph-video.facebook.com instead of the regular Graph API URL.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/page/videos\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page-id",
+                            "description": "The page ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "source",
+                            "description": "The video, encoded as form data.",
+                            "required": true,
+                            "type": "File",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "description",
+                            "description": "The description of the video.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "title",
+                            "description": "The title of the video.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "thumb",
+                            "description": "Binary image file of thumbnail to be used when the video is stopped (requires ads_management permission)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "published",
+                            "description": "Whether a post about this video is published. Default is true.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "scheduled_publish_time",
+                            "description": "Time when the page post about this video should go live, this should be between 10 mins and 6 months from the time of publishing the video.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

@@ -67,6 +67,10 @@
             "description" : "Operations about Offer"
         },
         {
+            "path" : "/../page",
+            "description" : "Operations about Page"
+        },
+        {
             "path" : "/../payment",
             "description" : "Operations about Payment"
         },
