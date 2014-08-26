@@ -1,0 +1,164 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://graph.facebook.com/v2.1",
+    "resourcePath": "/",
+    "apis": [
+        {
+            "path": "/{photo-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Represents an individual photo on Facebook.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/photo\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "photo-id",
+                            "description": "ID of photo.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "You can delete photos using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/photo\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "photo-id",
+                            "description": "ID of photo.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{photo-id}/tags",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The list of people tagged in a photo.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/photo/tags\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "photo-id",
+                            "description": "ID of photo.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can add tags to a photo using this edge.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/photo/tags\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "photo-id",
+                            "description": "ID of photo.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "tags",
+                            "description": "A list of tagged people, or tagged text.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "You can update the location of existing tags using this edge",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/photo/tags\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "photo-id",
+                            "description": "ID of photo.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "to",
+                            "description": "ID of the user whose tag you want to update.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "x",
+                            "description": "x coordinate of tag, as a percentage offset from the left edge of the picture.",
+                            "required": true,
+                            "type": "number",
+                            "format": "float",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "y",
+                            "description": "y coordinate of tag, as a percentage offset from the top edge of the picture.",
+                            "required": true,
+                            "type": "number",
+                            "format": "float",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

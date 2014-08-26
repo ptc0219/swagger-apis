@@ -69,6 +69,10 @@
         {
             "path" : "/../payment",
             "description" : "Operations about Payment"
+        },
+        {
+            "path" : "/../photo",
+            "description" : "Operations about Photo"
         }
     ]
 }
