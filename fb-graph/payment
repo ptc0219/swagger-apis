@@ -1,0 +1,123 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://graph.facebook.com/v2.1",
+    "resourcePath": "/",
+    "apis": [
+        {
+            "path": "/{payment-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The details of a payment made in an app using Facebook Payments.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/payment\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "payment-id",
+                            "description": "ID of payment.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{payment-id}/dispute",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "You can use this edge to settle disputes.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/payment/dispute\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "payment-id",
+                            "description": "ID of payment.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "reason",
+                            "description": "The reason you are settling this dispute.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["GRANTED_REPLACEMENT_ITEM", "DENIED_REFUND", "BANNED_USER"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/{payment-id}/refunds",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "You can use this edge to initiate refunds.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/payment/refunds\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "payment-id",
+                            "description": "ID of payment.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "currency",
+                            "description": "The three-letter ISO code of the currency in which the refund amount is specified; it must be the same as the currency in which the original purchase was denominated.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "amount",
+                            "description": "The amount to refund.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "reason",
+                            "description": "The reason you are refunding this order.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["MALICIOUS_FRAUD", "FRIENDLY_FRAUD", "CUSTOMER_SERVICE"]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

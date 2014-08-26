@@ -65,6 +65,10 @@
         {
             "path" : "/../offer",
             "description" : "Operations about Offer"
+        },
+        {
+            "path" : "/../payment",
+            "description" : "Operations about Payment"
         }
     ]
 }
