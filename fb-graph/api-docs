@@ -41,6 +41,10 @@
         {
             "path" : "/../friendlist",
             "description" : "Operations about Friend list"
+        },
+        {
+            "path" : "/../group",
+            "description" : "Operations about Group"
         }
     ]
 }
