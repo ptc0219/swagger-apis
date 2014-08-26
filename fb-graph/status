@@ -1,0 +1,60 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://graph.facebook.com/v2.1",
+    "resourcePath": "/",
+    "apis": [
+        {
+            "path": "/{status-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "A status message in a profile's feed.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/status\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "status-id",
+                            "description": "The status message ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "An app can delete a status if it published it.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/status\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "status-id",
+                            "description": "The status message ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

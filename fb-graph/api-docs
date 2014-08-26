@@ -85,6 +85,10 @@
         {
             "path" : "/../review",
             "description" : "Operations about Review"
+        },
+        {
+            "path" : "/../status",
+            "description" : "Operations about Status"
         }
     ]
 }
