@@ -45,6 +45,10 @@
         {
             "path" : "/../group",
             "description" : "Operations about Group"
+        },
+        {
+            "path" : "/../link",
+            "description" : "Operations about Link"
         }
     ]
 }
