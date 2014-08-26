@@ -53,6 +53,10 @@
         {
             "path" : "/../message",
             "description" : "Operations about Message"
+        },
+        {
+            "path" : "/../milestone",
+            "description" : "Operations about Milestone"
         }
     ]
 }
