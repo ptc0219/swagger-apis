@@ -101,6 +101,10 @@
         {
             "path" : "/../url",
             "description" : "Operations about URL"
+        },
+        {
+            "path" : "/../video",
+            "description" : "Operations about Video"
         }
     ]
 }
