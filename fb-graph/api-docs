@@ -49,6 +49,10 @@
         {
             "path" : "/../link",
             "description" : "Operations about Link"
+        },
+        {
+            "path" : "/../message",
+            "description" : "Operations about Message"
         }
     ]
 }
