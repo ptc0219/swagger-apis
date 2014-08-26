@@ -97,6 +97,10 @@
         {
             "path" : "/../thread",
             "description" : "Operations about Thread"
+        },
+        {
+            "path" : "/../url",
+            "description" : "Operations about URL"
         }
     ]
 }
