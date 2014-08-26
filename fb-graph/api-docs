@@ -93,6 +93,10 @@
         {
             "path" : "/../testuser",
             "description" : "Operations about Test user"
+        },
+        {
+            "path" : "/../thread",
+            "description" : "Operations about Thread"
         }
     ]
 }
