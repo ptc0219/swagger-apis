@@ -103,6 +103,10 @@
             "description" : "Operations about Thread"
         },
         {
+            "path" : "/../user",
+            "description" : "Operations about User"
+        },
+        {
             "path" : "/../url",
             "description" : "Operations about URL"
         },
