@@ -77,6 +77,10 @@
         {
             "path" : "/../placetag",
             "description" : "Operations about Place tag"
+        },
+        {
+            "path" : "/../post",
+            "description" : "Operations about Post"
         }
     ]
 }
