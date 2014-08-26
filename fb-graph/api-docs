@@ -73,6 +73,10 @@
         {
             "path" : "/../photo",
             "description" : "Operations about Photo"
+        },
+        {
+            "path" : "/../placetag",
+            "description" : "Operations about Place tag"
         }
     ]
 }
