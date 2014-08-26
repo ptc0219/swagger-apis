@@ -81,6 +81,10 @@
         {
             "path" : "/../post",
             "description" : "Operations about Post"
+        },
+        {
+            "path" : "/../review",
+            "description" : "Operations about Review"
         }
     ]
 }

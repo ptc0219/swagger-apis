@@ -1,0 +1,37 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://graph.facebook.com/v2.1",
+    "resourcePath": "/",
+    "apis": [
+        {
+            "path": "/{review-id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "A review of a Facebook app.",
+                    "notes": "Get more information on <a href=\"https://developers.facebook.com/docs/graph-api/reference/v2.1/review\">official API document</a>",
+                    "nickname": "anonymous",
+                    "type": "anonymousResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "review-id",
+                            "description": "The ID of the review.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
