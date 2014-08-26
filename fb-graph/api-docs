@@ -89,6 +89,10 @@
         {
             "path" : "/../status",
             "description" : "Operations about Status"
+        },
+        {
+            "path" : "/../testuser",
+            "description" : "Operations about Test user"
         }
     ]
 }
