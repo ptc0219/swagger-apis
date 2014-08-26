@@ -33,6 +33,10 @@
         {
             "path" : "/../domain",
             "description" : "Operations about Domain"
+        },
+        {
+            "path" : "/../event",
+            "description" : "Operations about Event"
         }
     ]
 }
