@@ -61,6 +61,10 @@
         {
             "path" : "/../object",
             "description" : "Operations about Object"
+        },
+        {
+            "path" : "/../offer",
+            "description" : "Operations about Offer"
         }
     ]
 }
