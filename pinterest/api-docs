@@ -1,0 +1,14 @@
+{
+    "apiVersion": "3",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "Pinterest API Docs",
+        "description": "Pinterest is a place to discover ideas for all your projects and interests, hand-picked by people like you."
+    },
+    "apis": [
+        {
+            "path" : "/../batch",
+            "description" : "Operations about Batch"
+        }
+    ]
+}

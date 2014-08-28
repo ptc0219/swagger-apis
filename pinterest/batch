@@ -1,0 +1,107 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "http://api.pinterest.com/v3",
+    "resourcePath": "/batch",
+    "apis": [
+        {
+            "path": "/batch/jobs",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Use this endpoint to check on the status of any number of previously submitted jobs.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_check_batch_job\">official API document</a>",
+                    "nickname": "batchJobs",
+                    "type": "batchJobsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "job_ids",
+                            "description": "A comma separated list of job identifiers.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/batch/pins",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "summary": "If you're not using Rich Pins today, we'll need you to specify some basic information in the PUT request that you make to this endpoint.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_batch_create_pins\">official API document</a>",
+                    "nickname": "batchPins",
+                    "type": "batchPinsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "board_id",
+                            "description": "The board that the pins will belong to. This board must be a protected board.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pins",
+                            "description": "A JSON Array of JSON objects with 'description', 'source_url' and 'image_url' keys.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/batch/scrape/pins",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "summary": "This API is intended for Rich Pins partners and is as easy as sending us a list of URLs.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_batch_scrape_pins\">official API document</a>",
+                    "nickname": "batchScrape",
+                    "type": "batchScrapeResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "board_id",
+                            "description": "The board that the pins will belong to. This board must be a protected board.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "urls",
+                            "description": "The urls you wish to scrape.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
