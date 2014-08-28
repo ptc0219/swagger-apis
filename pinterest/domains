@@ -1,0 +1,265 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "http://api.pinterest.com/v3",
+    "resourcePath": "/domains",
+    "apis": [
+        {
+            "path": "/domains/{domain}/pins/recent",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Our Most Recent Pins endpoint lets you fetch the most recently created Pins from your domain. Now, Pinners can see your latest Pins wherever you display them.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_domain_recent_pins\">official API document</a>",
+                    "nickname": "domainsRecent",
+                    "type": "domainsRecentResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "domain",
+                            "description": "The domain where the pins were found.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "bookmark",
+                            "description": "A valid bookmark string if present.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/domains/{domain}/pins/related/pin/{pin}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Our Related Pins API lets you display a list of Pins from your domain similar to a Pin you choose. Now, when someone likes one of your items, they'll be able to see other Pins from you just like it. Once you specify Pin A from your domain, this API will return Pins B, C, D and so on also from your domain.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_domain_related_pins\">official API document</a>",
+                    "nickname": "domainsRelated",
+                    "type": "domainsRelatedResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "domain",
+                            "description": "Pins returned will be pinned from this domain.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "pin",
+                            "description": "Pins returned will be related to this pin.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "bookmark",
+                            "description": "A valid bookmark string if present.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/domains/{domain}/pins/top/clicks",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "This API call returns the list of Pins from the domain ordered by click count value over a specified period of time (daily, weekly or bi-weekly). This endpoint returns up to 1,000 Pins. So, if the aggregation value is set to \"weekly\", then the API returns the most-clicked Pins for the past week on the specified domain. This endpoint is bookmarked, and each bookmark returns up to 100 Pins. The bookmark value returned in the response body allows you to page through to the next set of Pins.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_top_clicks_handler\">official API document</a>",
+                    "nickname": "domainsTopClicked",
+                    "type": "domainsTopClickedResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "domain",
+                            "description": "The domain name to query. The calling client must be authorized to view this domain.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "end_date",
+                            "description": "The end of the period to show pins for.",
+                            "required": true,
+                            "type": "string",
+                            "format": "date-time",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "aggregation",
+                            "description": "The time period over which to aggregate data.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["biweekly", "daily", "monthly", "weekly"]
+                        },
+                        {
+                            "name": "bookmark",
+                            "description": "A valid bookmark string if present.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/domains/{domain}/pins/top/repins",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Our Top Repins Domain endpoint lets you display a collection of the most repinned Pins from your domain over a certain period of time. Now, your visitors can see which items are the most popular on Pinterest.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_top_repins_handler\">official API document</a>",
+                    "nickname": "domainsTopRepins",
+                    "type": "domainsTopRepinsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "domain",
+                            "description": "The domain name to query. The calling client must be authorized to view this domain.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "end_date",
+                            "description": "The end of the period to show pins for.",
+                            "required": true,
+                            "type": "string",
+                            "format": "date-time",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "aggregation",
+                            "description": "The time period over which to aggregate data.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["biweekly", "daily", "monthly", "weekly"]
+                        },
+                        {
+                            "name": "bookmark",
+                            "description": "A valid bookmark string if present.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/domains/{domain}/search/pins",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Our Domain Search API lets you see Pins from your domain that include specific search terms. You specify a search predicate, like \"car\", and the API will show you Pins from your domain with \"car\" in the description.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_domain_search_pins\">official API document</a>",
+                    "nickname": "domainsSearch",
+                    "type": "domainsSearchResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "domain",
+                            "description": "The pins from this domain will be searched. A client must have access to this domain.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "query",
+                            "description": "The search term.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "bookmark",
+                            "description": "A valid bookmark string if present.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/domains/{domain}/questions",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns a list of questions from the given domain.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_domain_questions\">official API document</a>",
+                    "nickname": "domainsQuestions",
+                    "type": "domainsQuestionsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "domain_name",
+                            "description": "The domain where the questions were asked",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "bookmark",
+                            "description": "A valid bookmark string if present.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

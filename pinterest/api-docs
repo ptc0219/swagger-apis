@@ -13,6 +13,10 @@
         {
             "path" : "/../board",
             "description" : "Operations about Board"
+        },
+        {
+            "path" : "/../domain",
+            "description" : "Operations about Domain's Pin"
         }
     ]
 }
