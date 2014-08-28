@@ -1,0 +1,311 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/place",
+    "apis": [
+        {
+            "path": "/place/nearbysearch/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Nearby Search Requests.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/search#PlaceSearchRequests\">official API document</a><br><font color=\"red\">If rankby=distance is specified, then one or more of keyword, name, or types is required.</font>",
+                    "nickname": "placesNearbysearch",
+                    "type": "placesNearbysearchResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "rankby",
+                            "description": "Specifies the order in which results are listed.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["prominence", "distance"],
+                            "defaultValue": "prominence"
+                        },
+                        {
+                            "name": "location",
+                            "description": "The latitude/longitude around which to retrieve place information. This must be specified as latitude,longitude.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "radius",
+                            "description": "Defines the distance (in meters) within which to return place results. The maximum allowed radius is 50 000 meters.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "keyword",
+                            "description": "A term to be matched against all content that Google has indexed for this place, including but not limited to name, type, and address, as well as customer reviews and other third-party content.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "language",
+                            "description": "The language code, indicating in which language the results should be returned.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "minprice",
+                            "description": "Restricts results to only those places within the specified range. Valid values range between 0 (most affordable) to 4 (most expensive), inclusive. The exact amount indicated by a specific value will vary from region to region.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxprice",
+                            "description": "Restricts results to only those places within the specified range. Valid values range between 0 (most affordable) to 4 (most expensive), inclusive. The exact amount indicated by a specific value will vary from region to region.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "name",
+                            "description": "One or more terms to be matched against the names of places, separated with a space character.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "opennow",
+                            "description": "Returns only those places that are open for business at the time the query is sent.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "types",
+                            "description": "Restricts the results to places matching at least one of the specified types. Types should be separated with a pipe symbol.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pagetoken",
+                            "description": "Returns the next 20 results from a previously run search.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "zagatselected",
+                            "description": "Add this parameter (just the parameter name, with no associated value) to restrict your search to locations that are Zagat selected businesses. This parameter must not include a true or false value. The zagatselected parameter is experimental, and is only available to Places API enterprise customers.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/place/textsearch/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Text Search Requests.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/search#TextSearchRequests\">official API document</a>",
+                    "nickname": "placesTextsearch",
+                    "type": "placesTextsearchResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "query",
+                            "description": " The text string on which to search, for example: \"restaurant\".",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location",
+                            "description": "The latitude/longitude around which to retrieve place information. This must be specified as latitude,longitude.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "radius",
+                            "description": "Defines the distance (in meters) within which to return place results. The maximum allowed radius is 50 000 meters.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "language",
+                            "description": "The language code, indicating in which language the results should be returned.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "minprice",
+                            "description": "Restricts results to only those places within the specified range. Valid values range between 0 (most affordable) to 4 (most expensive), inclusive. The exact amount indicated by a specific value will vary from region to region.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxprice",
+                            "description": "Restricts results to only those places within the specified range. Valid values range between 0 (most affordable) to 4 (most expensive), inclusive. The exact amount indicated by a specific value will vary from region to region.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "opennow",
+                            "description": "Returns only those places that are open for business at the time the query is sent.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "types",
+                            "description": "Restricts the results to places matching at least one of the specified types. Types should be separated with a pipe symbol.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "zagatselected",
+                            "description": "Add this parameter (just the parameter name, with no associated value) to restrict your search to locations that are Zagat selected businesses. This parameter must not include a true or false value. The zagatselected parameter is experimental, and is only available to Places API enterprise customers.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/place/radarsearch/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Radar Search Requests.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/search#RadarSearchRequests\">official API document</a><br><font color=\"red\">A Radar Search request must include at least one of keyword, name, or types.</font>",
+                    "nickname": "placesRadarsearch",
+                    "type": "placesRadarsearchResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location",
+                            "description": "The latitude/longitude around which to retrieve place information. This must be specified as latitude,longitude.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "radius",
+                            "description": "Defines the distance (in meters) within which to return place results. The maximum allowed radius is 50 000 meters.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "keyword",
+                            "description": "A term to be matched against all content that Google has indexed for this place, including but not limited to name, type, and address, as well as customer reviews and other third-party content.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "minprice",
+                            "description": "Restricts results to only those places within the specified range. Valid values range between 0 (most affordable) to 4 (most expensive), inclusive. The exact amount indicated by a specific value will vary from region to region.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxprice",
+                            "description": "Restricts results to only those places within the specified range. Valid values range between 0 (most affordable) to 4 (most expensive), inclusive. The exact amount indicated by a specific value will vary from region to region.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "name",
+                            "description": "One or more terms to be matched against the names of places, separated by a space character.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "opennow",
+                            "description": "Returns only those places that are open for business at the time the query is sent.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "types",
+                            "description": "Restricts the results to places matching at least one of the specified types. Types should be separated with a pipe symbol.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "zagatselected",
+                            "description": "Add this parameter (just the parameter name, with no associated value) to restrict your search to locations that are Zagat selected businesses. This parameter must not include a true or false value. The zagatselected parameter is experimental, and is only available to Places API enterprise customers.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "apiVersion": "3",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "Google Places API Docs",
+        "description": "The Google Places API is a service that returns information about Places."
+    },
+    "apis": [
+        {
+            "path" : "/../search",
+            "description" : "Operations about Search"
+        }
+    ]
+}
