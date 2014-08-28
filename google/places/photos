@@ -1,0 +1,51 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/place",
+    "apis": [
+        {
+            "path": "/place/photo",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Place Photo Requests.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/photos#place_photo_requests\">official API document</a><br><font color=\"red\">maxheight and maxwidth(you must supply one of these).</font>",
+                    "nickname": "placesPhoto",
+                    "type": "placesPhotoResp",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "photoreference",
+                            "description": "A string identifier that uniquely identifies a photo. Photo references are returned from either a Place Search or Place Details request.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxheight",
+                            "description": "Specifies the maximum desired height or width, in pixels, of the image returned by the Place Photos service. If the image is smaller than the values specified, the original image will be returned. If the image is larger in either dimension, it will be scaled to match the smaller of the two dimensions, restricted to its original aspect ratio. Both the maxheight and maxwidth properties accept an integer between 1 and 1600.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxwidth",
+                            "description": "Specifies the maximum desired height or width, in pixels, of the image returned by the Place Photos service. If the image is smaller than the values specified, the original image will be returned. If the image is larger in either dimension, it will be scaled to match the smaller of the two dimensions, restricted to its original aspect ratio. Both the maxheight and maxwidth properties accept an integer between 1 and 1600.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

@@ -13,6 +13,10 @@
         {
             "path" : "/../details",
             "description" : "Operations about Details"
+        },
+        {
+            "path" : "/../photos",
+            "description" : "Operations about Photos"
         }
     ]
 }
