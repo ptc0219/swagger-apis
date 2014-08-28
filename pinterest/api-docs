@@ -15,7 +15,7 @@
             "description" : "Operations about Board"
         },
         {
-            "path" : "/../domain",
+            "path" : "/../domains",
             "description" : "Operations about Domain's Pin"
         }
     ]
