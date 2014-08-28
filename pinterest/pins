@@ -1,10 +1,10 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "http://api.pinterest.com/v3",
+    "basePath": "https://api.pinterest.com/v3",
     "resourcePath": "/pins",
     "apis": [
         {
-            "path": "/pins",
+            "path": "/pins/",
             "operations": [
                 {
                     "method": "PUT",

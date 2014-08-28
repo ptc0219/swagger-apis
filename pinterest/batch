@@ -1,10 +1,10 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "http://api.pinterest.com/v3",
+    "basePath": "https://api.pinterest.com/v3",
     "resourcePath": "/batch",
     "apis": [
         {
-            "path": "/batch/jobs",
+            "path": "/batch/jobs/",
             "operations": [
                 {
                     "method": "GET",
@@ -32,7 +32,7 @@
             ]
         },
         {
-            "path": "/batch/pins",
+            "path": "/batch/pins/",
             "operations": [
                 {
                     "method": "PUT",
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "path": "/batch/scrape/pins",
+            "path": "/batch/scrape/pins/",
             "operations": [
                 {
                     "method": "PUT",

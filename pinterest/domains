@@ -1,10 +1,10 @@
 {
     "swaggerVersion": "1.2",
-    "basePath": "http://api.pinterest.com/v3",
+    "basePath": "https://api.pinterest.com/v3",
     "resourcePath": "/domains",
     "apis": [
         {
-            "path": "/domains/{domain}/pins/recent",
+            "path": "/domains/{domain}/pins/recent/",
             "operations": [
                 {
                     "method": "GET",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "path": "/domains/{domain}/pins/related/pin/{pin}",
+            "path": "/domains/{domain}/pins/related/pin/{pin}/",
             "operations": [
                 {
                     "method": "GET",
@@ -81,7 +81,7 @@
             ]
         },
         {
-            "path": "/domains/{domain}/pins/top/clicks",
+            "path": "/domains/{domain}/pins/top/clicks/",
             "operations": [
                 {
                     "method": "GET",
@@ -132,7 +132,7 @@
             ]
         },
         {
-            "path": "/domains/{domain}/pins/top/repins",
+            "path": "/domains/{domain}/pins/top/repins/",
             "operations": [
                 {
                     "method": "GET",
@@ -183,7 +183,7 @@
             ]
         },
         {
-            "path": "/domains/{domain}/search/pins",
+            "path": "/domains/{domain}/search/pins/",
             "operations": [
                 {
                     "method": "GET",
@@ -225,7 +225,7 @@
             ]
         },
         {
-            "path": "/domains/{domain}/questions",
+            "path": "/domains/{domain}/questions/",
             "operations": [
                 {
                     "method": "GET",
