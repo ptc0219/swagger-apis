@@ -1,0 +1,155 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "http://api.pinterest.com/v3",
+    "resourcePath": "/boards",
+    "apis": [
+        {
+            "path": "/boards/",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "summary": "Creates a board on pinterest owned by the currently logged in user.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_create_board\">official API document</a>",
+                    "nickname": "boardsCreate",
+                    "type": "boardsCreateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "name",
+                            "description": "The name of the board.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "privacy",
+                            "description": "Board privacy settings.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["public", "secret"]
+                        },
+                        {
+                            "name": "category",
+                            "description": "The category key of the board.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["animals", "apparel", "architecture", "art", "art_arch", "cars_motorcycles", "celebrities", "celebrities_public_figures", "corgis", "design", "diy_crafts", "education", "everything", "fashion", "featured", "film_music_books", "fitness", "food_drink", "for_dad", "gardening", "geek", "gift_guides", "gifts", "hair_beauty", "health_fitness", "history", "holidays", "holidays_events", "home", "home_decor", "home_improvement", "humor", "illustrations_posters", "kids", "men_apparel", "mens_fashion", "mylife", "other", "outdoors", "people", "pets", "photography", "popular", "prints_posters", "products", "quotes", "science", "science_nature", "sports", "tattoos", "technology", "travel", "travel_places", "videos", "wedding_events", "weddings", "women_apparel", "womens_fashion"]
+                        },
+                        {
+                            "name": "layout",
+                            "description": "The layout assigned to the board.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["default", "places"]
+                        },
+                        {
+                            "name": "description",
+                            "description": "Free form description text of the board.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "protected",
+                            "description": "Whether or not this board will be a protected board. Protected boards cannot be seen on the profile page or in feeds.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/boards/{board}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Edit an existing board.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_edit_board\">official API document</a>",
+                    "nickname": "boardsEdit",
+                    "type": "boardsEditResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "board",
+                            "description": "A board id of the board being edited.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "name",
+                            "description": "The name of the board.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "description",
+                            "description": "Free form description text of the board.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "category",
+                            "description": "The category key of the board.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["animals", "apparel", "architecture", "art", "art_arch", "cars_motorcycles", "celebrities", "celebrities_public_figures", "corgis", "design", "diy_crafts", "education", "everything", "fashion", "featured", "film_music_books", "fitness", "food_drink", "for_dad", "gardening", "geek", "gift_guides", "gifts", "hair_beauty", "health_fitness", "history", "holidays", "holidays_events", "home", "home_decor", "home_improvement", "humor", "illustrations_posters", "kids", "men_apparel", "mens_fashion", "mylife", "other", "outdoors", "people", "pets", "photography", "popular", "prints_posters", "products", "quotes", "science", "science_nature", "sports", "tattoos", "technology", "travel", "travel_places", "videos", "wedding_events", "weddings", "women_apparel", "womens_fashion"]
+                        },
+                        {
+                            "name": "layout",
+                            "description": "The layout assigned to the board.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["default", "places"]
+                        },
+                        {
+                            "name": "privacy",
+                            "description": "Board privacy settings.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["public", "secret"]
+                        },
+                        {
+                            "name": "collab_board_email",
+                            "description": "Group board email settings.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "protected",
+                            "description": "Whether or not this board will be a protected board. Protected boards cannot be seen on the profile page or in feeds.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

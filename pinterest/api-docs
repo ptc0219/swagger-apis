@@ -9,6 +9,10 @@
         {
             "path" : "/../batch",
             "description" : "Operations about Batch"
+        },
+        {
+            "path" : "/../board",
+            "description" : "Operations about Board"
         }
     ]
 }
