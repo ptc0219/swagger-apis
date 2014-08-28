@@ -21,6 +21,10 @@
         {
             "path" : "/../autocomplete",
             "description" : "Operations about Autocomplete"
+        },
+        {
+            "path" : "/../queryautocomplete",
+            "description" : "Operations about Query Autocomplete"
         }
     ]
 }
