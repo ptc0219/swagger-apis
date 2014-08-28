@@ -17,6 +17,10 @@
         {
             "path" : "/../photos",
             "description" : "Operations about Photos"
+        },
+        {
+            "path" : "/../autocomplete",
+            "description" : "Operations about Autocomplete"
         }
     ]
 }
