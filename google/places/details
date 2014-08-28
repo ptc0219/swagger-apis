@@ -1,0 +1,67 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/place",
+    "apis": [
+        {
+            "path": "/place/details/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Place Details Requests.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/details#PlaceDetailsRequests\">official API document</a><br><font color=\"red\">Either placeid or reference (you must supply one of these, but not both).</font>",
+                    "nickname": "placesDetail",
+                    "type": "placesDetailResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "placeid",
+                            "description": " A textual identifier that uniquely identifies a place, returned from a Place Search.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "reference",
+                            "description": " A textual identifier that uniquely identifies a place, returned from a Place Search. Note: The reference is now deprecated in favor of placeid. See the deprecation notice on this page.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "extensions",
+                            "description": "Indicates if the Place Details response should include additional fields.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "language",
+                            "description": "The language code, indicating in which language the results should be returned.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

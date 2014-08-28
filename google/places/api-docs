@@ -9,6 +9,10 @@
         {
             "path" : "/../search",
             "description" : "Operations about Search"
+        },
+        {
+            "path" : "/../details",
+            "description" : "Operations about Details"
         }
     ]
 }
