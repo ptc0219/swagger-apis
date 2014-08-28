@@ -1,0 +1,101 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "http://api.pinterest.com/v3",
+    "resourcePath": "/pins",
+    "apis": [
+        {
+            "path": "/pins",
+            "operations": [
+                {
+                    "method": "PUT",
+                    "summary": "Creates a pin owned by the logged in user.",
+                    "notes": "Get more information on <a href=\"https://developers.pinterest.com/api_docs/v3_create_pin_handler\">official API document</a>",
+                    "nickname": "pinCreate",
+                    "type": "pinCreateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "OAuth Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "board_id",
+                            "description": "The id of the board to pin onto. The board must be owned by the logged in user.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "description",
+                            "description": "The text description for the pin.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "source_url",
+                            "description": "The url from which the pin's image was returned",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "place",
+                            "description": "The place at which to tag the pin.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "share_facebook",
+                            "description": "Whether or not user explicitly wants to share this pin on Facebook.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "share_twitter",
+                            "description": "Whether or not user explicitly wants to share this pin on Twitter.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "image_url",
+                            "description": "The URL of the image to use for the pin.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "image",
+                            "description": "The image to use for this pin as a stream of bytes.",
+                            "required": false,
+                            "type": "File",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "method",
+                            "description": "The method that created the pin.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["android", "android_tablet", "api_other", "api_sdk", "bad", "bookmarklet", "button", "email", "extension", "ipad", "iphone", "scraped", "unknown", "uploaded"]
+                        },
+                        {
+                            "name": "sdk_client_id",
+                            "description": "The original client id of an application that made an SDK request.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

@@ -17,6 +17,10 @@
         {
             "path" : "/../domains",
             "description" : "Operations about Domain's Pin"
+        },
+        {
+            "path" : "/../pins",
+            "description" : "Operations about Pins"
         }
     ]
 }
