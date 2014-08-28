@@ -102,14 +102,14 @@
                         },
                         {
                             "name": "description",
-                            "description": "Free form description text of the board.",
+                            "description": "The text description for the board.",
                             "required": false,
                             "type": "string",
                             "paramType": "query"
                         },
                         {
                             "name": "category",
-                            "description": "The category key of the board.",
+                            "description": "The category assigned to the board.",
                             "required": false,
                             "type": "string",
                             "paramType": "query",
@@ -140,7 +140,7 @@
                         },
                         {
                             "name": "protected",
-                            "description": "Whether or not this board will be a protected board. Protected boards cannot be seen on the profile page or in feeds.",
+                            "description": "Set whether this board should be protected. If the board isn't presently protected, it cannot be made protected.",
                             "required": false,
                             "type": "boolean",
                             "paramType": "query"
