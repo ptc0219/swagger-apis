@@ -1,0 +1,238 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/place",
+    "apis": [
+        {
+            "path": "/place/add/{output}?key={key}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Adding Places.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/actions#adding_a_place\">official API document</a>",
+                    "nickname": "placesAdd",
+                    "type": "placesAddResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "POST Body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/place/delete/{output}?key={key}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Deleting Places.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/actions#deleting_a_place\">official API document</a>",
+                    "nickname": "placesDelete",
+                    "type": "placesDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "POST Body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/place/event/add/{output}?key={key}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Adding Events.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/actions#event_add\">official API document</a>",
+                    "nickname": "placesEventadd",
+                    "type": "placesEventaddResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "POST Body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/place/event/delete/{output}?key={key}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Event Deletions.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/actions#event_delete\">official API document</a>",
+                    "nickname": "placesEventdelete",
+                    "type": "placesEventdeleteResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "POST Body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/place/event/details/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Event Details.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/actions#event_details\">official API document</a>",
+                    "nickname": "placesEventdetails",
+                    "type": "placesEventdetailsResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "reference",
+                            "description": "The reference value of the place to which the event is attached. Note: Event requests do not accept a placeid. You must use a place reference when requesting event details.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "event_id",
+                            "description": "The event's unique event_id.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/place/bump/{output}?key={key}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Requesting a Bump.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/actions#BumpRequests\">official API document</a>",
+                    "nickname": "placesBump",
+                    "type": "placesBumpResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "POST Body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

@@ -15,6 +15,10 @@
             "description" : "Operations about Details"
         },
         {
+            "path" : "/../actions",
+            "description" : "Operations about Actions"
+        },
+        {
             "path" : "/../photos",
             "description" : "Operations about Photos"
         },
