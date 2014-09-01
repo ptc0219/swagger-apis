@@ -1,0 +1,148 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://rest.nexmo.com",
+    "resourcePath": "/sms",
+    "apis": [
+        {
+            "path": "/sms/{respformat}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "",
+                    "nickname": "sms",
+                    "type": "smsResp",
+                    "parameters": [
+                        {
+                            "name": "respformat",
+                            "description": "Choose which response format",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": [ "json", "xml" ],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from",
+                            "description": "Sender address may be alphanumeric (Ex: from=MyCompany20). Restrictions may apply, depending on the destination.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "to",
+                            "description": "Mobile number in international format, and one recipient per request. Ex: to=447525856424 or to=00447525856424 when sending to UK.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "text",
+                            "description": "Required when type='text'. Body of the text message (with a maximum length of 3200 characters), UTF-8 and URL encoded value. Ex: \"Déjà vu\" content would be \"D%c3%a9j%c3%a0+vu\"",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "type",
+                            "description": "This can be omitted for text (default), but is required when sending a Binary (binary), WAP Push (wappush), Unicode message (unicode), vcal (vcal) or vcard (vcard).",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "status-report-req",
+                            "description": "Set to 1 if you want to receive a delivery report (DLR) for this request. Make sure to configure your \"Callback URL\" in your \"API Settings\"",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "client-ref",
+                            "description": "Include any reference string for your reference. Useful for your internal reports (40 characters max).",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "network-code",
+                            "description": "Force the recipient network operator MCCMNC, make sure to supply the correct information otherwise the message won't be delivered.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "vcard",
+                            "description": "vcard text body correctly formatted.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "vcal",
+                            "description": "vcal text body correctly formatted.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "ttl",
+                            "description": "Message life span in milliseconds.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "message-class",
+                            "description": "Set to 0 for Flash SMS.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Hex encoded binary data.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "udh",
+                            "description": "Hex encoded udh.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "": {
+            "id": "",
+            "required": [
+                ""
+            ],
+            "properties": {
+                "": {
+                    "type": "",
+                    "description": ""
+                }
+            }
+        }
+    }
+}

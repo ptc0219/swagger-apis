@@ -1,0 +1,15 @@
+{
+    "apiVersion": "1.0.0",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "Nexmo API Docs",
+        "description": "Nexmo connects your apps directly to carriers around the world.<br>Integrate SMS, Voice and USSD messages using one simple RESTful API.",
+        "termsOfServiceUrl": "https://www.nexmo.com/terms"
+    },
+    "apis": [
+        {
+            "path" : "/../sms",
+            "description" : "Operations about SMS"
+        }
+    ]
+}
