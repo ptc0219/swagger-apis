@@ -4,12 +4,19 @@
     "info": {
         "title": "Nexmo API Docs",
         "description": "Nexmo connects your apps directly to carriers around the world.<br>Integrate SMS, Voice and USSD messages using one simple RESTful API.",
-        "termsOfServiceUrl": "https://www.nexmo.com/terms"
+        "termsOfServiceUrl": "https://www.nexmo.com/terms",
+        "contact": "",
+        "license": "",
+        "licenseUrl": ""
     },
     "apis": [
         {
             "path" : "/../sms",
             "description" : "Operations about SMS"
+        },
+        {
+            "path" : "/../uspsc",
+            "description" : "Operations about US Pre-approved Short Codes"
         }
     ]
 }

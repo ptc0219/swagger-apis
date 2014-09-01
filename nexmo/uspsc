@@ -1,0 +1,176 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://rest.nexmo.com",
+    "resourcePath": "/sc/us",
+    "apis": [
+        {
+            "path": "/sc/us/2fa/{respformat}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": " Two-factor Authentication.",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/US-shared-short-code-api/two-factor-authentication\">official API document</a>.",
+                    "nickname": "scus2fa",
+                    "type": "scus2faResp",
+                    "parameters": [
+                        {
+                            "name": "respformat",
+                            "description": "Choose which response format",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": [ "json", "xml" ],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "to",
+                            "description": "Mobile number in US format and one recipient per request. Ex: to=16365553226",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pin",
+                            "description": "Authentication verification code.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/sc/us/alert/{respformat}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Event Based Alerts.",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/US-shared-short-code-api/event-based-alerts\">official API document</a>.",
+                    "nickname": "scusAlert",
+                    "type": "scusAlertResp",
+                    "parameters": [
+                        {
+                            "name": "respformat",
+                            "description": "Choose which response format",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": [ "json", "xml" ],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from",
+                            "description": "Nexmo Pre-approved Short Code, can be found on your Dashboard",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "to",
+                            "description": "Mobile number in US format and one recipient per request. Ex: to=16365553226",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/sc/us/marketing/{respformat}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Keyword Marketing.",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/US-shared-short-code-api/keyword-marketing\">official API document</a>.",
+                    "nickname": "scusMarketing",
+                    "type": "scusMarketingResp",
+                    "parameters": [
+                        {
+                            "name": "respformat",
+                            "description": "Choose which response format",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": [ "json", "xml" ],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from",
+                            "description": "Nexmo Pre-approved Short Code, can be found on your Dashboard",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "keyword",
+                            "description": "The keyword you have selected during Pre-approved Short Code sign up process ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "to",
+                            "description": "Mobile number in US format and one recipient per request. Ex: to=16365553226",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "text",
+                            "description": "Body of the text message",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
