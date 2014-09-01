@@ -3,7 +3,11 @@
     "swaggerVersion": "1.2",
     "info": {
         "title": "Facebook Graph API Docs",
-        "description": "The primary way for apps to read and write to the Facebook social graph."
+        "description": "The primary way for apps to read and write to the Facebook social graph.",
+        "termsOfServiceUrl": "https://www.facebook.com/policies?ref=pf",
+        "contact": "",
+        "license": "",
+        "licenseUrl": ""
     },
     "apis": [
         {

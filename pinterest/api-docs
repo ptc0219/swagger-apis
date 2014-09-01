@@ -3,7 +3,11 @@
     "swaggerVersion": "1.2",
     "info": {
         "title": "Pinterest API Docs",
-        "description": "Pinterest is a place to discover ideas for all your projects and interests, hand-picked by people like you."
+        "description": "Pinterest is a place to discover ideas for all your projects and interests, hand-picked by people like you.",
+        "termsOfServiceUrl": "https://developers.pinterest.com/terms/",
+        "contact": "",
+        "license": "",
+        "licenseUrl": ""
     },
     "apis": [
         {

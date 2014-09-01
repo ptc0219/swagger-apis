@@ -3,7 +3,11 @@
     "swaggerVersion": "1.2",
     "info": {
         "title": "Google Places API Docs",
-        "description": "The Google Places API is a service that returns information about Places."
+        "description": "The Google Places API is a service that returns information about Places.",
+        "termsOfServiceUrl": "https://developers.google.com/site-terms/",
+        "contact": "",
+        "license": "Apache 2.0 License",
+        "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0"
     },
     "apis": [
         {
