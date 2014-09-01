@@ -1,0 +1,90 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/elevation",
+    "apis": [
+        {
+            "path": "/elevation/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The Google Elevation API.(Positional Requests)",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/elevation/#ElevationRequests\">official API document</a>.",
+                    "nickname": "elevationRequest",
+                    "type": "elevationRequestResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "locations",
+                            "description": "Defines the location(s) on the earth from which to return elevation data.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/elevation/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "The Google Elevation API.(Sampled Path Requests)",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/elevation/#ElevationRequests\">official API document</a>.",
+                    "nickname": "elevationRequest",
+                    "type": "elevationRequestResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "path",
+                            "description": "Defines a path on the earth for which to return elevation data.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "samples",
+                            "description": "Specifies the number of sample points along a path for which to return elevation data.",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

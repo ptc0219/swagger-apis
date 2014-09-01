@@ -17,6 +17,10 @@
         {
             "path" : "/../distancematrix",
             "description" : "The Google Distance Matrix API"
+        },
+        {
+            "path" : "/../elevation",
+            "description" : "The Google Elevation API"
         }
     ]
 }
