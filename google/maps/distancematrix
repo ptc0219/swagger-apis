@@ -1,0 +1,90 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/distancematrix",
+    "apis": [
+        {
+            "path": "/distancematrix/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Distance Matrix Requests.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/distancematrix/#DistanceMatrixRequests\">official API document</a>.",
+                    "nickname": "distancematrixRequest",
+                    "type": "distancematrixRequestResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "origins",
+                            "description": "One or more addresses and/or textual latitude/longitude values, separated with the pipe (|) character, from which to calculate distance and time.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "destinations",
+                            "description": "One or more addresses and/or textual latitude/longitude values, separated with the pipe (|) character, to which to calculate distance and time.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "mode",
+                            "description": "Specifies the mode of transport to use when calculating directions.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["driving", "walking", "bicycling"],
+                            "defaultValue": "driving"
+                        },
+                        {
+                            "name": "avoid",
+                            "description": "Introduces restrictions to the route.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "language",
+                            "description": "The language in which to return results.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "units",
+                            "description": "Specifies the unit system to use when expressing distance as text.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "departure_time",
+                            "description": "Specifies the desired time of departure as seconds since midnight, January 1, 1970 UTC.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

@@ -13,6 +13,10 @@
         {
             "path" : "/../directions",
             "description" : "The Google Directions API"
+        },
+        {
+            "path" : "/../distancematrix",
+            "description" : "The Google Distance Matrix API"
         }
     ]
 }
