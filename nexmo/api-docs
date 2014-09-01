@@ -21,6 +21,10 @@
         {
             "path" : "/../ussd",
             "description" : "Operations about USSD"
+        },
+        {
+            "path" : "/../voice",
+            "description" : "Operations about Voice"
         }
     ]
 }

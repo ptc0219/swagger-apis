@@ -1,0 +1,337 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://rest.nexmo.com",
+    "resourcePath": "/voice",
+    "apis": [
+        {
+            "path": "/call/{respformat}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Make an outbound call and take control of the call flow.",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/voice-api/call\">official API document</a>.",
+                    "nickname": "voiceCall",
+                    "type": "voiceCallResp",
+                    "parameters": [
+                        {
+                            "name": "respformat",
+                            "description": "Choose which response format",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": [ "json", "xml" ],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "to",
+                            "description": "Mobile number in international format, and one recipient per request. Ex: to=447525856424 or to=00447525856424 when sending to UK.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from",
+                            "description": "A voice enabled inbound number associated with your account.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "machine_detection",
+                            "description": "Expected values are true or hangup.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "machine_timeout",
+                            "description": "Time used to distinguish between human and machine events (default is 400ms, maximum is 10000ms).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "answer_url",
+                            "description": "A URL to which Nexmo will send a request when the call is answered. Should contain a VoiceXML response.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "answer_method",
+                            "description": "The HTTP method for your answer_url. Must be GET (default) or POST.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "error_url",
+                            "description": "A URL to which Nexmo will send a request when an error occurs requesting or executing the VoiceXML returned by answer_url.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "error_method",
+                            "description": "The HTTP method for your error_url. Must be GET (default) or POST.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "status_url",
+                            "description": "A URL to which Nexmo will send a request when the call ends to notify your application.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "status_method",
+                            "description": "The HTTP method for your status_url. Must be GET (default) or POST.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/tts/{respformat}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Text To Speech.",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/voice-api/text-to-speech\">official API document</a>.",
+                    "nickname": "voiceTts",
+                    "type": "voiceTtsResp",
+                    "parameters": [
+                        {
+                            "name": "respformat",
+                            "description": "Choose which response format",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": [ "json", "xml" ],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "to",
+                            "description": "Mobile number in international format, and one recipient per request. Ex: to=447525856424 or to=00447525856424 when sending to UK.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from",
+                            "description": "A voice enabled inbound number associated with your account.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "text",
+                            "description": "Body of the text message (with a maximum length of 1000 characters), UTF-8 and URL encoded value.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "lg",
+                            "description": "The language used to read the message, expected values are below and en-us \"US english\" is the default.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "voice",
+                            "description": "The voice to be used female (default) or male",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "repeat",
+                            "description": "Define how many times you want to repeat the text message (default is 1 , maximum is 10).",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "machine_detection",
+                            "description": "How to behave when an answering machine is detected.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "machine_timeout",
+                            "description": "Time used to distinguish between human and machine events (default is 400ms, maximum is 10000ms).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "callback",
+                            "description": "A URL to which Nexmo will send a request when the call ends to notify your application.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "callback_method",
+                            "description": "The HTTP method for your status_url. Must be GET (default) or POST.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/tts-prompt/{respformat}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Text To Speech Prompt.",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/voice-api/text-to-speech-prompt\">official API document</a>.",
+                    "nickname": "voiceTtsprompt",
+                    "type": "voiceTtspromptResp",
+                    "parameters": [
+                        {
+                            "name": "respformat",
+                            "description": "Choose which response format",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": [ "json", "xml" ],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "to",
+                            "description": "Mobile number in international format, and one recipient per request. Ex: to=447525856424 or to=00447525856424 when sending to UK.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "from",
+                            "description": "A voice enabled inbound number associated with your account.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "text",
+                            "description": "Body of the text message (with a maximum length of 1000 characters), UTF-8 and URL encoded value.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "lg",
+                            "description": "The language used to read the message, expected values are below and en-us \"US english\" is the default.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "voice",
+                            "description": "The voice to be used female (default) or male",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "repeat",
+                            "description": "Define how many times you want to repeat the text message (default is 1 , maximum is 10).",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "machine_detection",
+                            "description": "How to behave when an answering machine is detected.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "machine_timeout",
+                            "description": "Time used to distinguish between human and machine events (default is 400ms, maximum is 10000ms).",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "callback",
+                            "description": "A URL to which Nexmo will send a request when the call ends to notify your application.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "max_digits",
+                            "description": "Number of digits (with a maximum of 16) to be entered by the end user.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "bye_text",
+                            "description": "Body of the text message played after digits are entered (with a maximum length of 500 characters), UTF-8 and URL encoded value.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
