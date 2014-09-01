@@ -72,6 +72,59 @@
                             "paramType": "query"
                         }
                     ]
+                },
+                {
+                    "method": "GET",
+                    "summary": "Reverse Geocoding Request.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/geocoding/#ReverseGeocoding\">official API document</a>.",
+                    "nickname": "reversegeocodingRequest",
+                    "type": "reversegeocodingRequestResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "latlng",
+                            "description": "The textual latitude/longitude value for which you wish to obtain the closest, human-readable address.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "language",
+                            "description": "The language in which to return results.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "result_type",
+                            "description": "One or more address types, separated by a pipe (|).",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location_type",
+                            "description": "One or more location types, separated by a pipe (|).",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
                 }
             ]
         }
