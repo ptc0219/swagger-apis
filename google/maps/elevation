@@ -8,7 +8,7 @@
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "The Google Elevation API.(Positional Requests)",
+                    "summary": "Elevation Requests.(Positional Requests)",
                     "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/elevation/#ElevationRequests\">official API document</a>.",
                     "nickname": "elevationRequest",
                     "type": "elevationRequestResp",
@@ -45,7 +45,7 @@
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "The Google Elevation API.(Sampled Path Requests)",
+                    "summary": "Elevation Requests.(Sampled Path Requests)",
                     "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/elevation/#ElevationRequests\">official API document</a>.",
                     "nickname": "elevationRequest",
                     "type": "elevationRequestResp",
