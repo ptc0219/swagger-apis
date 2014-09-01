@@ -9,7 +9,7 @@
                 {
                     "method": "GET",
                     "summary": "Directions Requests.",
-                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/directions/#DirectionsRequests\">official API document</a>.</font>",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/directions/#DirectionsRequests\">official API document</a>.",
                     "nickname": "directionsRequest",
                     "type": "directionsRequestResp",
                     "parameters": [
@@ -25,7 +25,7 @@
                         {
                             "name": "key",
                             "description": "Your application's API key.",
-                            "required": true,
+                            "required": false,
                             "type": "string",
                             "paramType": "query"
                         },
