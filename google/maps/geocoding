@@ -1,0 +1,81 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/geocode",
+    "apis": [
+        {
+            "path": "/geocode/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Geocoding Request.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/geocoding/#GeocodingRequests\">official API document</a>.",
+                    "nickname": "geocodingRequest",
+                    "type": "geocodingRequestResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "address",
+                            "description": "The address that you want to geocode.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "components",
+                            "description": "A component filter for which you wish to obtain a geocode.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "bounds",
+                            "description": "The bounding box of the viewport within which to bias geocode results more prominently.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "language",
+                            "description": "The language in which to return results.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "region",
+                            "description": "The region code, specified as a ccTLD (\"top-level domain\") two-character value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "components",
+                            "description": "The component filters, separated by a pipe (|).",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

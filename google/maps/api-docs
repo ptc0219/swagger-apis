@@ -21,6 +21,10 @@
         {
             "path" : "/../elevation",
             "description" : "The Google Elevation API"
+        },
+        {
+            "path" : "/../geocoding",
+            "description" : "The Google Geocoding API"
         }
     ]
 }
