@@ -1,0 +1,18 @@
+{
+    "apiVersion": "1",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "Google Maps API Web Services.",
+        "description": "This document discusses the Maps API Web Services, a collection of HTTP interfaces to Google services providing geographic data for your maps applications.",
+        "termsOfServiceUrl": "https://developers.google.com/site-terms/",
+        "contact": "",
+        "license": "Apache 2.0 License",
+        "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "apis": [
+        {
+            "path" : "/../directions",
+            "description" : "The Google Directions API"
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/directions",
+    "apis": [
+        {
+            "path": "/directions/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Directions Requests.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/directions/#DirectionsRequests\">official API document</a>.</font>",
+                    "nickname": "directionsRequest",
+                    "type": "directionsRequestResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "origin",
+                            "description": "The address or textual latitude/longitude value from which you wish to calculate directions.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "destination",
+                            "description": "The address or textual latitude/longitude value from which you wish to calculate directions.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "mode",
+                            "description": "Specifies the mode of transport to use when calculating directions.<br><font color=\"red\">If you set the mode to \"transit\" you must also specify either a departure_time or an arrival_time.</font>",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["driving", "walking", "bicycling", "transit"],
+                            "defaultValue": "driving"
+                        },
+                        {
+                            "name": "waypoints",
+                            "description": "Specifies an array of waypoints.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "alternatives",
+                            "description": "If set to true, specifies that the Directions service may provide more than one route alternative in the response.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "avoid",
+                            "description": "Indicates that the calculated route(s) should avoid the indicated features.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "language",
+                            "description": "The language in which to return results.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "units",
+                            "description": "Specifies the unit system to use when displaying results.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "region",
+                            "description": "The region code.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "departure_time",
+                            "description": "Specifies the desired time of departure as seconds since midnight, January 1, 1970 UTC.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "arrival_time",
+                            "description": "Specifies the desired time of arrival for transit directions as seconds since midnight, January 1, 1970 UTC.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
