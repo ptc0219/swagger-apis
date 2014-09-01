@@ -8,7 +8,8 @@
             "operations": [
                 {
                     "method": "GET",
-                    "summary": "",
+                    "summary": "Send outbound messages.",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/US-shared-short-code-api/two-factor-authentication\">official API document</a>.",
                     "nickname": "sms",
                     "type": "smsResp",
                     "parameters": [
@@ -132,17 +133,5 @@
         }
     ],
     "models": {
-        "": {
-            "id": "",
-            "required": [
-                ""
-            ],
-            "properties": {
-                "": {
-                    "type": "",
-                    "description": ""
-                }
-            }
-        }
     }
 }
