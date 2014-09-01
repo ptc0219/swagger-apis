@@ -25,6 +25,10 @@
         {
             "path" : "/../voice",
             "description" : "Operations about Voice"
+        },
+        {
+            "path" : "/../dev",
+            "description" : "Operations about Develop"
         }
     ]
 }

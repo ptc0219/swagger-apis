@@ -1,0 +1,631 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://rest.nexmo.com",
+    "resourcePath": "/dev",
+    "apis": [
+        {
+            "path": "/account/get-balance/{api_key}/{api_secret}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Account: Get Balance",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/account-get-balance\">official API document</a>.",
+                    "nickname": "accountGetbalance",
+                    "type": "accountGetbalanceResp",
+                    "parameters": [
+
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/get-pricing/outbound/{api_key}/{api_secret}/{country}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Account: Pricing",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/account-pricing\">official API document</a>.",
+                    "nickname": "accountPricing",
+                    "type": "accountPricingResp",
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "country",
+                            "description": "A 2 letter country code. Ex: CA",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/settings/{api_key}/{api_secret}?newSecret={new secret}&moCallBackUrl={inbound call back url}&drCallBackUrl={DLR call back url}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Account: Settings",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/account-settings\">official API document</a>.",
+                    "nickname": "accountSetting",
+                    "type": "accountSettingResp",
+                    "parameters": [
+
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "newSecret",
+                            "description": "Your new API secret (8 characters max)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "moCallBackUrl",
+                            "description": "Inbound call back URL. The URL should be active to be taken into account and properly encoded Ex: http%3a%2f%2fmycallback.servername",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "drCallBackUrl",
+                            "description": "DLR call back URL. The URL should be active to be taken into account and properly encoded Ex: http%3a%2f%2fmycallback.servername",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/top-up/{api_key}/{api_secret}/{trx}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Account: Top Up",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/account-top-up\">official API document</a>.",
+                    "nickname": "accountTopup",
+                    "type": "accountTopupResp",
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "trx",
+                            "description": "The transaction id associated with your most recent manual 'auto reload' top-up. Ex: 00X123456Y7890123Z",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/numbers/{api_key}/{api_secret}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Account: Top Up",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/account-top-up\">official API document</a>.",
+                    "nickname": "accountTopup",
+                    "type": "accountTopupResp",
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "index",
+                            "description": "Page index (>0, default 1). Ex: 2",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "size",
+                            "description": "Page size (max 100, default 10). Ex: 25",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pattern",
+                            "description": "A matching pattern. Ex: 33",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/number/search/{api_key}/{api_secret}/{country}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Number: Search",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/number-search\">official API document</a>.",
+                    "nickname": "numberSearch",
+                    "type": "numberSearchResp",
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "country",
+                            "description": "Country code. Ex: CA",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "pattern",
+                            "description": "A matching pattern. Ex: 33",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "features",
+                            "description": "Available features are SMS and VOICE, use a comma-separated values. Ex: SMS,VOICE",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "index",
+                            "description": "Page index (>0, default 1). Ex: 2",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "size",
+                            "description": "Page size (max 100, default 10). Ex: 25",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/number/buy/{api_key}/{api_secret}/{country}/{msisdn}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Number: Buy",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/number-buy\">official API document</a>.",
+                    "nickname": "numberBuy",
+                    "type": "numberBuyResp",
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "msisdn",
+                            "description": "An available inbound number Ex: 34911067000",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "country",
+                            "description": "Country code. Ex: CA",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ],
+                    "responseMessages":[
+                        {
+                            "code": 200,
+                            "message": "Successful purchase"
+                        },
+                        {
+                            "code": 401,
+                            "message": "Wrong credentials"
+                        },
+                        {
+                            "code": 420,
+                            "message": "Wrong parameters"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/number/cancel/{api_key}/{api_secret}/{country}/{msisdn}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Number: Cancel",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/number-cancel\">official API document</a>.",
+                    "nickname": "numberCancel",
+                    "type": "numberCancelResp",
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "msisdn",
+                            "description": "An available inbound number Ex: 34911067000",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "country",
+                            "description": "Country code. Ex: CA",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ],
+                    "responseMessages":[
+                        {
+                            "code": 200,
+                            "message": "Successful purchase"
+                        },
+                        {
+                            "code": 401,
+                            "message": "Wrong credentials"
+                        },
+                        {
+                            "code": 420,
+                            "message": "Wrong parameters"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/number/update/{api_key}/{api_secret}/{country}/{msisdn}?moHttpUrl={url}&moSmppSysType={sysType}&voiceCallbackType={type}&voiceCallbackValue={value}&voiceStatusCallback={status}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Number: Update",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/number-update\">official API document</a>.",
+                    "nickname": "numberUpdate",
+                    "type": "numberUpdateResp",
+                    "parameters": [
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "msisdn",
+                            "description": "An available inbound number Ex: 34911067000",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "country",
+                            "description": "Country code. Ex: CA",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "moHttpUrl",
+                            "description": "The URL should be active to be taken into account and properly encoded Ex: http%3a%2f%2fmycallback.servername",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "moSmppSysType",
+                            "description": "The associated system type for SMPP client only Ex: inbound",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "voiceCallbackType",
+                            "description": "The voice callback type for SIP end point (sip), for a telephone number (tel), for VoiceXML end point (vxml)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "voiceCallbackValue",
+                            "description": "The voice callback value based on the voiceCallbackType",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "voiceStatusCallback",
+                            "description": "A URL to which Nexmo will send a request when the call ends to notify your application.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ],
+                    "responseMessages":[
+                        {
+                            "code": 200,
+                            "message": "Successful purchase"
+                        },
+                        {
+                            "code": 401,
+                            "message": "Wrong credentials"
+                        },
+                        {
+                            "code": 420,
+                            "message": "Wrong parameters"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/search/message/{api_key}/{api_secret}/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Search: Message",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/search-message\">official API document</a>.",
+                    "nickname": "searchMessage",
+                    "type": "searchMessageResp",
+                    "parameters": [
+
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "id",
+                            "description": "Your message id received at submission time Ex: 00A0B0C0",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/search/messages/{api_key}/{api_secret}?ids={id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Search: Messages(By ids)",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/search-messages\">official API document</a>.",
+                    "nickname": "searchMessages",
+                    "type": "searchMessagesResp",
+                    "parameters": [
+
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "id",
+                            "description": "A list of message ids, up to 10 Ex: ids=00A0B0C0&ids=00A0B0C1&ids=00A0B0C2",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/search/messages/{api_key}/{api_secret}?date=YYYY-MM-DD&to={recipient}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Search: Messages(By recipient and date)",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/search-messages\">official API document</a>.",
+                    "nickname": "searchMessages",
+                    "type": "searchMessagesResp",
+                    "parameters": [
+
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "date",
+                            "description": "Message date submission YYYY-MM-DD Ex: 2011-11-15",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "to",
+                            "description": "A recipient number Ex: 1234567890",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/search/rejections/{api_key}/{api_secret}?date=YYYY-MM-DD&to={recipient}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Search: Rejections",
+                    "notes": "Get more information on <a href=\"https://docs.nexmo.com/index.php/developer-api/search-rejections\">official API document</a>.",
+                    "nickname": "searchRejections",
+                    "type": "searchRejectionsResp",
+                    "parameters": [
+
+                        {
+                            "name": "api_key",
+                            "description": "Your API Key.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "api_secret",
+                            "description": "Your API Secret.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "date",
+                            "description": "Message date submission YYYY-MM-DD Ex: 2011-11-15",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "to",
+                            "description": "A recipient number Ex: 1234567890",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
