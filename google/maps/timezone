@@ -1,0 +1,60 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://maps.googleapis.com/maps/api",
+    "resourcePath": "/timezone",
+    "apis": [
+        {
+            "path": "/timezone/{output}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Time Zone Requests.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/places/documentation/timezone/#Requests\">official API document</a>.",
+                    "nickname": "timezoneRequest",
+                    "type": "timezoneRequestResp",
+                    "parameters": [
+                        {
+                            "name": "output",
+                            "description": "Output format.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "key",
+                            "description": "Your application's API key.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "location",
+                            "description": "A comma-separated lat,lng tuple (eg. location=-33.86,151.20), representing the location to look up.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "timestamp",
+                            "description": "specifies the desired time as seconds since midnight, January 1, 1970 UTC.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "language",
+                            "description": "The language in which to return results.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

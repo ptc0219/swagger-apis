@@ -25,6 +25,10 @@
         {
             "path" : "/../geocoding",
             "description" : "The Google Geocoding API"
+        },
+        {
+            "path" : "/../timezone",
+            "description" : "The Google Time Zone API"
         }
     ]
 }
