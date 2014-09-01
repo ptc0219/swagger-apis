@@ -17,6 +17,10 @@
         {
             "path" : "/../uspsc",
             "description" : "Operations about US Pre-approved Short Codes"
+        },
+        {
+            "path" : "/../ussd",
+            "description" : "Operations about USSD"
         }
     ]
 }
