@@ -37,12 +37,7 @@
                             "paramType": "query"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "path": "/elevation/{output}",
-            "operations": [
+                },
                 {
                     "method": "GET",
                     "summary": "Elevation Requests.(Sampled Path Requests)",
