@@ -1,0 +1,18 @@
+{
+    "apiVersion": "0.9",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "Pixnet API Docs",
+        "description": "痞客邦 PIXNET提供了 PIXNET API 與 PIXNET openID 三種資源，詳細的使用辦法請參考 <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/oauthApi\">PIXNET API Documentation</a>。",
+        "termsOfServiceUrl": "http://developer.pixnet.pro/#!/doc/pixnetApiTos/pixnetApiTos",
+        "contact": "pixnetapi@pixnet.tw",
+        "license": "",
+        "licenseUrl": ""
+    },
+    "apis": [
+        {
+            "path" : "/../index",
+            "description" : "Index Methods"
+        }
+    ]
+}
