@@ -1,0 +1,711 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://emma.pixnet.cc",
+    "resourcePath": "/account",
+    "apis": [
+        {
+            "path": "/account",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "讀取認證使用者資訊",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/account\">official API document</a>.",
+                    "nickname": "account",
+                    "type": "accountResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "with_notification",
+                            "description": "傳回最近的 5 則通知",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "notification_type",
+                            "description": "限制傳回通知類型",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["friend", "system", "comment", "appmarket"]
+                        },
+                        {
+                            "name": "with_blog_info",
+                            "description": "傳回部落格資訊",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "with_mib",
+                            "description": "傳回 MIB 相關資訊 傳回的 revenue 會按照時間排序，新的在前",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "with_analytics",
+                            "description": "傳回人氣統計相關資訊、近期熱門文章、相片資訊",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/info",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "修改認證使用者資訊",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountInfo\">official API document</a>.",
+                    "nickname": "accountInfo",
+                    "type": "accountInfoResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "password",
+                            "description": "密碼，需要檢查與系統內儲存資訊相符後才能執行修改",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "display_name",
+                            "description": "使用者暱稱",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "email",
+                            "description": "信箱",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "gender",
+                            "description": "性別",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["F", "M"]
+                        },
+                        {
+                            "name": "address",
+                            "description": "住址",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "phone",
+                            "description": "電話",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "birth",
+                            "description": "生日",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "education",
+                            "description": "教育程度",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["中學以下", "高中/高職", "專科", "大學", "研究所以上"]
+                        },
+                        {
+                            "name": "avatar",
+                            "description": "大頭照(Base64)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/mib",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "讀取認證使用者 MIB 資訊",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountMib\">official API document</a>.",
+                    "nickname": "accountMib",
+                    "type": "accountMibResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "history_days",
+                            "description": "列出指定天數的歷史收益資訊，最少 0 天，最多 45 天",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "上傳認證使用者 MIB 帳戶資訊",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountMibCreate\">official API document</a>.",
+                    "nickname": "accountMibcreate",
+                    "type": "accountMibcreateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id_number",
+                            "description": "身分證字號",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id_image_front",
+                            "description": "身分證正面",
+                            "required": true,
+                            "type": "File",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "id_image_back",
+                            "description": "身分證反面",
+                            "required": true,
+                            "type": "File",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "email",
+                            "description": "Email",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "cellphone",
+                            "description": "手機號碼",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "mail_address",
+                            "description": "支票寄送地址",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "domicile",
+                            "description": "戶籍地",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "enable_video_ad",
+                            "description": "是否開啟影音廣告",
+                            "required": true,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "name",
+                            "description": "真實姓名",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "upload_method",
+                            "description": "上傳方式: 當指定為 base64 時, 可以將 upload_file 指定為由 base64 encode 過的資料. 如果不設定時則使用預設的檔案上傳方式",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/mib/positions",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "取得 MIB 版位資料",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountMibPositions\">official API document</a>.",
+                    "nickname": "accountMibpositions",
+                    "type": "accountMibpositionsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/mib/positions/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "取得認證使用者 MIB 單一版位資料",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountMibPositionsId\">official API document</a>.",
+                    "nickname": "accountMibpositionsid",
+                    "type": "accountMibpositionsidResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "版位 ID，可由 http://emma.pixnet.cc/account/mib mib.blog.positions.blog/article/article.id 取得",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "修改認證使用者 MIB 版位資料",
+                    "notes": "<font color=\"red\">官方文件並未針對參數詳細說明其性質及放置位置</font><br>Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountMibPositionsUpdate\">official API document</a>.",
+                    "nickname": "accountMibpositionsupdate",
+                    "type": "accountMibpositionsupdateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "版位 ID",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/mibpay",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "MIB 請款",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountMibPay\">official API document</a>.",
+                    "nickname": "accountMibpay",
+                    "type": "accountMibpayResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/analytics",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "取得認證使用者拜訪紀錄分析資料",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountAnalytics\">official API document</a>.",
+                    "nickname": "accountAnalytics",
+                    "type": "accountAnalyticsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "statistics_days",
+                            "description": "列出指定天數的歷史拜訪資訊，最少 0 天，最多 45 天",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "referer_days",
+                            "description": "列出指定天數的誰連結我資訊，最少 0 天，最多 7 天",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/password",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "修改密碼",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountPassword\">official API document</a>.",
+                    "nickname": "accountPassword",
+                    "type": "accountPasswordResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "password",
+                            "description": "密碼，需要檢查與系統內儲存資訊相符後才能執行修改",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "new_password",
+                            "description": "新密碼，密碼需至少4個字元，區分大小寫",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/account/notifications",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出通知",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/accountNotifications\">official API document</a>.",
+                    "nickname": "accountNotifications",
+                    "type": "accountNotificationsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "notification_type",
+                            "description": "限制傳回通知類型",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["friend", "system", "comment", "appmarket"]
+                        },
+                        {
+                            "name": "limit",
+                            "description": "傳回通知數量限制，預設為10筆",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/users/{user}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "讀取使用者公開資訊",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/users\">official API document</a>.",
+                    "nickname": "users",
+                    "type": "usersResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "使用者名稱",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
