@@ -1,0 +1,1925 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://emma.pixnet.cc",
+    "resourcePath": "/blog",
+    "apis": [
+        {
+            "path": "/blog",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出部落格資訊",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blog\">official API document</a>.",
+                    "nickname": "blog",
+                    "type": "blogResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "修改部落格資訊",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogUpdate\">official API document</a>.",
+                    "nickname": "blogUpdate",
+                    "type": "blogUpdateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "name",
+                            "description": "部落格名稱",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "description",
+                            "description": "部落格描述",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "keyword",
+                            "description": "部落格關鍵字 (逗號分隔)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "site_category_id",
+                            "description": "部落格全站分類 ID, 列表如下請參閱官方API Document",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/categories",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出所有部落格個人分類",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCategories\">official API document</a>.",
+                    "nickname": "blogCategories",
+                    "type": "blogCategoriesResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "blog_password",
+                            "description": "如果指定使用者的 Blog 被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "新增部落格個人分類",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCategoriesCreate\">official API document</a>.",
+                    "nickname": "blogCategoriesCreate",
+                    "type": "blogCategoriesCreateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "name",
+                            "description": "分類名稱，文字",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "type",
+                            "description": "分類類型",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["category", "folder"],
+                            "defaultValue": "category"
+                        },
+                        {
+                            "name": "description",
+                            "description": "分類說明，文字",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "show_index",
+                            "description": "是否在首頁上顯示, 1: yes, 0: no.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [1, 0],
+                            "defaultValue": 1
+                        },
+                        {
+                            "name": "site_category_id",
+                            "description": "對應的全站文章類別 id. 只有當 type 為 category 需要, 預設為 0",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "site_category_done",
+                            "description": "是否已決定對應. 只有當 type 為 category 時需要. 如果它設為 0, 則 PIXNET 後台會在發表文章時詢問是否要對應全站文章類別",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/categories/{id}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "修改部落格個人分類",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCategoriesUpdate\">official API document</a>.",
+                    "nickname": "blogCategoriesUpdate",
+                    "type": "blogCategoriesUpdateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "分類ID",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "name",
+                            "description": "分類名稱，文字",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "type",
+                            "description": "分類類型",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["category", "folder"],
+                            "defaultValue": "category"
+                        },
+                        {
+                            "name": "description",
+                            "description": "分類說明，文字",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "show_index",
+                            "description": "是否在首頁上顯示, 1: yes, 0: no.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [1, 0],
+                            "defaultValue": 1
+                        },
+                        {
+                            "name": "site_category_id",
+                            "description": "對應的全站文章類別 id. 只有當 type 為 category 需要, 預設為 0",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "site_category_done",
+                            "description": "是否已決定對應. 只有當 type 為 category 時需要. 如果它設為 0, 則 PIXNET 後台會在發表文章時詢問是否要對應全站文章類別",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "刪除部落格個人分類",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCategoriesDelete\">official API document</a>.",
+                    "nickname": "blogCategoriesDelete",
+                    "type": "blogCategoriesDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "分類ID",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "_method",
+                            "description": "如果不是使用 DELETE http_method 的話(例如 POST), 需要指定這個參數為 delete",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "type",
+                            "description": "分類類型.如果要找 folder 就一定要給予 type 值",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["category", "folder"],
+                            "defaultValue": "category"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/categories/position",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "修改部落格個人分類排序",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCategoriesPosition\">official API document</a>.",
+                    "nickname": "blogCategoriesPosition",
+                    "type": "blogCategoriesPositionResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "ids",
+                            "description": "分類 id 順序以 , 或 - 為分隔，放在越前面的表示圖片的順序越優先。不過在排序上分類資料夾的排序要優先於分類，所以對分類資料夾的排序指定只會影響資料夾群本身。(EX: 12394813,12938503,12395064,12351423 or 12394813-12938503-12395064-12351423 )",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/articles",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出所有部落格個人文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticles\">official API document</a>.",
+                    "nickname": "blogArticles",
+                    "type": "blogArticlesResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "blog_password",
+                            "description": "如果指定使用者的 Blog 被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page",
+                            "description": "頁數, 預設為1",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "per_page",
+                            "description": "每頁幾筆, 預設為100",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "category_id",
+                            "description": "個人分類參數, 預設是 null (所有分類文章)<br>多個分類 id 以逗號 (,) 分隔，例如 category_id=1234,5678,90。上限 10 個分類。",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "status",
+                            "description": "文章狀態, 1: 草稿, 2: 公開, 3: 密碼, 4: 隱藏, 5: 好友, 7: 共同作者, 如果有指定則回傳指定狀態的文章, 預設是 null(所有文章)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "is_top",
+                            "description": "置頂, 1: 是, 0: 否, 如果有指定則回傳其指定文章, 預設是 null(所有文章)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "trim_user",
+                            "description": "是否每篇文章都要回傳作者資訊, 如果設定為 1, 則就不回傳. 預設是 0",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "新增部落格個人文章",
+                    "notes": "<font color=\"red\">欄位名稱Bug</font><br>Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticlesCreate\">official API document</a>.",
+                    "nickname": "blogArticlesCreate",
+                    "type": "blogArticlesCreateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "title",
+                            "description": "文章標題",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "文章內容",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "status",
+                            "description": "文章狀態, 0: 刪除, 1: 草稿, 2: 公開, 3: 密碼, 4: 隱藏, 5: 好友, 7: 共同作者",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "public_at",
+                            "description": "公開時間, 這個表示文章的發表時間, 以 UNIX timestamp 的方式輸入, 預設為現在時間",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "category_id",
+                            "description": "個人分類, 請先到 BlogCategory 裡找自己的分類列表, 預設是0",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "site_category_id",
+                            "description": "站台分類",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "use_nl2br",
+                            "description": "是否使用 nl2br, 預設是0 (1 → 使用 nl2br, 0 → 不使用)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "comment_perm",
+                            "description": "可留言權限. 0: 關閉留言, 1: 開放所有人留言, 2: 僅開放會員留言, 3:開放好友留言. 預設會看 Blog 整體設定",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "comment_hidden",
+                            "description": "預設留言狀態. 0: 公開, 1: 強制隱藏. 預設為0(公開)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "tags",
+                            "description": "標籤, 以”,”為分隔, 如”foo,bar”",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "thumb",
+                            "description": "文章縮圖網址, 會影響 oEmbed 與 SNS (Twitter, Facebook, Plurk …) 抓到的縮圖",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "trackback",
+                            "description": "發送引用通知, 可以輸入複數網站(用空白分隔)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "password",
+                            "description": "當 status 被設定為 3 時需要輸入這個參數以設定為此文章的密碼",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "password_hint",
+                            "description": "當 status 被設定為 3 時需要輸入這個參數以設定為此文章的密碼提示",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "friend_group_ids",
+                            "description": "當 status 被設定為 5 時可以輸入這個參數以設定此文章可閱讀的好友群組, 預設不輸入代表所有好友",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "notify_twitter",
+                            "description": "動態發送至 Twitter. 必須先有同步關係才能發送, 預設為部落格全域設定.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "notify_facebook",
+                            "description": "動態發送至 Facebook. 必須先有同步關係才能發送, 預設為部落格全域設定.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/articles/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "讀取部落格個人文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticlesId\">official API document</a>.",
+                    "nickname": "blogArticlesId",
+                    "type": "blogArticlesIdResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "文章ID",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "blog_password",
+                            "description": "如果指定使用者的 Blog 被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "article_password",
+                            "description": "如果指定使用者的文章被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "修改部落格個人文章",
+                    "notes": "<font color=\"red\">欄位名稱Bug</font>Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticlesUpdate\">official API document</a>.",
+                    "nickname": "blogArticlesUpdate",
+                    "type": "blogArticlesUpdateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "文章ID",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "title",
+                            "description": "文章標題",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "文章內容",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "status",
+                            "description": "文章狀態, 0: 刪除, 1: 草稿, 2: 公開, 3: 密碼, 4: 隱藏, 5: 好友, 7: 共同作者",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "public_at",
+                            "description": "公開時間, 這個表示文章的發表時間, 以 UNIX timestamp 的方式輸入, 預設為現在時間",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "category_id",
+                            "description": "個人分類, 請先到 BlogCategory 裡找自己的分類列表, 預設是0",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "site_category_id",
+                            "description": "站台分類",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "use_nl2br",
+                            "description": "是否使用 nl2br, 預設是0 (1 → 使用 nl2br, 0 → 不使用)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "comment_perm",
+                            "description": "可留言權限. 0: 關閉留言, 1: 開放所有人留言, 2: 僅開放會員留言, 3:開放好友留言. 預設會看 Blog 整體設定",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "comment_hidden",
+                            "description": "預設留言狀態. 0: 公開, 1: 強制隱藏. 預設為0(公開)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "tags",
+                            "description": "標籤, 以”,”為分隔, 如”foo,bar”",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "thumb",
+                            "description": "文章縮圖網址, 會影響 oEmbed 與 SNS (Twitter, Facebook, Plurk …) 抓到的縮圖",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "trackback",
+                            "description": "發送引用通知, 可以輸入複數網站(用空白分隔)",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "password",
+                            "description": "當 status 被設定為 3 時需要輸入這個參數以設定為此文章的密碼",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "password_hint",
+                            "description": "當 status 被設定為 3 時需要輸入這個參數以設定為此文章的密碼提示",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "friend_group_ids",
+                            "description": "當 status 被設定為 5 時可以輸入這個參數以設定此文章可閱讀的好友群組, 預設不輸入代表所有好友",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "notify_twitter",
+                            "description": "動態發送至 Twitter. 必須先有同步關係才能發送, 預設為部落格全域設定.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "notify_facebook",
+                            "description": "動態發送至 Facebook. 必須先有同步關係才能發送, 預設為部落格全域設定.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "刪除部落格個人文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticlesDelete\">official API document</a>.",
+                    "nickname": "blogArticlesDelete",
+                    "type": "blogArticlesDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "文章ID",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "_method",
+                            "description": "如果不是使用 DELETE http_method 的話, 需要指定這個參數為 delete",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/articles/{id}/related",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "讀取指定文章之相關文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticlesIdRelated\">official API document</a>.",
+                    "nickname": "blogArticlesIdRelated",
+                    "type": "blogArticlesIdRelatedResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "文章ID",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "with_body",
+                            "description": "是否包含文章本文的內容",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "限制回傳文章的筆數，預設值為1，最大值為10",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/articles/latest",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出部落格最新文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticlesLatest\">official API document</a>.",
+                    "nickname": "blogArticlesLatest",
+                    "type": "blogArticlesLatestResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "blog_password",
+                            "description": "如果指定使用者的 Blog 被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "回傳筆數, 預設為 100",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "trim_user",
+                            "description": "是否每篇文章都要回傳作者資訊, 如果設定為 1, 則就不回傳. 預設是 0",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/articles/hot",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出部落格熱門文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticlesHot\">official API document</a>.",
+                    "nickname": "blogArticlesHot",
+                    "type": "blogArticlesHotResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "blog_password",
+                            "description": "如果指定使用者的 Blog 被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "回傳筆數, 預設為 1",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "trim_user",
+                            "description": "是否每篇文章都要回傳作者資訊, 如果設定為 1, 則就不回傳. 預設是 0",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/articles/search",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "搜尋部落格文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogArticlesSearch\">official API document</a>.",
+                    "nickname": "blogArticlesSearch",
+                    "type": "blogArticlesSearchResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "key",
+                            "description": "關鍵字或標籤",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "site",
+                            "description": "是否為全站搜尋, 預設為 false",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "type",
+                            "description": "搜尋類型, 支援 tag (文章標籤) 與 keyword (全文關鍵字). 預設為 keyword",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page",
+                            "description": "頁數, 預設為1",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "per_page",
+                            "description": "每頁幾筆, 預設為100",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/comments",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出部落格留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogComments\">official API document</a>.",
+                    "nickname": "blogComments",
+                    "type": "blogCommentsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "article_id",
+                            "description": "指定要回傳的留言文章",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "blog_password",
+                            "description": "如果指定使用者的 Blog 被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "article_password",
+                            "description": "如果指定使用者的文章被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "filter",
+                            "description": "顯示特別屬性的留言. whisper: 只顯示悄悄話留言; nospam: 只顯示非廣告留言; noreply: 只顯示未回覆留言",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sort",
+                            "description": "排序條件. date-posted-asc: 依照留言時間由舊到新排序; date-posted-desc: 依照留言時間由新到舊排序",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "page",
+                            "description": "頁數, 預設為1",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "per_page",
+                            "description": "每頁幾筆, 預設為100",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "新增部落格留言",
+                    "notes": "<font color=\"red\">欄位名稱Bug</font><br>Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsCreate\">official API document</a>.",
+                    "nickname": "blogCommentsCreate",
+                    "type": "blogCommentsCreateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "article_id",
+                            "description": "指定要回傳的留言文章",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "留言內容",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "author",
+                            "description": "留言的暱稱, 不填入則預設代入認證使用者的 display_name",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "title",
+                            "description": "留言標題",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "url",
+                            "description": "個人網頁",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "is_open",
+                            "description": "公開留言/悄悄話",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "email",
+                            "description": "電子郵件",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "blog_password",
+                            "description": "如果指定使用者的 Blog 被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "article_password",
+                            "description": "如果指定使用者的文章被密碼保護，則需要指定這個參數以通過授權",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/comments/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "讀取單一留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsId\">official API document</a>.",
+                    "nickname": "blogCommentsId",
+                    "type": "blogCommentsIdResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "刪除部落格留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsDelete\">official API document</a>.",
+                    "nickname": "blogCommentsDelete",
+                    "type": "blogCommentsDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "_method",
+                            "description": "如果不是使用 DELETE http_method 的話, 需要指定這個參數為 delete",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/comments/{id}/reply",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "回覆部落格留言，可以重覆使用這個功能來修改回覆內容",
+                    "notes": "<font color=\"red\">欄位名稱Bug</font><br>Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsReply\">official API document</a>.",
+                    "nickname": "blogCommentsReply",
+                    "type": "blogCommentsReplyResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "回覆的內容",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/comments/{id}/open",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "將留言設為公開",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsOpen\">official API document</a>.",
+                    "nickname": "blogCommentsOpen",
+                    "type": "blogCommentsOpenResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/comments/{id}/close",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "將留言設為悄悄話",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsClose\">official API document</a>.",
+                    "nickname": "blogCommentsClose",
+                    "type": "blogCommentsCloseResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/comments/{id}/mark_spam",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "將留言設為廣告留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsMarkSpam\">official API document</a>.",
+                    "nickname": "blogCommentsMarkSpam",
+                    "type": "blogCommentsMarkSpamResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/comments/{id}/mark_ham",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "將留言設為非廣告留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsMarkHam\">official API document</a>.",
+                    "nickname": "blogCommentsMarkHam",
+                    "type": "blogCommentsMarkHamResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/comments/latest",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出部落格最新留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogCommentsLatest\">official API document</a>.",
+                    "nickname": "blogCommentsLatest",
+                    "type": "blogCommentsLatestResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/site_categories",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出部落格全站分類",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogSiteCategories\">official API document</a>.",
+                    "nickname": "blogSiteCategories",
+                    "type": "blogSiteCategoriesResp",
+                    "parameters": [
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "include_groups",
+                            "description": "當被設為 1 或 true 時, 回傳資訊會以全站分類群組為分類",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "include_thumbs",
+                            "description": "當被設為 1 或 true 時, 回傳分類資訊會包含縮圖",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blog/suggested_tags",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出部落格熱門以及相關標籤",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blogSuggestedTags\">official API document</a>.",
+                    "nickname": "blogSuggestedTags",
+                    "type": "blogSuggestedTagsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

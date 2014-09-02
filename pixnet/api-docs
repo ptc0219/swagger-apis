@@ -17,6 +17,10 @@
         {
             "path" : "/../user",
             "description" : "User Methods"
+        },
+        {
+            "path" : "/../blog",
+            "description" : "Blog Methods"
         }
     ]
 }
