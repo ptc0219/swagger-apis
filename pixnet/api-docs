@@ -29,6 +29,10 @@
         {
             "path" : "/../friend",
             "description" : "Friend Methods"
+        },
+        {
+            "path" : "/../block",
+            "description" : "Block Methods"
         }
     ]
 }

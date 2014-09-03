@@ -1,0 +1,147 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://emma.pixnet.cc",
+    "resourcePath": "/blocks",
+    "apis": [
+        {
+            "path": "/blocks/",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出黑名單",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blocks\">official API document</a>.",
+                    "nickname": "blocks",
+                    "type": "blocksResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blocks/create",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "新增黑名單",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blocksCreate\">official API document</a>.",
+                    "nickname": "blocksCreate",
+                    "type": "blocksCreateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "使用者名稱，若有多個使用者，以半型逗點為分隔(,)",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/blocks/delete",
+            "operations": [
+                {
+                    "method": "DELETE",
+                    "summary": "移除黑名單",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/blocksDelete\">official API document</a>.",
+                    "nickname": "blocksDelete",
+                    "type": "blocksDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "使用者名稱",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "_method",
+                            "description": "如果不是使用 DELETE http_method 的話, 需要指定這個參數為 delete",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
