@@ -1,0 +1,497 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://emma.pixnet.cc",
+    "resourcePath": "/guestbook",
+    "apis": [
+        {
+            "path": "/guestbook/",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出留言板留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbook\">official API document</a>.",
+                    "nickname": "guestbook",
+                    "type": "guestbookResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "filter",
+                            "description": "顯示特別屬性的留言. whisper: 只顯示悄悄話留言; noreply: 只顯示未回覆留言",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "cursor",
+                            "description": "Breaks the results into pages. A single page contains 100 users. This is recommended for users who are following many users. Provide a value of -1 to begin paging. Provide values as returned to in the response body's next_cursor and previous_cursor attributes to page back and forth in the list.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "per_page",
+                            "description": "每頁幾筆, 預設為100",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "新增留言版留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbookCreate\">official API document</a>.",
+                    "nickname": "guestbookCreate",
+                    "type": "guestbookCreateResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "title",
+                            "description": "留言標題",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "留言內容",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "user",
+                            "description": "要留言的留言版版主名稱, 若不填入則預設找自己的留言版",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "author",
+                            "description": "留言的暱稱, 不填入則預設代入認證使用者的 display_name",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "url",
+                            "description": "個人網頁",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "email",
+                            "description": "電子郵件",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "is_open",
+                            "description": "公開留言/悄悄話",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/guestbook/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "讀取單一留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbookId\">official API document</a>.",
+                    "nickname": "guestbookId",
+                    "type": "guestbookIdResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "user",
+                            "description": "指定要回傳的使用者資訊",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "刪除留言版留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbookDelete\">official API document</a>.",
+                    "nickname": "guestbookDelete",
+                    "type": "guestbookDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "_method",
+                            "description": "如果不是使用 DELETE http_method 的話, 需要指定這個參數為 delete",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/guestbook/{id}/reply",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "回覆留言版留言，可以重覆使用這個功能來修改回覆內容",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbookReply\">official API document</a>.",
+                    "nickname": "guestbookReply",
+                    "type": "guestbookReplyResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "reply",
+                            "description": "回覆的內容",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/guestbook/{id}/open",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "將留言設為公開",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbookOpen\">official API document</a>.",
+                    "nickname": "guestbookOpen",
+                    "type": "guestbookOpenResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/guestbook/{id}/close",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "將留言設為悄悄話",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbookClose\">official API document</a>.",
+                    "nickname": "guestbookClose",
+                    "type": "guestbookCloseResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/guestbook/{id}/mark_spam",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "將留言設為廣告留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbookMarkSpam\">official API document</a>.",
+                    "nickname": "guestbookMarkSpam",
+                    "type": "guestbookMarkSpamResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/guestbook/{id}/mark_ham",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "將留言設為非廣告留言",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/guestbookMarkHam\">official API document</a>.",
+                    "nickname": "guestbookMarkHam",
+                    "type": "guestbookMarkHamResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "留言id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

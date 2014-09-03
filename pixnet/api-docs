@@ -33,6 +33,10 @@
         {
             "path" : "/../block",
             "description" : "Block Methods"
+        },
+        {
+            "path" : "/../guestbook",
+            "description" : "Guestbook Methods"
         }
     ]
 }
