@@ -21,6 +21,10 @@
         {
             "path" : "/../blog",
             "description" : "Blog Methods"
+        },
+        {
+            "path" : "/../album",
+            "description" : "Album Methods"
         }
     ]
 }
