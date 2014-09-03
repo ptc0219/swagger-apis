@@ -25,6 +25,10 @@
         {
             "path" : "/../album",
             "description" : "Album Methods"
+        },
+        {
+            "path" : "/../friend",
+            "description" : "Friend Methods"
         }
     ]
 }
