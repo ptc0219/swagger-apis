@@ -1,0 +1,394 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://emma.pixnet.cc",
+    "resourcePath": "/mainpage",
+    "apis": [
+        {
+            "path": "/mainpage/album/best_selected",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出精選相簿",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/mainpageAlbumBestSelected\">official API document</a>.",
+                    "nickname": "mainpageAlbumBestSelected",
+                    "type": "mainpageAlbumBestSelectedResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/mainpage/blog/columns/{category_id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "按分類列出所有部落格專欄的文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/mainpageBlogColumns\">official API document</a>.",
+                    "nickname": "mainpageBlogColumns",
+                    "type": "mainpageBlogColumnsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "category_id",
+                            "description": "分類id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "page",
+                            "description": "當有指定category_id時才有效, 一頁20篇文章",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/mainpage/blog/columns/categories",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "按分類列出所有部落格專欄的分類",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/mainpageBlogColumnsCategories\">official API document</a>.",
+                    "nickname": "mainpageBlogColumnsCategories",
+                    "type": "mainpageBlogColumnsCategoriesResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/mainpage/album/columns",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "按分類列出所有相簿專欄的照片",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/mainpageAlbumColumns\">official API document</a>.",
+                    "nickname": "mainpageAlbumColumns",
+                    "type": "mainpageAlbumColumnsResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "api_version",
+                            "description": "指定使用的 API 版本 (1 或 2)，版本 1 是為了相容舊版而保留，之後將會廢棄。開發者應該優先使用版本 2 的 API。",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/mainpage/blog/categories/{cycle}/{category_id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出分類的熱門文章/最新文章/近期熱門文章",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/mainpageBlogCategories\">official API document</a>.",
+                    "nickname": "mainpageBlogCategories",
+                    "type": "mainpageBlogCategoriesResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "cycle",
+                            "description": "hot, latest, hot_weekly",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "category_id",
+                            "description": "分類id",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "page",
+                            "description": "指定頁數，預設為1",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "count",
+                            "description": "一頁回傳幾筆, 預設為10",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/mainpage/album/categories/{cycle}/{category_id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出分類的熱門相簿/最新相簿/近期熱門簿",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/mainpageAlbumCategories\">official API document</a>.",
+                    "nickname": "mainpageAlbumCategories",
+                    "type": "mainpageAlbumCategoriesResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "cycle",
+                            "description": "hot, latest, hot_weekly",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "category_id",
+                            "description": "分類id",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "page",
+                            "description": "指定頁數，預設為1",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "count",
+                            "description": "一頁回傳幾筆, 預設為10",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "strict_filter",
+                            "description": "0或1，是否過濾腥羶色內容",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "api_version",
+                            "description": "指定使用的 API 版本 (1 或 2)，版本 1 是為了相容舊版而保留，之後將會廢棄。開發者應該優先使用版本 2 的 API。",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/mainpage/album/video/{cycle}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "列出熱門影音/最新影音/近期影音",
+                    "notes": "Get more information on <a href=\"http://developer.pixnet.pro/#!/doc/pixnetApi/mainpageAlbumVideo\">official API document</a>.",
+                    "nickname": "mainpageAlbumVideo",
+                    "type": "mainpageAlbumVideoResp",
+                    "parameters": [
+                        {
+                            "name": "access_token",
+                            "description": "API Access Token.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "cycle",
+                            "description": "hot, latest, hot_weekly",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "format",
+                            "description": "選擇輸出格式.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": ["json", "xml"],
+                            "defaultValue": "json"
+                        },
+                        {
+                            "name": "pretty_print",
+                            "description": "選擇是否輸出有縮排的 JSON 文件.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query",
+                            "enum": [0, 1],
+                            "defaultValue": "1"
+                        },
+                        {
+                            "name": "page",
+                            "description": "指定頁數，預設為1",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "per_page",
+                            "description": "一頁回傳幾筆, 預設為10",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

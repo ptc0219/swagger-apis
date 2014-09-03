@@ -37,6 +37,10 @@
         {
             "path" : "/../guestbook",
             "description" : "Guestbook Methods"
+        },
+        {
+            "path" : "/../mainpage",
+            "description" : "Mainpage Methods"
         }
     ]
 }
