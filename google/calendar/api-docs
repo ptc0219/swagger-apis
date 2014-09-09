@@ -33,6 +33,10 @@
         {
             "path" : "/../freebusy",
             "description" : "Operation about Free Busy."
+        },
+        {
+            "path" : "/../settings",
+            "description" : "Operation about Settings."
         }
     ]
 }

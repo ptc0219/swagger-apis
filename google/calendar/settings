@@ -1,0 +1,110 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/calendar/v3",
+    "resourcePath": "/users",
+    "apis": [
+        {
+            "path": "/users/me/settings/{setting}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns a single user setting.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/settings/get\">official API document</a>.",
+                    "nickname": "settingGet",
+                    "type": "settingGetResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "setting",
+                            "description": "The id of the user setting.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/users/me/settings",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns all user settings for the authenticated user.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/settings/list\">official API document</a>.",
+                    "nickname": "settingList",
+                    "type": "settingListResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "maxResults",
+                            "description": "Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pageToken",
+                            "description": "Token specifying which result page to return.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "syncToken",
+                            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken. Learn more about incremental synchronization. The default is to return all entries. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/users/me/settings/watch",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Watch for changes to Settings resources.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/settings/watch\">official API document</a>.",
+                    "nickname": "settingWatch",
+                    "type": "settingWatchResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
