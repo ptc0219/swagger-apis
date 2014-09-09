@@ -1,0 +1,18 @@
+{
+    "apiVersion": "1",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "YouTube Analytics API.",
+        "description": "The YouTube Analytics API provides a single method that lets you retrieve different Analytics reports. Each request must use query parameters to specify a channel ID or content owner, a start date, an end date, and at least one metric. You may also provide additional query parameters, such as dimensions, filters, or sorting instructions.",
+        "termsOfServiceUrl": "https://developers.google.com/site-terms/",
+        "contact": "",
+        "license": "Apache 2.0 License",
+        "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "apis": [
+        {
+            "path" : "/../reports",
+            "description" : "Operation about Reports."
+        }
+    ]
+}

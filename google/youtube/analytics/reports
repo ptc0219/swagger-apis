@@ -1,0 +1,94 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/analytics/v1",
+    "resourcePath": "/reports",
+    "apis": [
+        {
+            "path": "/reports",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Retrieve YouTube Analytics data",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/analytics/v1/\">official API document</a>.",
+                    "nickname": "reports",
+                    "type": "reportsResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "end-date",
+                            "description": "The end date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "ids",
+                            "description": "Identifies the YouTube channel or content owner for which you are retrieving YouTube Analytics data.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "metrics",
+                            "description": "A comma-separated list of YouTube Analytics metrics, such as views or likes,dislikes.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "start-date",
+                            "description": "The start date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "dimensions",
+                            "description": "A comma-separated list of YouTube Analytics dimensions, such as video or ageGroup,gender.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "filters",
+                            "description": "A list of filters that should be applied when retrieving YouTube Analytics data.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "max-results",
+                            "description": "The maximum number of rows to include in the response. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sort",
+                            "description": "A comma-separated list of dimensions or metrics that determine the sort order for YouTube Analytics data. By default the sort order is ascending. The - prefix causes descending sort order. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "start-index",
+                            "description": "The 1-based index of the first entity to retrieve. (The default value is 1.) Use this parameter as a pagination mechanism along with the max-results parameter. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
