@@ -1,0 +1,679 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/calendar/v3",
+    "resourcePath": "/calendars",
+    "apis": [
+        {
+            "path": "/calendars/{calendarId}/events",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns events on the specified calendar.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/list\">official API document</a>.",
+                    "nickname": "eventsList",
+                    "type": "eventsListResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "alwaysIncludeEmail",
+                            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "iCalUID",
+                            "description": "Specifies event ID in the iCalendar format to be included in the response. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxAttendees",
+                            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxResults",
+                            "description": "Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "orderBy",
+                            "description": "The order of the events returned in the result. The default is an unspecified, stable order. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pageToken",
+                            "description": "Token specifying which result page to return. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "privateExtendedProperty",
+                            "description": "Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "q",
+                            "description": "Free text search terms to find events that match these terms in any field, except for extended properties. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sharedExtendedProperty",
+                            "description": "Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "showDeleted",
+                            "description": "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "showHiddenInvitations",
+                            "description": "Whether to include hidden invitations in the result. The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "singleEvents",
+                            "description": "Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. The default is False.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "syncToken",
+                            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "timeMax",
+                            "description": "Upper bound (exclusive) for an event's start time to filter by. The default is not to filter by start time. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "timeMin",
+                            "description": "Lower bound (inclusive) for an event's end time to filter by. The default is not to filter by end time. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "timeZone",
+                            "description": "Time zone used in the response. The default is the time zone of the calendar. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "updatedMin",
+                            "description": "Lower bound for an event's last modification time (as a RFC 3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. The default is not to filter by last modification time. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Creates an event.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/insert\">official API document</a>.",
+                    "nickname": "eventsInsert",
+                    "type": "eventsInsertResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "maxAttendees",
+                            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sendNotifications",
+                            "description": " Whether to send notifications about the creation of the new event. The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/calendars/{calendarId}/events/{eventId}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns an event.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/get\">official API document</a>.",
+                    "nickname": "eventsGet",
+                    "type": "eventsGetResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "eventId",
+                            "description": "Event identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "alwaysIncludeEmail",
+                            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. The default is False.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxAttendees",
+                            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "timeZone",
+                            "description": "Time zone used in the response. The default is the time zone of the calendar. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "PUT",
+                    "summary": "Updates an event.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/update\">official API document</a>.",
+                    "nickname": "eventsUpdate",
+                    "type": "eventsUpdateResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "eventId",
+                            "description": "Event identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "alwaysIncludeEmail",
+                            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. The default is False.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxAttendees",
+                            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sendNotifications",
+                            "description": "Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "PATCH",
+                    "summary": "Updates an event. This method supports patch semantics.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/patch\">official API document</a>.",
+                    "nickname": "eventsPatch",
+                    "type": "eventsPatchResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "eventId",
+                            "description": "Event identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "alwaysIncludeEmail",
+                            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. The default is False.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxAttendees",
+                            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sendNotifications",
+                            "description": "Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "Deletes an event.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/delete\">official API document</a>.",
+                    "nickname": "eventsDelete",
+                    "type": "eventsDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "eventId",
+                            "description": "Event identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "sendNotifications",
+                            "description": "Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/calendars/{calendarId}/events/watch",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Watch for changes to Events resources.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/watch\">official API document</a>.",
+                    "nickname": "eventsWatch",
+                    "type": "eventsWatchResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/calendars/{calendarId}/events/quickAdd",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Creates an event based on a simple text string.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/quickAdd\">official API document</a>.",
+                    "nickname": "eventsQuickadd",
+                    "type": "eventsQuickaddResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "text",
+                            "description": "The text describing the event to be created.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sendNotifications",
+                            "description": "Whether to send notifications about the creation of the event. The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/calendars/{calendarId}/events/import",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Imports an event. This operation is used to add a private copy of an existing event to a calendar.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/import\">official API document</a>.",
+                    "nickname": "eventsImport",
+                    "type": "eventsImportResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/calendars/{calendarId}/events/{eventId}/move",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Moves an event to another calendar, i.e. changes an event's organizer.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/move\">official API document</a>.",
+                    "nickname": "eventsMove",
+                    "type": "eventsMoveResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "eventId",
+                            "description": "Event identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "destination",
+                            "description": "Calendar identifier of the target calendar where the event is to be moved to.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "sendNotifications",
+                            "description": "Whether to send notifications about the change of the event's organizer. The default is False.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/calendars/{calendarId}/events/{eventId}/instances",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns instances of the specified recurring event.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/events/instances\">official API document</a>.",
+                    "nickname": "eventsInstances",
+                    "type": "eventsInstancesResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "eventId",
+                            "description": "Event identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "alwaysIncludeEmail",
+                            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxAttendees",
+                            "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxResults",
+                            "description": "Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. ",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "originalStart",
+                            "description": "The original start time of the instance in the result.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pageToken",
+                            "description": "Token specifying which result page to return. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "showDeleted",
+                            "description": "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "timeMax",
+                            "description": "Upper bound (exclusive) for an event's start time to filter by. The default is not to filter by start time. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "timeMin",
+                            "description": "Lower bound (inclusive) for an event's end time to filter by. The default is not to filter by end time. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "timeZone",
+                            "description": "Time zone used in the response. The default is the time zone of the calendar. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

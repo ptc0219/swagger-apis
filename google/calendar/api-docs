@@ -25,6 +25,10 @@
         {
             "path" : "/../colors",
             "description" : "Operation about Colors."
+        },
+        {
+            "path" : "/../events",
+            "description" : "Operation about Events."
         }
     ]
 }
