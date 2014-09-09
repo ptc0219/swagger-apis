@@ -1,0 +1,276 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/calendar/v3",
+    "resourcePath": "/calendars",
+    "apis": [
+        {
+            "path": "/calendars/{calendarId}/acl/{ruleId}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns an access control rule.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/acl/get\">official API document</a>.",
+                    "nickname": "aclGet",
+                    "type": "aclGetResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "ruleId",
+                            "description": "ACL rule identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                },
+                {
+                    "method": "PUT",
+                    "summary": "Updates an access control rule.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/acl/update\">official API document</a>.",
+                    "nickname": "aclUpdate",
+                    "type": "aclUpdateResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "ruleId",
+                            "description": "ACL rule identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "PATCH",
+                    "summary": "Updates an access control rule. This method supports patch semantics.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/acl/patch\">official API document</a>.",
+                    "nickname": "aclPatch",
+                    "type": "aclPatchResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "ruleId",
+                            "description": "ACL rule identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "Deletes an access control rule.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/acl/delete\">official API document</a>.",
+                    "nickname": "aclDelete",
+                    "type": "aclDeleteResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "ruleId",
+                            "description": "ACL rule identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/calendars/{calendarId}/acl",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns the rules in the access control list for the calendar.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/acl/list\">official API document</a>.",
+                    "nickname": "aclList",
+                    "type": "aclListResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "maxResults",
+                            "description": "Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pageToken",
+                            "description": "Token specifying which result page to return.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "showDeleted",
+                            "description": "Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to \"none\". Deleted ACLs will always be included if syncToken is provided. The default is False. ",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "syncToken",
+                            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False. If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken. The default is to return all entries.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Creates an access control rule.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/acl/insert\">official API document</a>.",
+                    "nickname": "aclInsert",
+                    "type": "aclInsertResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/calendars/{calendarId}/acl/watch",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Watch for changes to ACL resources.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/acl/watch\">official API document</a>.",
+                    "nickname": "aclWatch",
+                    "type": "aclWatchResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "calendarId",
+                            "description": "Calendar identifier.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

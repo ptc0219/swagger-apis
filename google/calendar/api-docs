@@ -1,0 +1,18 @@
+{
+    "apiVersion": "3",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "Google Calendar API.",
+        "description": "The Google Calendar API lets you develop client applications that create new events, edit or delete existing events, and search for events.",
+        "termsOfServiceUrl": "https://developers.google.com/site-terms/",
+        "contact": "",
+        "license": "Apache 2.0 License",
+        "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "apis": [
+        {
+            "path" : "/../acl",
+            "description" : "Operation about Access Control Rule."
+        }
+    ]
+}
