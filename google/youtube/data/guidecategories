@@ -1,0 +1,59 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/v3",
+    "resourcePath": "/guideCategories",
+    "apis": [
+        {
+            "path": "/guideCategories",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns a list of categories that can be associated with YouTube channels.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/guideCategories/list\">official API document</a>.",
+                    "nickname": "list",
+                    "type": "list",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter specifies the guideCategory resource properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies a comma-separated list of the YouTube channel category ID(s) for the resource(s) that are being retrieved. In a guideCategory resource, the id property specifies the YouTube channel category ID.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "regionCode",
+                            "description": "The regionCode parameter instructs the API to return the list of guide categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "hl",
+                            "description": "The hl parameter specifies the language that will be used for text values in the API response. The default value is en-US.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

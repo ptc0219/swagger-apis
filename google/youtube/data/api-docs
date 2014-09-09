@@ -25,6 +25,10 @@
         {
             "path" : "/../channelsections",
             "description" : "Operation about ChannelSections."
+        },
+        {
+            "path" : "/../guidecategories",
+            "description" : "Operation about GuideCategories."
         }
     ]
 }
