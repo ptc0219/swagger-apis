@@ -238,7 +238,7 @@
             "path": "/calendars/{calendarId}/acl/watch",
             "operations": [
                 {
-                    "method": "GET",
+                    "method": "POST",
                     "summary": "Watch for changes to ACL resources.",
                     "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/acl/watch\">official API document</a>.",
                     "nickname": "aclWatch",
