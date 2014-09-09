@@ -29,6 +29,10 @@
         {
             "path" : "/../events",
             "description" : "Operation about Events."
+        },
+        {
+            "path" : "/../freebusy",
+            "description" : "Operation about Free Busy."
         }
     ]
 }
