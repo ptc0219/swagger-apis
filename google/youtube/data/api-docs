@@ -1,0 +1,18 @@
+{
+    "apiVersion": "3",
+    "swaggerVersion": "1.2",
+    "info": {
+        "title": "YouTube Data API.",
+        "description": "The YouTube Data API (v3) lets you incorporate YouTube functionality into your own application. You can use the API to fetch search results and to retrieve, insert, update, and delete resources like videos or playlists.",
+        "termsOfServiceUrl": "https://developers.google.com/site-terms/",
+        "contact": "",
+        "license": "Apache 2.0 License",
+        "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "apis": [
+        {
+            "path" : "/../activities",
+            "description" : "Operation about Activities."
+        }
+    ]
+}
