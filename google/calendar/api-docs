@@ -17,6 +17,10 @@
         {
             "path" : "/../calendarlist",
             "description" : "Operation about Calendar List."
+        },
+        {
+            "path" : "/../calendars",
+            "description" : "Operation about Calendars."
         }
     ]
 }
