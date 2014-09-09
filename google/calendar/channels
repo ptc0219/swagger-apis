@@ -1,0 +1,38 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/calendar/v3",
+    "resourcePath": "/channels",
+    "apis": [
+        {
+            "path": "/channels/stop",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Stop watching resources through this channel.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/channels/stop\">official API document</a>.",
+                    "nickname": "channelsStop",
+                    "type": "channelsStopResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

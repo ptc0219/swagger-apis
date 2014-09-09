@@ -37,6 +37,10 @@
         {
             "path" : "/../settings",
             "description" : "Operation about Settings."
+        },
+        {
+            "path" : "/../channels",
+            "description" : "Operation about Channels."
         }
     ]
 }
