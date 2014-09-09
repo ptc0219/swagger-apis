@@ -1,0 +1,31 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/calendar/v3",
+    "resourcePath": "/colors",
+    "apis": [
+        {
+            "path": "/colors",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns the color definitions for calendars and events.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/google-apps/calendar/v3/reference/colors/get\">official API document</a>.",
+                    "nickname": "colorsGet",
+                    "type": "colorsGetResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

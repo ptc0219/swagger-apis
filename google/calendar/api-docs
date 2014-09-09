@@ -21,6 +21,10 @@
         {
             "path" : "/../calendars",
             "description" : "Operation about Calendars."
+        },
+        {
+            "path" : "/../colors",
+            "description" : "Operation about Colors."
         }
     ]
 }
