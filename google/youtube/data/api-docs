@@ -21,6 +21,10 @@
         {
             "path" : "/../channels",
             "description" : "Operation about Channels."
+        },
+        {
+            "path" : "/../channelsections",
+            "description" : "Operation about ChannelSections."
         }
     ]
 }

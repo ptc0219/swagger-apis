@@ -1,0 +1,166 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/v3",
+    "resourcePath": "/channelSections",
+    "apis": [
+        {
+            "path": "/channelSections",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns a list of channelSection resources that match the API request criteria. ",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/channelSections/list\">official API document</a>.",
+                    "nickname": "list",
+                    "type": "listResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter specifies a comma-separated list of one or more channelSection resource properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "channelId",
+                            "description": "The channelId parameter specifies a YouTube channel ID. If a request specifies a value for this parameter, the API will only return the specified channel's sections.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies a comma-separated list of IDs that uniquely identify the channelSection resources that are being retrieved. In a channelSection resource, the id property specifies the section's ID.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "mine",
+                            "description": "This parameter can only be used in a properly authorized request. Set this parameter's value to true to retrieve a feed of the channel sections associated with the authenticated user's YouTube channel.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Adds a channel section to the authenticated user's channel.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/channelSections/insert\">official API document</a>.",
+                    "nickname": "insert",
+                    "type": "insertResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwnerChannel",
+                            "description": "The onBehalfOfContentOwnerChannel parameter specifies the YouTube channel ID of the channel to which a video is being added.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request Body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "PUT",
+                    "summary": "Updates a channel section.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/channelSections/update\">official API document</a>.",
+                    "nickname": "update",
+                    "type": "updateResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request Body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "Deletes a channel section.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/channelSections/delete\">official API document</a>.",
+                    "nickname": "delete",
+                    "type": "deleteResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies the ID that uniquely identifies the channel section that is being deleted. In a channelSection resource, the id property specifies the section's ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
