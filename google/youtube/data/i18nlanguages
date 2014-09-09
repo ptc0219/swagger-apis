@@ -1,0 +1,45 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/v3",
+    "resourcePath": "/i18nLanguages",
+    "apis": [
+        {
+            "path": "/i18nLanguages",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns a list of application languages that the YouTube website supports.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/i18nLanguages/list\">official API document</a>.",
+                    "nickname": "list",
+                    "type": "list",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter specifies the i18nLanguage resource properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 1 unit. ",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "hl",
+                            "description": "The hl parameter specifies the language that should be used for text values in the API response. The default value is en_US.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

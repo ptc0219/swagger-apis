@@ -29,6 +29,10 @@
         {
             "path" : "/../guidecategories",
             "description" : "Operation about GuideCategories."
+        },
+        {
+            "path" : "/../i18nlanguages",
+            "description" : "Operation about I18nLanguages."
         }
     ]
 }
