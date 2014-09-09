@@ -23,7 +23,7 @@
                         },
                         {
                             "name": "calendarId",
-                            "description": "Calendar id",
+                            "description": "Calendar identifier.",
                             "required": true,
                             "type": "string",
                             "paramType": "path"
@@ -47,7 +47,7 @@
                         },
                         {
                             "name": "calendarId",
-                            "description": "Calendar id",
+                            "description": "Calendar identifier.",
                             "required": true,
                             "type": "string",
                             "paramType": "path"
@@ -85,7 +85,7 @@
                         },
                         {
                             "name": "calendarId",
-                            "description": "Calendar id",
+                            "description": "Calendar identifier.",
                             "required": true,
                             "type": "string",
                             "paramType": "path"
@@ -123,7 +123,7 @@
                         },
                         {
                             "name": "calendarId",
-                            "description": "Calendar id",
+                            "description": "Calendar identifier.",
                             "required": true,
                             "type": "string",
                             "paramType": "path"
