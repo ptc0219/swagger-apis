@@ -17,6 +17,10 @@
         {
             "path" : "/../channelbanners",
             "description" : "Operation about ChannelBanners."
+        },
+        {
+            "path" : "/../channels",
+            "description" : "Operation about Channels."
         }
     ]
 }
