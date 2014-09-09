@@ -13,6 +13,10 @@
         {
             "path" : "/../activities",
             "description" : "Operation about Activities."
+        },
+        {
+            "path" : "/../channelbanners",
+            "description" : "Operation about ChannelBanners."
         }
     ]
 }

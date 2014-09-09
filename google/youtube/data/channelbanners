@@ -1,0 +1,45 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/v3",
+    "resourcePath": "/channelBanners",
+    "apis": [
+        {
+            "path": "/channelBanners/insert",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Uploads a channel banner image to YouTube.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/channelBanners/insert\">official API document</a>.",
+                    "nickname": "channelbannerInsert",
+                    "type": "",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "File",
+                            "description": "Upload image",
+                            "required": true,
+                            "type": "File",
+                            "paramType": "form"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "This parameter can only be used in a properly authorized request.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
