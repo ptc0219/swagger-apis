@@ -57,6 +57,10 @@
         {
             "path" : "/../thumbnails",
             "description" : "Operation about Thumbnails."
+        },
+        {
+            "path" : "/../videocategories",
+            "description" : "Operation about VideoCategories."
         }
     ]
 }
