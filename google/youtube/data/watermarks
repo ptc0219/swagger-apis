@@ -1,0 +1,81 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/v3",
+    "resourcePath": "/watermarks",
+    "apis": [
+        {
+            "path": "/watermarks/set",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Uploads a watermark image to YouTube and sets it for a channel. ",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/watermarks/set\">official API document</a>.",
+                    "nickname": "set",
+                    "type": "setResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "channelId",
+                            "description": "The channelId parameter specifies the YouTube channel ID for which the watermark is being provided.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/watermarks/unset",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Deletes a channel's watermark image.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/watermarks/unset\">official API document</a>.",
+                    "nickname": "unset",
+                    "type": "unsetResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "channelId",
+                            "description": "The channelId parameter specifies the YouTube channel ID for which the watermark is being unset.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

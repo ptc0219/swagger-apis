@@ -65,6 +65,10 @@
         {
             "path" : "/../videos",
             "description" : "Operation about Videos."
+        },
+        {
+            "path" : "/../watermarks",
+            "description" : "Operation about Watermarks."
         }
     ]
 }
