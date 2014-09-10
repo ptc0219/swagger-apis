@@ -1,0 +1,173 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/v3",
+    "resourcePath": "/playlistItems",
+    "apis": [
+        {
+            "path": "/playlistItems",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns a collection of playlist items that match the API request parameters.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/playlistItems/list\">official API document</a>.",
+                    "nickname": "list",
+                    "type": "listResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies a comma-separated list of one or more unique playlist item IDs.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "playlistId",
+                            "description": "The playlistId parameter specifies the unique ID of the playlist for which you want to retrieve playlist items. Note that even though this is an optional parameter, every request to retrieve playlist items must specify a value for either the id parameter or the playlistId parameter.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxResults",
+                            "description": "The maxResults parameter specifies the maximum number of items that should be returned in the result set. Acceptable values are 0 to 50, inclusive. The default value is 5.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pageToken",
+                            "description": "The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "videoId",
+                            "description": "The videoId parameter specifies that the request should return only the playlist items that contain the specified video.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Adds a resource to a playlist.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/playlistItems/insert\">official API document</a>.",
+                    "nickname": "insert",
+                    "type": "insertResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "PUT",
+                    "summary": "Modifies a playlist item. For example, you could update the item's position in the playlist.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/playlistItems/update\">official API document</a>.",
+                    "nickname": "update",
+                    "type": "updateResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "Deletes a playlist item.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/playlistItems/delete\">official API document</a>.",
+                    "nickname": "delete",
+                    "type": "deleteResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies the YouTube playlist item ID for the playlist item that is being deleted. In a playlistItem resource, the id property specifies the playlist item's ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

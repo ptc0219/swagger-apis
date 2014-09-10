@@ -37,6 +37,10 @@
         {
             "path" : "/../i18nregions",
             "description" : "Operation about I18nRegions."
+        },
+        {
+            "path" : "/../playlistitems",
+            "description" : "Operation about PlaylistItems."
         }
     ]
 }
