@@ -41,6 +41,10 @@
         {
             "path" : "/../playlistitems",
             "description" : "Operation about PlaylistItems."
+        },
+        {
+            "path" : "/../playlists",
+            "description" : "Operation about Playlists."
         }
     ]
 }
