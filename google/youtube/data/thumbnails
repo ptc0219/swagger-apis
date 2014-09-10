@@ -1,0 +1,45 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/v3",
+    "resourcePath": "/thumbnails",
+    "apis": [
+        {
+            "path": "/thumbnails/set",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Uploads a custom video thumbnail to YouTube and sets it for a video.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/thumbnails/set\">official API document</a>.",
+                    "nickname": "set",
+                    "type": "setResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "videoId",
+                            "description": "The videoId parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}
