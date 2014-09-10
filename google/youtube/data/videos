@@ -1,0 +1,301 @@
+{
+    "swaggerVersion": "1.2",
+    "basePath": "https://www.googleapis.com/youtube/v3",
+    "resourcePath": "/videos",
+    "apis": [
+        {
+            "path": "/videos",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Returns a list of videos that match the API request parameters.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/videos/list\">official API document</a>.",
+                    "nickname": "list",
+                    "type": "listResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "chart",
+                            "description": "The chart parameter identifies the chart that you want to retrieve.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved. In a video resource, the id property specifies the video's ID.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "myRating",
+                            "description": "This parameter can only be used in a properly authorized request. Set this parameter's value to like or dislike to instruct the API to only return videos liked or disliked by the authenticated user.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "maxResults",
+                            "description": "The maxResults parameter specifies the maximum number of items that should be returned in the result set.",
+                            "required": false,
+                            "type": "integer",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "pageToken",
+                            "description": "The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "regionCode",
+                            "description": "The regionCode parameter instructs the API to select a video chart available in the specified region. This parameter can only be used in conjunction with the chart parameter. The parameter value is an ISO 3166-1 alpha-2 country code.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "videoCategoryId",
+                            "description": "The videoCategoryId parameter identifies the video category for which the chart should be retrieved. This parameter can only be used in conjunction with the chart parameter. By default, charts are not restricted to a particular category. The default value is 0.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "summary": "Uploads a video to YouTube and optionally sets the video's metadata.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/videos/insert\">official API document</a>.",
+                    "nickname": "insert",
+                    "type": "insertResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "autoLevels",
+                            "description": "The autoLevels parameter indicates whether YouTube should automatically enhance the video's lighting and color.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "notifySubscribers",
+                            "description": "The notifySubscribers parameter indicates whether YouTube should send a notification about the new video to users who subscribe to the video's channel. A parameter value of True indicates that subscribers will be notified of newly uploaded videos. However, a channel owner who is uploading many videos might prefer to set the value to False to avoid sending a notification about each new video to the channel's subscribers. The default value is True.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwnerChannel",
+                            "description": "The onBehalfOfContentOwnerChannel parameter specifies the YouTube channel ID of the channel to which a video is being added. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "stabilize",
+                            "description": "The stabilize parameter indicates whether YouTube should adjust the video to remove shaky camera motions.",
+                            "required": false,
+                            "type": "boolean",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "PUT",
+                    "summary": "Updates a video's metadata.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/videos/update\">official API document</a>.",
+                    "nickname": "update",
+                    "type": "updateResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "part",
+                            "description": "The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. ",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "body",
+                            "description": "Request body.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "body"
+                        }
+                    ]
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "Deletes a YouTube video.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/videos/delete\">official API document</a>.",
+                    "nickname": "delete",
+                    "type": "deleteResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies the YouTube video ID for the resource that is being deleted. In a video resource, the id property specifies the video's ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/videos/rate",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Add a like or dislike rating to a video or remove a rating from a video.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/videos/rate\">official API document</a>.",
+                    "nickname": "rate",
+                    "type": "rateResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies the YouTube video ID of the video that is being rated or having its rating removed.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "rating",
+                            "description": "Specifies the rating to record.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/videos/getRating",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Retrieves the ratings that the authorized user gave to a list of specified videos.",
+                    "notes": "Get more information on <a href=\"https://developers.google.com/youtube/v3/docs/videos/getRating\">official API document</a>.",
+                    "nickname": "getRating",
+                    "type": "getRatingResp",
+                    "parameters": [
+                        {
+                            "name": "Authorization",
+                            "description": "OAuth2 Authorization",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "header",
+                            "defaultValue" : "Bearer xxxxxxxxxx"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) for which you are retrieving rating data. In a video resource, the id property specifies the video's ID.",
+                            "required": true,
+                            "type": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "onBehalfOfContentOwner",
+                            "description": "The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value.",
+                            "required": false,
+                            "type": "string",
+                            "paramType": "query"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+    }
+}

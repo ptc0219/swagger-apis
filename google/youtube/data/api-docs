@@ -61,6 +61,10 @@
         {
             "path" : "/../videocategories",
             "description" : "Operation about VideoCategories."
+        },
+        {
+            "path" : "/../videos",
+            "description" : "Operation about Videos."
         }
     ]
 }
